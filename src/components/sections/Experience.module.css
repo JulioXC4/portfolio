@@ -1,0 +1,249 @@
+.experienceSection {
+  padding: 100px 0;
+  position: relative;
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.headerBar {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: 2px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-primary) 0%, rgba(161, 98, 7, 0.1) 100%);
+  z-index: 1;
+}
+
+.timelineItem {
+  position: relative;
+  padding-left: 80px;
+  margin-bottom: 2rem;
+  z-index: 2;
+}
+
+.timelineDot {
+  position: absolute;
+  left: 14px;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bg-base);
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: var(--shadow-glow-gold);
+  transition: all var(--transition-normal);
+}
+
+.timelineItem:hover .timelineDot {
+  background: var(--color-primary);
+  color: #08080a;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--color-primary);
+}
+
+.experienceCard {
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  transition: all var(--transition-normal);
+}
+
+.experienceCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary-glow);
+  box-shadow: var(--shadow-lg), var(--shadow-glow-gold);
+  background: var(--bg-surface-hover);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.titleArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.role {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+}
+
+.companyArea {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.headerIcon {
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.metaArea {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.productBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+}
+
+.badgeLabel {
+  color: var(--text-muted);
+}
+
+.badgeName {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.bulletList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.bulletItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.bulletArrow {
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  user-select: none;
+}
+
+.bulletText {
+  font-size: 0.96rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.techTag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.experienceCard:hover .techTag {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .timelineLine {
+    left: 20px;
+  }
+  
+  .timelineDot {
+    left: 6px;
+  }
+  
+  .timelineItem {
+    padding-left: 45px;
+  }
+  
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .metaArea {
+    align-items: flex-start;
+  }
+
+  .experienceCard {
+    padding: 1.5rem;
+  }
+}

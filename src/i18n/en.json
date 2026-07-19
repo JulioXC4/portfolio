@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "tech": "Tech Stack",
+    "goals": "Future Paths",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I am",
+    "tagline": "Designing, building, and optimizing software end-to-end.",
+    "role": "Full Stack Developer · Growing Engineer",
+    "description": "Software Engineering student with practical experience building real-world enterprise products. I am passionate about the complete product lifecycle: from structuring databases and modeling efficient APIs, to deploying containers and polishing interactive user experiences.",
+    "cta_projects": "View Works",
+    "cta_contact": "Let's Connect"
+  },
+  "about": {
+    "title": "About Me",
+    "paragraph1": "I am a Software Engineering student committed to building complete, well-rounded software solutions. While my career path started with a strong foundation in backend development, I have actively expanded my focus to a Full Stack role. I enjoy participating in every stage of a product's lifecycle: from understanding the business needs and designing the architecture, to writing stable APIs and refining client-side interfaces.",
+    "paragraph2": "During my time at Devdatep Consulting, I contributed to EmiteFacil, a multi-tenant SaaS billing platform integrated with national tax authorities (SUNAT). Working on a high-availability, business-critical system strengthened my commitment to code quality, error tolerance, and long-term readability.",
+    "paragraph3": "I believe technology should solve real operational problems with elegance. My goal is to keep learning and applying industry standards across cloud infrastructure, clean backends, modern web frontends, and mobile client applications."
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "internship": {
+      "role": "Backend Developer Intern",
+      "company": "Devdatep Consulting",
+      "period": "2026 · Lima, Peru",
+      "bullet1": "Designed and implemented RESTful APIs using Laravel 11 and PHP 8.2 following service-oriented architecture (SOA) with Repository and DTO patterns.",
+      "bullet2": "Integrated digital signatures and SOAP/XML communications with national tax agency (SUNAT) for the EmiteFacil billing platform.",
+      "bullet3": "Constructed automated business identity validations by integrating third-party governmental query APIs.",
+      "bullet4": "Secured routes and managed user sessions via Laravel Sanctum, and designed optimized MySQL relational schemas."
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A showcase of complete solutions demonstrating technical design, clean architecture, and execution.",
+    "category": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "backend": "Backend",
+      "iot": "IoT",
+      "ia": "AI"
+    },
+    "status": {
+      "finished": "Completed",
+      "in_development": "In Development",
+      "upcoming": "Upcoming"
+    },
+    "view_details": "View Details",
+    "view_github": "View Repository",
+    "back_to_portfolio": "Back to Portfolio",
+    "featured_tag": "Featured Project",
+    "tech_stack": "Technologies Used",
+    "key_features": "Key Features",
+    "architecture_title": "System Architecture",
+    "simulator_title": "IoT Simulator Console",
+    "simulator_desc": "Use the sliders on the ingredient containers to simulate physical weight updates detected by the ESP32 load cells. Notice how the Edge filter instantly propagates telemetry to the Spring Boot Backend."
+  },
+  "tech": {
+    "title": "Tech Stack",
+    "subtitle": "Tools and languages structured by their role in the software architecture."
+  },
+  "education": {
+    "title": "Education",
+    "degree": "B.S. in Software Engineering",
+    "university": "Universidad Tecnológica del Perú",
+    "period": "Ongoing"
+  },
+  "goals": {
+    "title": "Learning Path & Growth Goals",
+    "subtitle": "Where I focus my continuous improvement and specialization in the short and mid term.",
+    "arch_title": "Software Architecture & Design",
+    "arch_desc": "Deepening my grasp of Domain-Driven Design (DDD), microservices patterns, and real-time message brokers.",
+    "devops_title": "DevOps Culture & Cloud",
+    "devops_desc": "Automating lifecycles with CI/CD (GitHub Actions), containerizing with Docker, and provisioning resources in Microsoft Azure.",
+    "front_title": "Modern Frontend Development",
+    "front_desc": "Mastering React/Next.js and advanced Vue 3 patterns (Composition API and Pinia) for reactive web products.",
+    "ai_title": "Practical AI Integration",
+    "ai_desc": "Studying cognitive APIs and orchestrating workflow automations using large language models."
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "If you have a job opportunity, a project idea, or just want to connect, feel free to reach out. I'll get back to you soon!",
+    "name": "Name",
+    "email": "Email Address",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Your message was sent successfully! I'll get in touch with you shortly.",
+    "error": "There was an error sending your message. Please try again."
+  }
+}

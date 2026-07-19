@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "about": "Sobre Mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "tech": "Tecnologías",
+    "goals": "Objetivos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "tagline": "Diseño, construyo y optimizo software de extremo a extremo.",
+    "role": "Full Stack Developer · Ingeniero en Crecimiento",
+    "description": "Estudiante de Ingeniería de Software con experiencia práctica en productos empresariales reales. Me apasiona el ciclo completo del desarrollo: desde estructurar bases de datos y modelar APIs eficientes, hasta desplegar contenedores y pulir experiencias interactivas para el usuario final.",
+    "cta_projects": "Ver Trabajos",
+    "cta_contact": "Hablemos"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "paragraph1": "Soy estudiante de Ingeniería de Software comprometido con el desarrollo de soluciones integrales. Aunque mi trayectoria profesional comenzó con una fuerte inclinación hacia el backend, he expandido mi enfoque hacia el rol Full Stack. Me entusiasma participar en todo el ciclo de vida del producto: analizando el modelo de negocio, diseñando la arquitectura, escribiendo APIs robustas y puliendo la interfaz de cara al usuario.",
+    "paragraph2": "Durante mis prácticas en Devdatep Consulting, colaboré en el desarrollo de EmiteFacil, una plataforma de facturación electrónica SaaS integrada con SUNAT. El trabajar en un sistema de alta criticidad reforzó mi compromiso con la calidad de código, la tolerancia a fallos y la legibilidad a largo plazo.",
+    "paragraph3": "Creo firmemente que la tecnología debe resolver problemas reales de negocio de forma elegante. Mi objetivo es continuar aprendiendo y aplicando las mejores prácticas de la industria tanto en infraestructura y backend como en interfaces web modernas y dispositivos móviles."
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "internship": {
+      "role": "Backend Developer Intern",
+      "company": "Devdatep Consulting",
+      "period": "2026 · Lima, Perú",
+      "bullet1": "Diseño e implementación de APIs RESTful usando Laravel 11 y PHP 8.2 bajo una arquitectura orientada a servicios (SOA) utilizando los patrones Repository y DTO.",
+      "bullet2": "Integración de firma digital y comunicación SOAP/XML con SUNAT para la plataforma SaaS de facturación electrónica EmiteFacil.",
+      "bullet3": "Implementación de validaciones automáticas de datos fiscales (RUC, DNI) conectándose con APIs gubernamentales.",
+      "bullet4": "Manejo de seguridad y sesiones mediante tokens con Laravel Sanctum y diseño de base de datos relacionales en MySQL."
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Una muestra de soluciones completas que demuestran arquitectura, diseño y ejecución técnica.",
+    "category": {
+      "all": "Todos",
+      "web": "Web",
+      "mobile": "Móvil",
+      "backend": "Backend",
+      "iot": "IoT",
+      "ia": "IA"
+    },
+    "status": {
+      "finished": "Finalizado",
+      "in_development": "En Desarrollo",
+      "upcoming": "Próximamente"
+    },
+    "view_details": "Ver Detalles",
+    "view_github": "Ver Repositorio",
+    "back_to_portfolio": "Volver al Portafolio",
+    "featured_tag": "Proyecto Estrella",
+    "tech_stack": "Tecnologías Utilizadas",
+    "key_features": "Características Principales",
+    "architecture_title": "Arquitectura del Sistema",
+    "simulator_title": "Consola del Simulador IoT",
+    "simulator_desc": "Usa los deslizadores de los contenedores para simular cambios de peso físicos detectados por las celdas de carga del ESP32. Observa cómo el filtro Edge notifica en tiempo real al Backend en Spring Boot."
+  },
+  "tech": {
+    "title": "Stack Tecnológico",
+    "subtitle": "Herramientas y lenguajes estructurados según su rol en la arquitectura de software."
+  },
+  "education": {
+    "title": "Formación Académica",
+    "degree": "Ingeniería de Software",
+    "university": "Universidad Tecnológica del Perú",
+    "period": "En curso"
+  },
+  "goals": {
+    "title": "Ruta de Aprendizaje y Crecimiento",
+    "subtitle": "Hacia dónde dirijo mis esfuerzos de mejora continua y especialización a corto y mediano plazo.",
+    "arch_title": "Arquitectura y Diseño de Software",
+    "arch_desc": "Profundización en Domain-Driven Design (DDD), patrones de microservicios y mensajería en tiempo real.",
+    "devops_title": "Cultura DevOps y Cloud",
+    "devops_desc": "Automatización con pipelines CI/CD (GitHub Actions), contenedorización en Docker y administración en Microsoft Azure.",
+    "front_title": "Frontend Moderno",
+    "front_desc": "Dominio de React/Next.js y patrones avanzados de Vue 3 (Composition API y Pinia) para interfaces web interactivas.",
+    "ai_title": "Integración Práctica de IA",
+    "ai_desc": "Estudio de APIs cognitivas y automatización con modelos de lenguaje aplicados para optimizar flujos empresariales."
+  },
+  "contact": {
+    "title": "Hablemos",
+    "subtitle": "Si tienes una propuesta de trabajo, un proyecto interesante o simplemente quieres saludar, mi buzón está abierto.",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito! Me pondré en contacto contigo a la brevedad.",
+    "error": "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+  }
+}
