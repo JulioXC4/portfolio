@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
+import { TechMark } from '@/components/common/TechMark';
+import { ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { ShieldCheck, Database, Cpu, Cloud, Monitor } from 'lucide-react';
 import styles from './TechStack.module.css';
@@ -94,11 +96,11 @@ export const TechStack: React.FC = () => {
   };
 
   return (
-    <section id="tech" className={styles.techSection}>
+    <section id="tech" className={styles.techSection} tabIndex={0} aria-label={t('tech.title')}>
       <div className={`${styles.container} container`}>
         {/* Section Header */}
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>{t('tech.title')}</h2>
+          <h2 className={styles.sectionTitle}>{t('tech.title').split(' ')[0]} <span>{t('tech.title').split(' ').slice(1).join(' ')}</span></h2>
           <p className={styles.sectionSubtitle}>{t('tech.subtitle')}</p>
           <div className={styles.headerBar}></div>
         </div>
@@ -112,15 +114,18 @@ export const TechStack: React.FC = () => {
                 onClick={() => setActiveLayerId(layer.id)}
                 className={`${styles.towerLayerBlock} ${activeLayerId === layer.id ? styles.blockActive : ''}`}
                 aria-label={`Select ${getLayerName(layer)}`}
+                aria-pressed={activeLayerId === layer.id}
+                aria-controls="tech-details"
               >
                 <span className={styles.blockIcon}>{layer.icon}</span>
                 <span className={styles.blockLabel}>{getLayerName(layer)}</span>
+                <ChevronRight size={18} className={styles.blockChevron} />
               </button>
             ))}
           </div>
 
           {/* Detailed Side Panel right */}
-          <div className={`${styles.sidePanel} glass-card`}>
+          <div id="tech-details" key={activeLayerId} className={`${styles.sidePanel} glass-card`}>
             <div className={styles.panelHeader}>
               <h3 className={styles.panelTitle}>{getLayerName(activeLayer)}</h3>
             </div>
@@ -130,7 +135,7 @@ export const TechStack: React.FC = () => {
               <div className={styles.techBadgeGrid}>
                 {activeLayer.techs.map((tech, idx) => (
                   <div key={idx} className={styles.techBadgeCard}>
-                    <span className={styles.badgeDot}></span>
+                    <TechMark name={tech} />
                     <span className={styles.badgeName}>{tech}</span>
                   </div>
                 ))}

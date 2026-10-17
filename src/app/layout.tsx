@@ -48,12 +48,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${outfit.variable} ${inter.variable}`}>
+    <html lang="es" data-scroll-behavior="smooth" className={`${outfit.variable} ${inter.variable}`}>
       <body>
-        <div className="bg-glow-container">
-          <div className="bg-glow-spot-1"></div>
-          <div className="bg-glow-spot-2"></div>
-        </div>
         <ThemeProvider>
           <LanguageProvider>
             {children}

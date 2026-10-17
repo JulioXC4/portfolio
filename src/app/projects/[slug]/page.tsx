@@ -1,13 +1,15 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { projectsData, Project } from '@/data/projects';
 import { ArchitectureDiagram } from '@/components/ui/ArchitectureDiagram';
 import { LiveDashboardSimulator } from '@/components/ui/LiveDashboardSimulator';
-import { ArrowLeft, ExternalLink, ShieldAlert, Cpu, Network, Layers } from 'lucide-react';
+import { ArrowLeft, ExternalLink, ShieldAlert, Cpu, Network, Layers, Activity, Cloud, Smartphone, Monitor, Bell } from 'lucide-react';
 import { Github } from '@/components/common/BrandIcons';
+import { BrandMark } from '@/components/common/BrandMark';
 import styles from './page.module.css';
 
 export default function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -42,6 +44,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
   const title = lang === 'es' ? project.titleES : project.titleEN;
   const description = lang === 'es' ? project.longDescriptionES : project.longDescriptionEN;
   const features = lang === 'es' ? project.featuresES : project.featuresEN;
+  const featureIcons = [Activity, Cpu, Cloud, Smartphone, Monitor, Bell];
 
   const getStatusColor = (status: Project['status']) => {
     switch (status) {
@@ -66,10 +69,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
             <span>{t('projects.back_to_portfolio')}</span>
           </Link>
           <div className={styles.logo}>
-            <svg className={styles.logoIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <circle cx="12" cy="12" r="9" stroke="var(--color-primary)" strokeWidth="1.5" />
-              <line x1="9" y1="15" x2="15" y2="9" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" />
-            </svg>
+            <BrandMark className={styles.logoIcon} />
             <span className={styles.logoText}>Julio <span className={styles.logoLastName}>Castro</span></span>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
 
       <main className={`${styles.main} container`}>
         {/* Project Hero Header */}
-        <section className={styles.heroSection}>
+        <section className={`${styles.heroSection} ${isRestock ? styles.restockHero : ''}`}>
           <div className={styles.heroMeta}>
             <span className={`${styles.statusLabel} ${getStatusColor(project.status)}`}>
               {getStatusText(project.status)}
@@ -106,6 +106,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
               </a>
             )}
           </div>
+          {isRestock && <Image src="/images/restock-detail.png" width={1536} height={1024} sizes="(max-width: 760px) 90vw, 40vw" loading="eager" className={styles.projectArt} alt="" />}
         </section>
 
         {/* Dynamic content rendering based on whether it is Restock or a standard project */}
@@ -118,10 +119,10 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
                 <Layers size={20} className={styles.headingIcon} />
                 <span>{t('projects.key_features')}</span>
               </h3>
-              <ul className={styles.featuresList}>
+              <ul className={`${styles.featuresList} ${styles.restockFeatures}`}>
                 {features.map((feat, idx) => (
                   <li key={idx} className={styles.featureItem}>
-                    <span className={styles.featureBullet}>✔</span>
+                    <span className={styles.featureBullet}>{React.createElement(featureIcons[idx] ?? Activity, { size: 26, strokeWidth: 1.3, 'aria-hidden': true })}</span>
                     <p>{feat}</p>
                   </li>
                 ))}

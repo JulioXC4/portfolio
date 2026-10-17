@@ -27,44 +27,34 @@ export const LiveDashboardSimulator: React.FC = () => {
     'Sensors calibration status: SUCCESS.'
   ]);
 
-  const logsEndRef = useRef<HTMLDivElement>(null);
-
-  const addLog = (message: string) => {
-    const timestamp = new Date().toLocaleTimeString();
-    setLogs((prev) => [...prev.slice(-30), `[${timestamp}] ${message}`]);
-  };
+  const terminalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (logsEndRef.current) {
-      logsEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
+    const terminal = terminalRef.current;
+    if (terminal) terminal.scrollTop = terminal.scrollHeight;
   }, [logs]);
 
   const handleWeightChange = (id: string, newWeight: number) => {
-    setIngredients((prev) =>
-      prev.map((ing) => {
-        if (ing.id === id) {
-          const oldWeight = ing.weight;
-          const roundedWeight = Math.round(newWeight * 10) / 10;
-          
-          if (roundedWeight !== oldWeight) {
-            // Trigger logs based on changes
-            const rawNoise = Math.round((roundedWeight + (Math.random() * 0.16 - 0.08)) * 100) / 100;
-            addLog(`[MQTT] Published raw reading: ${rawNoise}${ing.unit} on topic /sensor/${ing.id}`);
-            addLog(`[EDGE] Filtered weight noise: ${rawNoise}${ing.unit} -> ${roundedWeight}${ing.unit}`);
+    const ingredient = ingredients.find(item => item.id === id);
+    if (!ingredient) return;
+    const roundedWeight = Math.round(newWeight * 10) / 10;
+    if (roundedWeight === ingredient.weight) return;
 
-            if (roundedWeight <= ing.threshold && oldWeight > ing.threshold) {
-              addLog(`[CLOUD] ALERT: Stock of ${ing.nameEN} (${roundedWeight}${ing.unit}) has dropped below threshold (${ing.threshold}${ing.unit})!`);
-              addLog(`[CLOUD] CQRS notification triggered. Dispatching SMS/Email alerts.`);
-            } else if (roundedWeight > ing.threshold && oldWeight <= ing.threshold) {
-              addLog(`[CLOUD] Status recovery: ${ing.nameEN} is back above threshold.`);
-            }
-          }
-          return { ...ing, weight: roundedWeight };
-        }
-        return ing;
-      })
-    );
+    // A reproducible sample models small sensor fluctuations around the input.
+    const rawNoise = Math.round((roundedWeight + Math.sin(roundedWeight * 19.7) * 0.08) * 100) / 100;
+    const messages = [
+      `[MQTT] Published raw reading: ${rawNoise}${ingredient.unit} on topic /sensor/${id}`,
+      `[EDGE] Filtered weight noise: ${rawNoise}${ingredient.unit} -> ${roundedWeight}${ingredient.unit}`
+    ];
+    if (roundedWeight <= ingredient.threshold && ingredient.weight > ingredient.threshold) {
+      messages.push(`[CLOUD] ALERT: Stock of ${ingredient.nameEN} (${roundedWeight}${ingredient.unit}) has dropped below threshold (${ingredient.threshold}${ingredient.unit})!`);
+      messages.push('[CLOUD] CQRS notification triggered. Dispatching SMS/Email alerts.');
+    } else if (roundedWeight > ingredient.threshold && ingredient.weight <= ingredient.threshold) {
+      messages.push(`[CLOUD] Status recovery: ${ingredient.nameEN} is back above threshold.`);
+    }
+    const timestamp = new Date().toLocaleTimeString();
+    setIngredients(previous => previous.map(item => item.id === id ? { ...item, weight: roundedWeight } : item));
+    setLogs(previous => [...previous, ...messages.map(message => `[${timestamp}] ${message}`)].slice(-30));
   };
 
   return (
@@ -92,6 +82,8 @@ export const LiveDashboardSimulator: React.FC = () => {
                 
                 <input
                   type="range"
+                  aria-label={ing.nameES}
+                  aria-describedby={`threshold-${ing.id}`}
                   min="0"
                   max={ing.maxWeight}
                   step="0.1"
@@ -102,7 +94,7 @@ export const LiveDashboardSimulator: React.FC = () => {
                 />
 
                 <div className={styles.sliderFooter}>
-                  <span className={styles.thresholdLabel}>Umbral Crítico: {ing.threshold}{ing.unit}</span>
+                  <span id={`threshold-${ing.id}`} className={styles.thresholdLabel}>Umbral Crítico: {ing.threshold}{ing.unit}</span>
                   <span className={`${styles.statusPill} ${isCritical ? styles.pillAlert : styles.pillOk}`}>
                     {isCritical ? 'ALERT: LOW' : 'STOCK OK'}
                   </span>
@@ -120,7 +112,7 @@ export const LiveDashboardSimulator: React.FC = () => {
           <h4 className={styles.panelTitle}>Terminal Edge &amp; Cloud Logs</h4>
         </div>
 
-        <div className={styles.terminalBody}>
+        <div ref={terminalRef} className={styles.terminalBody} role="log" aria-live="polite" aria-label="Terminal Edge & Cloud Logs">
           <div className={styles.logsContainer}>
             {logs.map((log, idx) => {
               let logClass = styles.logDefault;
@@ -135,7 +127,6 @@ export const LiveDashboardSimulator: React.FC = () => {
                 </div>
               );
             })}
-            <div ref={logsEndRef} />
           </div>
         </div>
       </div>

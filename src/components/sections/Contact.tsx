@@ -33,7 +33,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className={styles.contactSection}>
+    <section id="contact" className={styles.contactSection} tabIndex={0} aria-label={t('contact.title')}>
       <div className={`${styles.container} container`}>
         <div className={styles.grid}>
           {/* Column 1: Info */}
@@ -92,7 +92,7 @@ export const Contact: React.FC = () => {
                     required
                     disabled={status === 'sending'}
                     className={styles.input}
-                    placeholder="John Doe"
+                    autoComplete="name"
                   />
                 </div>
 
@@ -107,7 +107,7 @@ export const Contact: React.FC = () => {
                     required
                     disabled={status === 'sending'}
                     className={styles.input}
-                    placeholder="john@example.com"
+                    autoComplete="email"
                   />
                 </div>
 
@@ -121,21 +121,20 @@ export const Contact: React.FC = () => {
                     required
                     disabled={status === 'sending'}
                     className={styles.textarea}
-                    placeholder={t('nav.about') === 'Sobre Mí' ? 'Escribe tu mensaje aquí...' : 'Write your message here...'}
                     rows={5}
                   />
                 </div>
 
                 {/* Status messages */}
                 {status === 'success' && (
-                  <div className={styles.successBox}>
+                  <div className={styles.successBox} role="status">
                     <CheckCircle2 size={20} className={styles.successIcon} />
                     <span>{t('contact.success')}</span>
                   </div>
                 )}
 
                 {status === 'error' && (
-                  <div className={styles.errorBox}>
+                  <div className={styles.errorBox} role="alert">
                     <AlertCircle size={20} className={styles.errorIcon} />
                     <span>{t('contact.error')}</span>
                   </div>

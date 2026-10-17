@@ -1,18 +1,20 @@
 # Julio Castro Alejos · Web Portfolio
 
-Este es el repositorio oficial de mi portafolio web profesional, desarrollado para destacar mi perfil de **Full Stack Developer** con una sólida base técnica en **Backend Engineering**, **Software Architecture** y soluciones integradas de **IoT (Internet de las Cosas)**.
+Este es el repositorio oficial de mi portafolio web profesional. Soy Julio Castro Alejos, estudiante de Ingeniería de Software (8.º ciclo) en la **Universidad Peruana de Ciencias Aplicadas (UPC)**, desarrollador Full Stack y consultor en 180 Degrees Consulting UPC. Mi enfoque es entender los problemas de personas y negocios y construir soluciones útiles de extremo a extremo.
 
 El proyecto está diseñado para servir no solo como mi carta de presentación, sino también como un ejemplo de mi forma de escribir código, estructurar proyectos y diseñar arquitecturas de software legibles, mantenibles y de alto rendimiento.
 
 ## 🚀 Características Principales
 
+- **Una sección por pantalla:** Cada sección ocupa el alto visible menos el encabezado fijo. El contenido se centra cuando cabe y conserva desplazamiento interno cuando necesita más espacio, también en móvil. La navegación restablece el inicio de cada panel y respeta las preferencias de movimiento reducido.
+- **Identidad propia:** Paleta grafito, marfil y cobre, monograma JC, fotografía personal, logo de la UPC y SVG locales de las tecnologías. Las ilustraciones originales explican el proceso de resolución de problemas y los proyectos sin reemplazar controles o textos por imágenes.
 - **Arquitectura Basada en Datos:** Toda la información sobre mis proyectos está centralizada en un archivo único de datos (`src/data/projects.ts`). Agregar, modificar o desactivar proyectos es tan sencillo como actualizar un registro, eliminando la necesidad de reescribir lógica de componentes UI.
 - **Enrutamiento Dinámico e Híbrido (`/projects/[slug]`):** La aplicación genera páginas detalladas dinámicamente para cada proyecto. Para mi proyecto estrella (**Restock**), el enrutamiento activa componentes a medida hiper-interactivos para explicar sistemas complejos.
 - **Soporte Bilingüe Nativo (ES / EN):** Sistema de internacionalización ágil desarrollado mediante un React Context personalizado (`LanguageContext`), que detecta el idioma predeterminado del navegador y lo guarda localmente en el cliente sin redirecciones costosas de servidor.
 - **Componentes Altamente Interactivos (Especiales para Restock):**
   - **Simulador de Stock IoT:** Un panel interactivo que simula celdas de carga y telemetría en tiempo real, permitiendo a los visitantes alterar pesos virtuales para observar cómo reacciona el filtro Edge y la consola de alertas Cloud en tiempo real.
   - **Diagrama de Arquitectura Interactivo:** Un mapa interactivo detallando las capas Físicas (ESP32), de Mensajería (MQTT Broker), de Procesamiento Edge (Python/Flask), de Núcleo Backend (Spring Boot con DDD & CQRS) y Aplicaciones de Cliente (Angular y Flutter).
-- **Rendimiento e Integridad:** Optimización total con `next/font/google` para tipografía sin saltos de layout, y CSS Modules puros (Vanilla CSS) para maximizar la compatibilidad, velocidad LCP y puntaje Lighthouse (100/100).
+- **Rendimiento e Integridad:** Tipografía mediante `next/font/google`, imágenes optimizadas con `next/image` y CSS Modules. Las ilustraciones, marcas y fotografía se sirven desde el propio proyecto.
 - **Accesibilidad y SEO:** Estructura semántica completa en HTML5, etiquetas ARIA descriptivas para lectores de pantalla, navegación por teclado y metadatos SEO automatizados en cada ruta.
 
 ---
@@ -21,7 +23,7 @@ El proyecto está diseñado para servir no solo como mi carta de presentación, 
 
 - **Core:** Next.js 16 (App Router), React 19, TypeScript (Strict Mode)
 - **Estilos:** Vanilla CSS (CSS Modules localmente escopados)
-- **Iconografía:** Lucide React + BrandIcons personalizados
+- **Iconografía:** Lucide React, monograma JC y SVG locales de Devicon / Simple Icons (fuentes en `public/images/brands/SOURCES.md`)
 - **Calidad de Código:** ESLint estricto, Prettier
 
 ---
@@ -74,12 +76,14 @@ Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el 
 ```bash
 npm run build
 ```
-Este comando compila la aplicación y realiza un chequeo riguroso de tipos TypeScript y estilo ESLint, generando un bundle de producción optimizado listo para ser desplegado en Vercel.
+Este comando compila la aplicación y comprueba los tipos TypeScript. Ejecuta también `npm run lint` para verificar ESLint.
+
+El formulario de contacto conserva una confirmación local simulada. Los enlaces de email, LinkedIn y GitHub son reales; el formulario no envía correos desde un backend.
 
 ---
 
 ## 🎨 Principios de Diseño y Buenas Prácticas
 
 - **Principios SOLID:** Responsabilidad única aplicada en componentes independientes desacoplados de la lógica de renderizado principal.
-- **RSC por Defecto:** Los componentes del servidor se utilizan por defecto para maximizar el SEO y velocidad inicial, habilitando `use client` únicamente en elementos de interacción directa (Navbar, toggles, simulador).
+- **App Router:** Layout de servidor y componentes de cliente para el estado de idioma, tema, navegación y demostraciones interactivas.
 - **Cero Warnings de Compilación:** Compilación y validaciones de tipos estrictas que garantizan una base de código robusta y confiable.

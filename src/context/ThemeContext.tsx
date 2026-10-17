@@ -19,15 +19,16 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     // Read from localStorage or system settings on client-side mount
     const savedTheme = localStorage.getItem('portfolio-theme') as Theme | null;
     const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    const initialTheme = savedTheme || systemTheme;
+    const initialTheme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : systemTheme;
     
     document.documentElement.setAttribute('data-theme', initialTheme);
     
     // Defer state updates to avoid synchronous cascading renders
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setMounted(true);
       setTheme(initialTheme);
     }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const toggleTheme = () => {

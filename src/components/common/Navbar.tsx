@@ -1,10 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTheme } from '@/context/ThemeContext';
-import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import styles from './Navbar.module.css';
+import { BrandMark } from './BrandMark';
+import { scrollToSection } from '@/lib/navigation';
 
 const navItems = [
   { id: 'about', labelKey: 'nav.about' },
@@ -19,6 +21,8 @@ export const Navbar: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
@@ -28,11 +32,12 @@ export const Navbar: React.FC = () => {
 
       // Simple scroll spy logic
       const sections = navItems.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 120;
+      const headerHeight = document.querySelector('[data-header-bar]')?.getBoundingClientRect().height ?? 88;
+      const scrollPosition = window.scrollY + headerHeight + 32;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
+        if (section && section.getBoundingClientRect().top + window.scrollY <= scrollPosition) {
           setActiveSection(navItems[i].id);
           break;
         }
@@ -42,9 +47,28 @@ export const Navbar: React.FC = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    drawerRef.current?.querySelector<HTMLButtonElement>('button')?.focus();
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    const handleResize = () => { if (window.innerWidth > 900) setIsOpen(false); };
+    window.addEventListener('keydown', handleKey);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('keydown', handleKey);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isOpen]);
 
   const toggleLanguage = () => {
     setLanguage(language === 'es' ? 'en' : 'es');
@@ -52,32 +76,17 @@ export const Navbar: React.FC = () => {
 
   const handleNavClick = (id: string) => {
     setIsOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80; // height of the navbar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+    scrollToSection(id);
   };
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={styles.container}>
+      <div className={styles.container} data-header-bar>
         {/* Brand Logo */}
-        <div className={styles.logo} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <svg className={styles.logoIcon} width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <circle cx="12" cy="12" r="9" stroke="var(--color-primary)" strokeWidth="1.5" />
-            <line x1="9" y1="15" x2="15" y2="9" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" />
-          </svg>
+        <button type="button" aria-label={language === 'es' ? 'Volver al inicio' : 'Back to top'} className={styles.logo} onClick={() => scrollToSection('home')}>
+          <BrandMark className={styles.logoIcon} />
           <span className={styles.logoText}>Julio <span className={styles.logoLastName}>Castro</span></span>
-        </div>
+        </button>
 
         {/* Desktop Menu */}
         <div className={styles.desktopMenu}>
@@ -96,7 +105,6 @@ export const Navbar: React.FC = () => {
           </button>
           
           <button onClick={toggleLanguage} className={styles.langBtn} aria-label="Toggle language">
-            <Globe size={18} />
             <span className={styles.langText}>{language === 'es' ? 'EN' : 'ES'}</span>
           </button>
         </div>
@@ -108,18 +116,17 @@ export const Navbar: React.FC = () => {
           </button>
           
           <button onClick={toggleLanguage} className={`${styles.langBtn} ${styles.mobileLang}`} aria-label="Toggle language">
-            <Globe size={18} />
             <span className={styles.langText}>{language === 'es' ? 'EN' : 'ES'}</span>
           </button>
           
-          <button onClick={() => setIsOpen(!isOpen)} className={styles.menuBtn} aria-label="Open menu">
+          <button ref={menuButtonRef} onClick={() => setIsOpen(!isOpen)} className={styles.menuBtn} aria-label={isOpen ? 'Close menu' : 'Open menu'} aria-expanded={isOpen} aria-controls="mobile-navigation">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer */}
-      <div className={`${styles.mobileDrawer} ${isOpen ? styles.drawerOpen : ''}`}>
+      {isOpen && <div id="mobile-navigation" ref={drawerRef} className={styles.mobileDrawer}>
         <div className={styles.drawerLinks}>
           {navItems.map((item) => (
             <button
@@ -131,7 +138,7 @@ export const Navbar: React.FC = () => {
             </button>
           ))}
         </div>
-      </div>
+      </div>}
     </nav>
   );
 };

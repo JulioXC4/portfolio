@@ -13,6 +13,8 @@ import { Contact } from '@/components/sections/Contact';
 import { ScrollReveal } from '@/components/common/ScrollReveal';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './page.module.css';
+import { BrandMark } from '@/components/common/BrandMark';
+import { scrollToSection } from '@/lib/navigation';
 
 export default function Home() {
   const { t } = useLanguage();
@@ -24,7 +26,8 @@ export default function Home() {
       <Navbar />
 
       {/* Main Sections */}
-      <main className={styles.mainContent}>
+      <a href="#main-content" className="skip-link">{t('nav.about') === 'Sobre Mí' ? 'Saltar al contenido' : 'Skip to content'}</a>
+      <main id="main-content" className={styles.mainContent}>
         {/* Hero Section */}
         <Hero />
 
@@ -68,35 +71,32 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={`${styles.footerContainer} container`}>
           <div className={styles.footerLeft}>
-            <div className={styles.footerLogo} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <svg className={styles.logoIcon} width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <circle cx="12" cy="12" r="9" stroke="var(--color-primary)" strokeWidth="1.5" />
-                <line x1="9" y1="15" x2="15" y2="9" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" />
-              </svg>
+            <button type="button" aria-label="Back to top" className={styles.footerLogo} onClick={() => scrollToSection('home')}>
+              <BrandMark className={styles.logoIcon} />
               <span className={styles.logoText}>Julio <span className={styles.logoLastName}>Castro</span></span>
-            </div>
+            </button>
             <p className={styles.footerSubtitle}>
               {t('nav.about') === 'Sobre Mí' ? 'Ingeniería con propósito' : 'Engineering with purpose'}
             </p>
           </div>
           
           <div className={styles.footerLinks}>
-            <button onClick={() => { document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }} className={styles.footerLink}>
+            <button onClick={() => scrollToSection('about')} className={styles.footerLink}>
               {t('nav.about')}
             </button>
-            <button onClick={() => { document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' }); }} className={styles.footerLink}>
+            <button onClick={() => scrollToSection('experience')} className={styles.footerLink}>
               {t('nav.experience')}
             </button>
-            <button onClick={() => { document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }); }} className={styles.footerLink}>
+            <button onClick={() => scrollToSection('projects')} className={styles.footerLink}>
               {t('nav.projects')}
             </button>
-            <button onClick={() => { document.getElementById('tech')?.scrollIntoView({ behavior: 'smooth' }); }} className={styles.footerLink}>
+            <button onClick={() => scrollToSection('tech')} className={styles.footerLink}>
               {t('nav.tech')}
             </button>
-            <button onClick={() => { document.getElementById('goals')?.scrollIntoView({ behavior: 'smooth' }); }} className={styles.footerLink}>
+            <button onClick={() => scrollToSection('goals')} className={styles.footerLink}>
               {t('nav.goals')}
             </button>
-            <button onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }} className={styles.footerLink}>
+            <button onClick={() => scrollToSection('contact')} className={styles.footerLink}>
               {t('nav.contact')}
             </button>
           </div>

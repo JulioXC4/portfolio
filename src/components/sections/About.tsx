@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import { ShieldCheck, Briefcase, Cpu, Award } from 'lucide-react';
+import { Settings, ChartNoAxesColumnIncreasing, Layers, BookOpen, MapPin, GraduationCap, BriefcaseBusiness, ArrowUpRight } from 'lucide-react';
 import styles from './About.module.css';
 
 export const About: React.FC = () => {
@@ -10,28 +11,28 @@ export const About: React.FC = () => {
 
   const traits = [
     {
-      icon: <ShieldCheck size={28} className={styles.traitIcon} />,
+      icon: <Settings size={28} className={styles.traitIcon} />,
       titleES: 'Soluciones Reales',
       titleEN: 'Real Solutions',
       descES: 'Desarrollo software robusto y tolerante a fallos pensado para producción.',
       descEN: 'Developing robust, fault-tolerant software designed for production environments.'
     },
     {
-      icon: <Briefcase size={28} className={styles.traitIcon} />,
+      icon: <ChartNoAxesColumnIncreasing size={28} className={styles.traitIcon} />,
       titleES: 'Foco en el Negocio',
       titleEN: 'Business Value',
       descES: 'Entiendo el problema operativo para aportar valor tecnológico con propósito.',
       descEN: 'Understanding the operational problem to deliver purposeful technical value.'
     },
     {
-      icon: <Cpu size={28} className={styles.traitIcon} />,
+      icon: <Layers size={28} className={styles.traitIcon} />,
       titleES: 'Arquitectura Limpia',
       titleEN: 'Clean Architecture',
       descES: 'Aplico patrones (DDD, CQRS, DTO) para mantener la escalabilidad.',
       descEN: 'Applying design patterns (DDD, CQRS, DTO) to maintain long-term scalability.'
     },
     {
-      icon: <Award size={28} className={styles.traitIcon} />,
+      icon: <BookOpen size={28} className={styles.traitIcon} />,
       titleES: 'Aprendizaje Activo',
       titleEN: 'Continuous Growth',
       descES: 'Evoluciono constantemente investigando mejores prácticas de arquitectura y experiencia de usuario.',
@@ -40,12 +41,21 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className={styles.aboutSection}>
+    <section id="about" className={`${styles.aboutSection} editorial-band`} tabIndex={0} aria-label={t('about.title')}>
       <div className={`${styles.container} container`}>
         {/* Section Heading */}
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>{t('about.title')}</h2>
           <div className={styles.headerBar}></div>
+          <h2 className={styles.sectionTitle}>{t('about.title')}</h2>
+          <Image src="/images/julio-castro.jpg" width={1025} height={1245} sizes="(max-width: 700px) 75vw, 24vw" alt="Julio Castro Alejos" className={styles.portrait} />
+          <h3 className={styles.profileName}>Julio Castro Alejos</h3>
+          <p className={styles.profileRole}>{t('about.profile_role')}</p>
+          <dl className={styles.profileFacts}>
+            <div><dt><MapPin size={17} /><span className={styles.srOnly}>{t('about.location_label')}</span></dt><dd>{t('about.location')}</dd></div>
+            <div><dt><GraduationCap size={17} /><span className={styles.srOnly}>{t('about.education_label')}</span></dt><dd>{t('about.education_summary')}</dd></div>
+            <div><dt><BriefcaseBusiness size={17} /><span className={styles.srOnly}>{t('about.consulting_label')}</span></dt><dd>{t('about.consulting')}</dd></div>
+          </dl>
+          <a className={styles.profileLink} href="https://www.linkedin.com/in/juliocastroalejos/" target="_blank" rel="noopener noreferrer">{t('about.profile_link')}<ArrowUpRight size={18} /></a>
         </div>
 
         <div className={styles.grid}>

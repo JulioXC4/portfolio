@@ -17,9 +17,17 @@
   },
   "about": {
     "title": "Sobre Mí",
-    "paragraph1": "Soy estudiante de Ingeniería de Software comprometido con el desarrollo de soluciones integrales. Aunque mi trayectoria profesional comenzó con una fuerte inclinación hacia el backend, he expandido mi enfoque hacia el rol Full Stack. Me entusiasma participar en todo el ciclo de vida del producto: analizando el modelo de negocio, diseñando la arquitectura, escribiendo APIs robustas y puliendo la interfaz de cara al usuario.",
-    "paragraph2": "Durante mis prácticas en Devdatep Consulting, colaboré en el desarrollo de EmiteFacil, una plataforma de facturación electrónica SaaS integrada con SUNAT. El trabajar en un sistema de alta criticidad reforzó mi compromiso con la calidad de código, la tolerancia a fallos y la legibilidad a largo plazo.",
-    "paragraph3": "Creo firmemente que la tecnología debe resolver problemas reales de negocio de forma elegante. Mi objetivo es continuar aprendiendo y aplicando las mejores prácticas de la industria tanto en infraestructura y backend como en interfaces web modernas y dispositivos móviles."
+    "paragraph1": "Estudiante de Ingeniería de Software (8.º ciclo) en la Universidad Peruana de Ciencias Aplicadas, con una formación sólida en fundamentos de programación, estructuras de datos, bases de datos, ingeniería de requisitos, arquitectura de software y seguridad informática.",
+    "paragraph2": "A lo largo de la carrera he desarrollado proyectos académicos individuales y grupales, aplicando análisis de requerimientos, diseño de soluciones, buenas prácticas de desarrollo y control de versiones con Git. Tengo experiencia construyendo aplicaciones web y trabajando de forma colaborativa bajo metodologías ágiles.",
+    "paragraph3": "Complemento mi formación universitaria con experiencia práctica en desarrollo web full stack, lo que me ha permitido reforzar habilidades técnicas y una mentalidad orientada a la resolución de problemas. Me considero una persona proactiva, metódica y responsable, con interés en seguir aprendiendo y creciendo profesionalmente en el área de desarrollo de software.",
+    "profile_role": "Full Stack & Integraciones de IA · Solutions Builder",
+    "location_label": "Ubicación",
+    "location": "Perú",
+    "education_label": "Formación",
+    "education_summary": "Ingeniería de Software · UPC · 8.º ciclo",
+    "consulting_label": "Consultoría",
+    "consulting": "Consultor en 180 Degrees Consulting UPC",
+    "profile_link": "Ver perfil en LinkedIn"
   },
   "experience": {
     "title": "Experiencia Profesional",
@@ -66,8 +74,8 @@
   "education": {
     "title": "Formación Académica",
     "degree": "Ingeniería de Software",
-    "university": "Universidad Tecnológica del Perú",
-    "period": "En curso"
+    "university": "Universidad Peruana de Ciencias Aplicadas",
+    "period": "8.º ciclo · En curso"
   },
   "goals": {
     "title": "Ruta de Aprendizaje y Crecimiento",

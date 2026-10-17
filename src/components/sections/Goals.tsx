@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import { GraduationCap, Milestone, Code, Cloud, BrainCircuit, HeartHandshake } from 'lucide-react';
+import { Boxes, Monitor, Cloud, BrainCircuit, HeartHandshake } from 'lucide-react';
 import styles from './Goals.module.css';
 
 export const Goals: React.FC = () => {
@@ -10,7 +11,7 @@ export const Goals: React.FC = () => {
 
   const growthItems = [
     {
-      icon: <Milestone size={24} />,
+      icon: <Boxes size={24} />,
       title: t('goals.arch_title'),
       desc: t('goals.arch_desc')
     },
@@ -20,7 +21,7 @@ export const Goals: React.FC = () => {
       desc: t('goals.devops_desc')
     },
     {
-      icon: <Code size={24} />,
+      icon: <Monitor size={24} />,
       title: t('goals.front_title'),
       desc: t('goals.front_desc')
     },
@@ -32,7 +33,7 @@ export const Goals: React.FC = () => {
   ];
 
   return (
-    <section id="goals" className={styles.goalsSection}>
+    <section id="goals" className={`${styles.goalsSection} editorial-band`} tabIndex={0} aria-label={t('goals.title')}>
       <div className={`${styles.container} container`}>
         <div className={styles.grid}>
           {/* Left Column: Education / Formación */}
@@ -43,9 +44,7 @@ export const Goals: React.FC = () => {
             </div>
 
             <div className={`${styles.educationCard} glass-card`}>
-              <div className={styles.eduIconWrapper}>
-                <GraduationCap size={32} />
-              </div>
+              <Image src="/images/brands/upc.png" width={90} height={90} alt="UPC — Universidad Peruana de Ciencias Aplicadas" className={styles.universityLogo} />
               <div className={styles.eduDetails}>
                 <h3 className={styles.degree}>{t('education.degree')}</h3>
                 <span className={styles.university}>{t('education.university')}</span>
@@ -62,6 +61,7 @@ export const Goals: React.FC = () => {
                 &quot;Construir cosas que funcionen. Documentar lo que importa. Mejorar lo que se puede medir.&quot;
               </p>
             </div>
+            <Image src="/images/learning-path.png" width={1536} height={1024} sizes="(max-width: 760px) 80vw, 25vw" alt="" className={styles.learningArt} />
           </div>
 
           {/* Right Column: Growth Goals / Objetivos */}

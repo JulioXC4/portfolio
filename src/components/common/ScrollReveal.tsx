@@ -26,8 +26,8 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, delayMs = 
         }
       },
       {
-        threshold: 0.1, // Trigger when 10% of the element is visible
-        rootMargin: '0px 0px -50px 0px' // Offset trigger point slightly from bottom of screen
+        threshold: 0, // Reveal as soon as the section enters the viewport
+        rootMargin: '0px 0px -24px 0px' // Offset trigger point slightly from bottom of screen
       }
     );
 

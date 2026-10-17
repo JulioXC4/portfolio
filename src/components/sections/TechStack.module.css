@@ -1,230 +1,37 @@
-.techSection {
-  padding: 100px 0;
-  position: relative;
-  background-color: var(--bg-base);
+.techSection { padding: 56px 0 72px; }
+.sectionHeader { margin-bottom: 60px; }
+.sectionHeader::before { content: ""; display: block; width: 42px; height: 2px; background: var(--color-primary); margin-bottom: 26px; }
+.sectionTitle { font-size: clamp(36px,4.1vw,62px); }
+.sectionTitle span { color: var(--color-primary); }
+.sectionSubtitle { font-size: clamp(16px,1.5vw,22px); margin-top: 16px; }
+.headerBar { display: none; }
+.layout { display: grid; grid-template-columns: .9fr 1.4fr; gap: 48px; align-items: start; }
+.stackTower { display: flex; flex-direction: column; }
+.towerLayerBlock { display: flex; gap: 26px; align-items: center; padding: 26px; border-bottom: 1px solid var(--border-color); min-height: 100px; border-left: 3px solid transparent; width: 100%; text-align: left; color: var(--text-secondary); }
+.towerLayerBlock:hover { color: var(--text-primary); background: var(--color-primary-glow); }
+.blockActive { border-left-color: var(--color-primary); background: var(--color-primary-glow); color: var(--text-primary); }
+.blockIcon { display: flex; color: var(--color-primary); } .blockIcon svg { width: 30px; height: 30px; stroke-width: 1.3; }
+.blockLabel { font-size: 18px; } .blockActive .blockLabel { font-weight: 500; }
+.blockChevron { margin-left: auto; color: var(--color-primary); }
+.sidePanel { border-left: 1px solid var(--border-color); padding-left: 42px; min-width: 0; animation: enter 220ms ease-out; }
+.panelTitle { font-size: clamp(26px,2.8vw,42px); }
+.techBadgeGrid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px 18px; padding: 44px 0; }
+.techBadgeCard { display: flex; align-items: center; flex-direction: column; gap: 16px; color: var(--color-primary); }
+.techBadgeCard svg { width: 70px; height: 70px; }
+.badgeName { font-size: 16px; font-weight: 500; color: var(--text-primary); white-space: nowrap; }
+.detailsGroup { margin-top: 24px; }
+.detailsLabel { font-size: 24px; margin-bottom: 18px; font-weight: 500; letter-spacing: -.025em; }
+.detailsText,.projectsText { font-size: 18px; line-height: 1.65; }
+.projectsGroup { margin-top: 44px; }
+@media (max-width: 1000px) {
+  .layout { grid-template-columns: 1fr 1.3fr; gap: 24px; } .towerLayerBlock { padding: 24px 16px; gap: 18px; } .blockLabel { font-size: 15px; }
+  .sidePanel { padding-left: 26px; } .techBadgeGrid { justify-content: flex-start; gap: 28px; } .detailsText,.projectsText { font-size: 16px; }
 }
-
-.sectionHeader {
-  margin-bottom: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.sectionTitle {
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-}
-
-.sectionSubtitle {
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin-bottom: 1.25rem;
-  font-weight: 300;
-}
-
-.headerBar {
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-  border-radius: 2px;
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 3.5rem;
-  align-items: start;
-}
-
-/* Vertical Stack Tower */
-.stackTower {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.towerLayerBlock {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  padding: 1.25rem 1.5rem;
-  border-radius: 8px;
-  color: var(--text-secondary);
-  text-align: left;
-  transition: all var(--transition-normal);
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  position: relative;
-  overflow: hidden;
-}
-
-.towerLayerBlock::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 3px;
-  background: transparent;
-  transition: background var(--transition-fast);
-}
-
-.towerLayerBlock:hover {
-  color: var(--text-primary);
-  background: var(--bg-surface-hover);
-  border-color: var(--border-color-hover);
-  transform: translateX(4px);
-}
-
-.blockActive {
-  background: rgba(226, 177, 60, 0.05) !important;
-  border-color: var(--color-primary) !important;
-  color: var(--text-primary) !important;
-  box-shadow: var(--shadow-glow-gold);
-}
-
-.blockActive::before {
-  background: var(--color-primary);
-}
-
-.blockActive .blockIcon {
-  color: var(--color-primary);
-}
-
-.blockIcon {
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color var(--transition-fast);
-  flex-shrink: 0;
-}
-
-.blockLabel {
-  font-size: 1rem;
-}
-
-/* Side Panel Details */
-.sidePanel {
-  background: var(--bg-surface);
-  padding: 2.5rem;
-  border-radius: 12px;
-  min-height: 440px;
-  display: flex;
-  flex-direction: column;
-}
-
-.panelHeader {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  padding-bottom: 1.25rem;
-  margin-bottom: 1.75rem;
-}
-
-.panelTitle {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  font-family: var(--font-display);
-  letter-spacing: -0.02em;
-}
-
-.panelContent {
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-  flex-grow: 1;
-}
-
-.techBadgeGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-}
-
-.techBadgeCard {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-color);
-  padding: 0.4rem 0.85rem;
-  border-radius: 6px;
-  font-size: 0.88rem;
-  font-weight: 500;
-  transition: all var(--transition-fast);
-}
-
-.techBadgeCard:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: var(--color-primary);
-}
-
-.badgeDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  box-shadow: 0 0 8px var(--color-primary);
-}
-
-.badgeName {
-  color: var(--text-primary);
-}
-
-.detailsGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.detailsLabel {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  letter-spacing: 0.06em;
-}
-
-.detailsText {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  font-weight: 300;
-}
-
-.projectsGroup {
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
-  padding-top: 1.25rem;
-  margin-top: auto;
-}
-
-.projectsText {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  font-weight: 300;
-}
-
-/* Responsiveness */
-@media (max-width: 992px) {
-  .layout {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  
-  .towerLayerBlock:hover {
-    transform: none;
-  }
-  
-  .sidePanel {
-    min-height: auto;
-    padding: 1.75rem;
-  }
+@media (max-width: 760px) {
+  .techSection { padding: 44px 0 60px; } .sectionTitle { font-size: 36px; } .sectionHeader { margin-bottom: 34px; }
+  .layout { display: block; } .towerLayerBlock { padding: 20px 16px; min-height: 80px; gap: 18px; } .blockLabel { font-size: 15px; }
+  .sidePanel { border: 0; padding: 0; margin-top: 38px; } .panelTitle { font-size: 28px; } .techBadgeGrid { padding: 30px 0; gap: 28px; justify-content: flex-start; }
+  .techBadgeCard { width: calc((100% - 56px) / 3); gap: 14px; } .techBadgeCard svg { width: 48px; height: 48px; }
+  .badgeName { white-space: normal; text-align: center; font-size: 12px; }
+  .detailsLabel { font-size: 24px; margin-bottom: 16px; } .projectsGroup { margin-top: 32px; }
 }

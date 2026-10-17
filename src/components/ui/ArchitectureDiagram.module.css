@@ -1,155 +1,27 @@
-.diagramContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  width: 100%;
-}
-
-.nodesLayout {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  position: relative;
-}
-
-.nodeCard {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 1.5rem;
-  position: relative;
-  transition: all var(--transition-normal);
-  cursor: pointer;
-}
-
-.nodeCard:hover {
-  border-color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-gold);
-  background: var(--bg-surface-hover);
-}
-
-.nodeActive {
-  border-color: var(--color-primary) !important;
-  background: var(--bg-surface-hover) !important;
-  box-shadow: var(--shadow-glow-gold) !important;
-}
-
-.nodeHeader {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.nodeIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  background: rgba(226, 177, 60, 0.08);
-  border: 1px solid rgba(226, 177, 60, 0.2);
-  color: var(--color-primary);
-  flex-shrink: 0;
-  transition: all var(--transition-fast);
-}
-
-.nodeCard:hover .nodeIcon, .nodeActive .nodeIcon {
-  background: var(--color-primary);
-  color: #08080a;
-}
-
-.nodeName {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.nodeTech {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  font-family: var(--font-primary);
-  font-weight: 500;
-}
-
-.nodeRole {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
-}
-
-/* Connective Arrows - visible only on desktop when grid rows/cols align */
-.flowArrow {
-  display: none; /* Can be enabled in linear configurations, keeping layout grid simple for responsiveness */
-}
-
-/* Details Panel Box */
-.detailsBox {
-  background: var(--bg-surface);
-  border-radius: 16px;
-  padding: 2rem;
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.detailsHeader {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 0.75rem;
-  margin-bottom: 1.25rem;
-}
-
-.detailsShield {
-  color: var(--color-secondary);
-}
-
-.detailsTitle {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  font-family: var(--font-display);
-}
-
-.detailsList {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 0.85rem;
-}
-
-.detailItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-}
-
-.bullet {
-  color: var(--color-secondary);
-  font-weight: bold;
-}
-
-.detailItem p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-
-.placeholderBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
-}
-
-.placeholderText {
-  font-size: 1rem;
-  color: var(--text-muted);
-  max-width: 600px;
+.diagramContainer { display: grid; grid-template-columns: 3fr 1fr; gap: 26px; align-items: stretch; }
+.nodesLayout { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 14px; align-items: stretch; }
+.nodeCard { position: relative; text-align: left; padding: 22px 14px; border: 1px solid var(--border-color); border-radius: 5px; background: transparent; min-width: 0; }
+.nodeCard:hover,.nodeActive { border-color: var(--color-primary); background: var(--color-primary-glow); }
+.nodeHeader { display: flex; flex-direction: column; gap: 20px; }
+.nodeIcon { color: var(--color-primary); }
+.nodeIcon svg { width: 27px; height: 27px; stroke-width: 1.3; }
+.nodeName { display: block; font-family: var(--font-display); font-size: 14px; line-height: 1.35; font-weight: 500; }
+.nodeTech { font-size: 10px; color: var(--text-muted); display: block; margin-top: 10px; line-height: 1.6; }
+.nodeRole { font-size: 10px; color: var(--text-muted); margin-top: 14px; line-height: 1.6; }
+.flowArrow { position: absolute; right: -12px; top: 50%; color: var(--color-primary); z-index: 1; display: flex; align-items: center; }
+.arrowLine { width: 6px; height: 1px; background: var(--color-primary); } .arrowHead { font-size: 14px; }
+.detailsBox { border: 1px solid var(--border-color); padding: 20px; border-radius: 5px; }
+.detailsHeader { display: flex; align-items: flex-start; gap: 10px; }
+.detailsShield { color: var(--color-primary); width: 18px; height: 18px; }
+.detailsTitle { font-size: 14px; line-height: 1.45; font-weight: 500; letter-spacing: -.01em; }
+.detailsList { list-style: none; display: grid; gap: 14px; margin-top: 20px; }
+.detailItem { display: flex; gap: 10px; align-items: flex-start; } .detailItem p { font-size: 11px; line-height: 1.7; }
+.bullet { color: var(--color-primary); font-size: 11px; }
+.placeholderText { font-size: 13px; line-height: 1.7; }
+@media (max-width: 1200px) { .diagramContainer { grid-template-columns: 1fr; } .nodeName { font-size: 15px; } .detailItem p { font-size: 13px; } .detailsList { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) {
+  .nodesLayout { grid-template-columns: 1fr 1fr; gap: 14px; } .nodeCard { padding: 20px 16px; min-height: 165px; }
+  .nodeHeader { gap: 14px; } .nodeName { font-size: 16px; } .nodeTech,.nodeRole { font-size: 11px; }
+  .flowArrow { display: none; } .detailsList { grid-template-columns: 1fr; }
+  .detailsTitle { font-size: 16px; } .detailItem p { font-size: 14px; }
 }

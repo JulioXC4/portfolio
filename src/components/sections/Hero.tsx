@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import { ArrowRight, MessageSquare, Compass, Sliders, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, FileText, Settings, Compass, Sliders, CheckCircle2 } from 'lucide-react';
 import styles from './Hero.module.css';
+import { scrollToSection } from '@/lib/navigation';
 
 type CanvasStage = 'concept' | 'architecture' | 'product';
 
@@ -22,11 +24,22 @@ export const Hero: React.FC = () => {
   const { language, t } = useLanguage();
   const [activeStage, setActiveStage] = useState<CanvasStage>('concept');
 
+  const handleStageKey = (event: React.KeyboardEvent<HTMLButtonElement>, stage: CanvasStage) => {
+    const order: CanvasStage[] = ['concept', 'architecture', 'product'];
+    const index = order.indexOf(stage);
+    let next: CanvasStage;
+    if (event.key === 'ArrowRight') next = order[(index + 1) % order.length];
+    else if (event.key === 'ArrowLeft') next = order[(index + order.length - 1) % order.length];
+    else if (event.key === 'Home') next = order[0];
+    else if (event.key === 'End') next = order[order.length - 1];
+    else return;
+    event.preventDefault();
+    setActiveStage(next);
+    document.getElementById(`hero-tab-${next}`)?.focus();
+  };
+
   const handleScrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToSection(id);
   };
 
   const stages: Record<CanvasStage, StageDetails> = {
@@ -41,13 +54,15 @@ export const Hero: React.FC = () => {
       schema: (
         <div className={styles.conceptualSchema}>
           <div className={styles.schemaNode}>
+            <FileText className={styles.nodeIcon} aria-hidden="true" />
             <span className={styles.nodeLabel}>{language === 'es' ? 'Desafío Operativo' : 'Business Challenge'}</span>
-            <p className={styles.nodeSubtext}>{language === 'es' ? 'Procesos manuales, pérdida de stock' : 'Manual steps, stock leaks'}</p>
+            <p className={styles.nodeSubtext}>{language === 'es' ? 'Necesidades y procesos por mejorar' : 'Needs and processes to improve'}</p>
           </div>
-          <div className={styles.schemaConnector}>➔</div>
+          <div className={styles.schemaConnector}><ArrowRight size={24} aria-hidden="true" /></div>
           <div className={styles.schemaNodeActive}>
+            <Settings className={styles.nodeIcon} aria-hidden="true" />
             <span className={styles.nodeLabel}>{language === 'es' ? 'Definición de Solución' : 'Product Solution'}</span>
-            <p className={styles.nodeSubtext}>{language === 'es' ? 'Automatizar control mediante sensores' : 'Automate tracking via sensors'}</p>
+            <p className={styles.nodeSubtext}>{language === 'es' ? 'Software que resuelve el problema' : 'Software that solves the problem'}</p>
           </div>
         </div>
       )
@@ -104,15 +119,11 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className={styles.heroSection}>
+    <section id="home" className={styles.heroSection} tabIndex={0} aria-label={language === 'es' ? 'Inicio' : 'Home'}>
       <div className={`${styles.container} container`}>
         {/* Typographic and Narrative Column */}
         <div className={styles.textColumn}>
-          <span className={styles.eyebrow}>
-            {language === 'es' ? 'Ingeniero de Software' : 'Software Engineer'}
-          </span>
-          
-          <h1 className={styles.title}>
+<h1 className={styles.title}>
             {language === 'es' 
               ? 'Transformo ideas en productos digitales estables.' 
               : 'Translating ideas into robust digital products.'}
@@ -131,20 +142,28 @@ export const Hero: React.FC = () => {
             </button>
             <button onClick={() => handleScrollTo('contact')} className={styles.btnSecondary}>
               <span>{t('hero.cta_contact')}</span>
-              <MessageSquare size={18} />
             </button>
           </div>
         </div>
 
         {/* Conceptual Engineering Canvas Column */}
         <div className={styles.canvasColumn}>
+          <div className={styles.artwork}>
+            <Image src="/images/problem-solving.png" width={1680} height={944} sizes="(max-width: 760px) 100vw, 50vw" preload className={styles.heroArt} alt={language === 'es' ? 'De necesidades complejas a una solución clara y útil' : 'From complex needs to a clear, useful solution'} />
+          </div>
           <div className={`${styles.canvasCard} glass-card`}>
             {/* Canvas Header */}
             <div className={styles.canvasHeader}>
-              <div className={styles.tabs}>
+              <div className={styles.tabs} role="tablist" aria-label={language === 'es' ? 'Proceso de trabajo' : 'Working process'}>
                 {(['concept', 'architecture', 'product'] as CanvasStage[]).map((stage) => (
                   <button
                     key={stage}
+                    id={`hero-tab-${stage}`}
+                    role="tab"
+                    aria-selected={activeStage === stage}
+                    tabIndex={activeStage === stage ? 0 : -1}
+                    onKeyDown={event => handleStageKey(event, stage)}
+                    aria-controls="hero-panel"
                     onClick={() => setActiveStage(stage)}
                     className={`${styles.tab} ${activeStage === stage ? styles.tabActive : ''}`}
                   >
@@ -155,7 +174,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Canvas Content */}
-            <div className={styles.canvasBody}>
+            <div key={activeStage} id="hero-panel" role="tabpanel" aria-labelledby={`hero-tab-${activeStage}`} className={styles.canvasBody}>
               <div className={styles.metaRow}>
                 <div className={styles.stageIconWrapper}>
                   {stages[activeStage].icon}

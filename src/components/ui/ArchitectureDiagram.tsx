@@ -15,7 +15,7 @@ interface Node {
 }
 
 export const ArchitectureDiagram: React.FC = () => {
-  const [activeNode, setActiveNode] = useState<string | null>(null);
+  const [activeNode, setActiveNode] = useState<string | null>('edge');
 
   const nodes: Node[] = [
     {
@@ -108,16 +108,20 @@ export const ArchitectureDiagram: React.FC = () => {
     <div className={styles.diagramContainer}>
       <div className={styles.nodesLayout}>
         {nodes.map((node) => (
-          <div
+          <button
+            type="button"
             key={node.id}
             className={`${styles.nodeCard} ${activeNode === node.id ? styles.nodeActive : ''}`}
             onMouseEnter={() => setActiveNode(node.id)}
-            onMouseLeave={() => setActiveNode(null)}
+            onClick={() => setActiveNode(node.id)}
+            onFocus={() => setActiveNode(node.id)}
+            aria-pressed={activeNode === node.id}
+            aria-controls="architecture-details"
           >
             <div className={styles.nodeHeader}>
               <div className={styles.nodeIcon}>{node.icon}</div>
               <div>
-                <h4 className={styles.nodeName}>{node.name}</h4>
+                <span className={styles.nodeName}>{node.name}</span>
                 <span className={styles.nodeTech}>{node.tech}</span>
               </div>
             </div>
@@ -130,12 +134,12 @@ export const ArchitectureDiagram: React.FC = () => {
                 <span className={styles.arrowHead}>&gt;</span>
               </div>
             )}
-          </div>
+          </button>
         ))}
       </div>
 
       {/* Details Box Display */}
-      <div className={`${styles.detailsBox} glass-card`}>
+      <div id="architecture-details" className={`${styles.detailsBox} glass-card`}>
         {activeNode ? (
           <div>
             <div className={styles.detailsHeader}>

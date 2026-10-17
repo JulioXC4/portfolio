@@ -17,9 +17,17 @@
   },
   "about": {
     "title": "About Me",
-    "paragraph1": "I am a Software Engineering student committed to building complete, well-rounded software solutions. While my career path started with a strong foundation in backend development, I have actively expanded my focus to a Full Stack role. I enjoy participating in every stage of a product's lifecycle: from understanding the business needs and designing the architecture, to writing stable APIs and refining client-side interfaces.",
-    "paragraph2": "During my time at Devdatep Consulting, I contributed to EmiteFacil, a multi-tenant SaaS billing platform integrated with national tax authorities (SUNAT). Working on a high-availability, business-critical system strengthened my commitment to code quality, error tolerance, and long-term readability.",
-    "paragraph3": "I believe technology should solve real operational problems with elegance. My goal is to keep learning and applying industry standards across cloud infrastructure, clean backends, modern web frontends, and mobile client applications."
+    "paragraph1": "I am an eighth-semester Software Engineering student at Universidad Peruana de Ciencias Aplicadas, with a solid foundation in programming, data structures, databases, requirements engineering, software architecture, and information security.",
+    "paragraph2": "Throughout my degree, I have developed individual and team academic projects, applying requirements analysis, solution design, development best practices, and version control with Git. I have experience building web applications and collaborating using agile methodologies.",
+    "paragraph3": "I complement my university studies with practical experience in full stack web development, strengthening both my technical skills and my problem-solving mindset. I am proactive, methodical, and responsible, with a strong interest in continuous learning and professional growth in software development.",
+    "profile_role": "Full Stack & AI Integrations · Solutions Builder",
+    "location_label": "Location",
+    "location": "Peru",
+    "education_label": "Education",
+    "education_summary": "Software Engineering · UPC · 8th semester",
+    "consulting_label": "Consulting",
+    "consulting": "Consultant at 180 Degrees Consulting UPC",
+    "profile_link": "View LinkedIn profile"
   },
   "experience": {
     "title": "Professional Experience",
@@ -66,8 +74,8 @@
   "education": {
     "title": "Education",
     "degree": "B.S. in Software Engineering",
-    "university": "Universidad Tecnológica del Perú",
-    "period": "Ongoing"
+    "university": "Universidad Peruana de Ciencias Aplicadas",
+    "period": "8th semester · In progress"
   },
   "goals": {
     "title": "Learning Path & Growth Goals",

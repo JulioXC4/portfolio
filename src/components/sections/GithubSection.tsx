@@ -9,12 +9,12 @@ export const GithubSection: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="github" className={styles.githubSection}>
+    <section id="github" className={styles.githubSection} tabIndex={0} aria-label="GitHub">
       <div className={`${styles.container} container`}>
         {/* Section Heading */}
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>
-            {t('nav.about') === 'Sobre Mí' ? 'Actividad en GitHub' : 'GitHub Activity'}
+            {t('nav.about') === 'Sobre Mí' ? <>Actividad<br />en <span>GitHub</span></> : <><span>GitHub</span> Activity</>}
           </h2>
           <div className={styles.headerBar}></div>
         </div>

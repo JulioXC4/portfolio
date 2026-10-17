@@ -37,6 +37,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     
     // Defer state updates to avoid synchronous setState inside render-phase effects
     const timer = setTimeout(() => {
+      document.documentElement.lang = targetLang;
       setLanguageState(targetLang);
       setMounted(true);
     }, 0);
@@ -45,6 +46,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   }, []);
 
   const setLanguage = (lang: Language) => {
+    document.documentElement.lang = lang;
     setLanguageState(lang);
     localStorage.setItem('portfolio-lang', lang);
   };
