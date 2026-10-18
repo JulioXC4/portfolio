@@ -1,9 +1,10 @@
 {
   "nav": {
     "about": "About",
+    "services": "Services",
     "experience": "Experience",
     "projects": "Projects",
-    "freelance": "Freelance",
+    "freelance": "Client Work",
     "tech": "Tech Stack",
     "goals": "Future Paths",
     "contact": "Contact"
@@ -18,14 +19,18 @@
     "cta_projects": "Explore my work",
     "cta_contact": "Tell me what you need"
   },
+  "services": {
+    "title": "Software Development Services",
+    "subtitle": "Digital solutions engineered to win customers, automate operations, and scale your business with modern technology."
+  },
   "about": {
     "title": "About Me",
     "paragraph1": "I am an eighth-semester Software Engineering student at Universidad Peruana de Ciencias Aplicadas, with a solid foundation in programming, data structures, databases, requirements engineering, software architecture, and information security.",
     "paragraph2": "Throughout my degree, I have developed individual and team academic projects, applying requirements analysis, solution design, development best practices, and version control with Git. I have experience building web applications and collaborating using agile methodologies.",
-    "paragraph3": "I complement my university studies with practical experience in full stack web development, strengthening both my technical skills and my problem-solving mindset. I am proactive, methodical, and responsible, with a strong interest in continuous learning and professional growth in software development.",
-    "profile_role": "Full Stack & AI Integrations · Solutions Builder",
+    "paragraph3": "I complement my university studies with practical experience in full stack web development and freelance client deliveries, developing a pragmatic mindset focused on business outcomes and client satisfaction.",
+    "profile_role": "Full Stack Software Engineer & Freelance Solutions Builder",
     "location_label": "Location",
-    "location": "Peru",
+    "location": "Lima, Peru (Local & Remote Worldwide)",
     "education_label": "Education",
     "education_summary": "Software Engineering · UPC · 8th semester",
     "consulting_label": "Consulting",
@@ -33,8 +38,8 @@
     "profile_link": "View LinkedIn profile"
   },
   "freelance": {
-    "title": "Freelance work",
-    "subtitle": "Websites for businesses, designed to present their services and connect with their customers.",
+    "title": "Client Work & Deliveries",
+    "subtitle": "Websites and digital solutions built and delivered for companies and clients to date.",
     "visit": "Visit website",
     "preview": "Open website preview",
     "screenshot": "Actual website screenshot of"
@@ -44,16 +49,16 @@
     "internship": {
       "role": "Backend Developer Intern",
       "company": "Devdatep Consulting",
-      "period": "2026 · Lima, Peru",
-      "bullet1": "Designed and implemented RESTful APIs using Laravel 11 and PHP 8.2 following service-oriented architecture (SOA) with Repository and DTO patterns.",
-      "bullet2": "Integrated digital signatures and SOAP/XML communications with national tax agency (SUNAT) for the EmiteFacil billing platform.",
-      "bullet3": "Constructed automated business identity validations by integrating third-party governmental query APIs.",
-      "bullet4": "Secured routes and managed user sessions via Laravel Sanctum, and designed optimized MySQL relational schemas."
+      "period": "2026 · Lima, Perú",
+      "bullet1": "Design and implementation of RESTful APIs using Laravel 11 and PHP 8.2 under a Service-Oriented Architecture (SOA) applying Repository and DTO patterns.",
+      "bullet2": "Integration of digital signatures and SOAP/XML communications with SUNAT for the EmiteFacil electronic billing SaaS platform.",
+      "bullet3": "Automated validation of fiscal tax identifiers (RUC, DNI) via government APIs.",
+      "bullet4": "Token-based session authentication with Laravel Sanctum and relational database design in MySQL."
     }
   },
   "projects": {
-    "title": "Academic projects",
-    "subtitle": "Solutions developed with university teams: Restock as the main case study and a medical booking platform currently in development.",
+    "title": "Engineering Projects",
+    "subtitle": "Advanced solutions engineered with scalable architectures: Restock IoT inventory case study and clinical scheduling platform.",
     "category": {
       "all": "All",
       "web": "Web",
@@ -63,7 +68,7 @@
       "ia": "AI"
     },
     "status": {
-      "finished": "Completed",
+      "finished": "Finished",
       "in_development": "In Development",
       "upcoming": "Upcoming"
     },
@@ -75,39 +80,39 @@
     "key_features": "Key Features",
     "architecture_title": "System Architecture",
     "simulator_title": "IoT Simulator Console",
-    "simulator_desc": "Use the sliders on the ingredient containers to simulate physical weight updates detected by the ESP32 load cells. Notice how the Edge filter instantly propagates telemetry to the Spring Boot Backend."
+    "simulator_desc": "Use the container sliders to simulate weight changes detected by the ESP32 load cells. See how edge filtering updates the Spring Boot backend in real time."
   },
   "tech": {
-    "title": "My toolkit",
-    "subtitle": "The tools I use to build my projects and work with clients."
+    "title": "My Tools",
+    "subtitle": "The modern toolstack I use to build robust software for clients and production."
   },
   "education": {
-    "title": "Education",
-    "degree": "B.S. in Software Engineering",
+    "title": "Academic Background",
+    "degree": "Software Engineering",
     "university": "Universidad Peruana de Ciencias Aplicadas",
-    "period": "8th semester · In progress"
+    "period": "8th semester · In Progress"
   },
   "goals": {
-    "title": "Learning Path & Growth Goals",
-    "subtitle": "Where I focus my continuous improvement and specialization in the short and mid term.",
+    "title": "Growth Roadmap",
+    "subtitle": "Continuous improvement and specialization paths across software architecture and engineering.",
     "arch_title": "Software Architecture & Design",
-    "arch_desc": "Deepening my grasp of Domain-Driven Design (DDD), microservices patterns, and real-time message brokers.",
-    "devops_title": "DevOps Culture & Cloud",
-    "devops_desc": "Automating lifecycles with CI/CD (GitHub Actions), containerizing with Docker, and provisioning resources in Microsoft Azure.",
-    "front_title": "Modern Frontend Development",
-    "front_desc": "Mastering React/Next.js and advanced Vue 3 patterns (Composition API and Pinia) for reactive web products.",
-    "ai_title": "Practical AI Integration",
-    "ai_desc": "Studying cognitive APIs and orchestrating workflow automations using large language models."
+    "arch_desc": "Deepening Domain-Driven Design (DDD), microservices patterns, and real-time messaging.",
+    "devops_title": "DevOps & Cloud Culture",
+    "devops_desc": "Automation with CI/CD pipelines (GitHub Actions), Docker containerization, and Microsoft Azure cloud services.",
+    "front_title": "Modern Frontend",
+    "front_desc": "Mastering React/Next.js and Vue 3 patterns (Composition API and Pinia) for high-performance interactive web apps.",
+    "ai_title": "Applied AI Integrations",
+    "ai_desc": "Cognitive APIs and language model workflows applied to business automation and operational efficiency."
   },
   "contact": {
-    "title": "Get In Touch",
-    "subtitle": "If you have a job opportunity, a project idea, or just want to connect, feel free to reach out. I'll get back to you soon!",
+    "title": "Let's Talk",
+    "subtitle": "If you have a project to quote, a freelance inquiry, or want to collaborate, feel free to reach out directly.",
     "name": "Name",
     "email": "Email Address",
     "message": "Message",
     "send": "Send Message",
     "sending": "Sending...",
-    "success": "Your message was sent successfully! I'll get in touch with you shortly.",
-    "error": "There was an error sending your message. Please try again."
+    "success": "Message sent successfully! I will reach out shortly.",
+    "error": "An error occurred while sending. Please try again."
   }
 }

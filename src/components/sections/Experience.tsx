@@ -17,7 +17,7 @@ export function Experience() {
         <div className={styles.layout}>
           <aside className={styles.meta}>
             <a href="https://devdatep.com/" target="_blank" rel="noopener noreferrer" className={styles.company}>
-              <Image src="/images/brands/devdatep.webp" width={76} height={76} alt="" className={styles.companyMark} />
+              <Image src="/images/brands/devdatep.webp" width={76} height={76} alt="Devdatep Consulting" className={styles.companyMark} />
               <span>{t('experience.internship.company')}<ArrowUpRight size={18} aria-hidden="true" /></span>
             </a>
             <span className={styles.metaLine}><CalendarDays size={18} aria-hidden="true" />2026</span>

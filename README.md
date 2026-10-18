@@ -84,7 +84,11 @@ npm run build
 ```
 Este comando compila la aplicación y comprueba los tipos TypeScript. Ejecuta también `npm run lint` para verificar ESLint.
 
-El formulario de contacto conserva una confirmación local simulada. Los enlaces de email, LinkedIn y GitHub son reales; el formulario no envía correos desde un backend.
+El cotizador conserva el servicio elegido desde Servicios y valida los campos antes de abrir un borrador en WhatsApp o en la aplicación de correo del visitante. Los mensajes se adaptan al idioma español/inglés. El visitante revisa y envía el mensaje en esa aplicación; no hay envío de correo desde un backend del portafolio.
+
+Servicios utiliza detalles desplegables nativos y mantiene sus cuatro categorías. Los enlaces de WhatsApp comparten la configuración de `src/lib/whatsapp.ts`. El acceso flotante se oculta en Servicios, Contacto y el footer para no superponerse a sus acciones.
+
+El SEO incluye metadatos por proyecto, canonical, JSON-LD, `robots.txt`, `sitemap.xml` y una imagen Open Graph con la identidad del portafolio. El sitemap contiene únicamente proyectos visibles. Google Analytics y la verificación de Search Console solo se activan al configurar `NEXT_PUBLIC_GA_ID` y `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, respectivamente.
 
 ---
 

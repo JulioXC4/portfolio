@@ -1,167 +1,63 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Mail, Send, CheckCircle2, AlertCircle } from 'lucide-react';
-import { Github, Linkedin } from '@/components/common/BrandIcons';
+import { ArrowUpRight, Mail, Send } from 'lucide-react';
+import { Github, Linkedin, WhatsApp } from '@/components/common/BrandIcons';
+import { getWhatsAppUrl, WHATSAPP_DISPLAY_PHONE, WHATSAPP_MESSAGES } from '@/lib/whatsapp';
+import { servicesData } from '@/data/services';
+import { trackWhatsAppClick, trackQuoteRequest } from '@/lib/analytics';
 import styles from './Contact.module.css';
 
-export const Contact: React.FC = () => {
-  const { t } = useLanguage();
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-
-    setStatus('sending');
-
-    try {
-      // Simulate form submission to backend/Vercel serverless API
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    } catch {
-      setStatus('error');
+export function Contact({ serviceId, onServiceChange }: { serviceId: string; onServiceChange: (id: string) => void }) {
+  const { language, t } = useLanguage();
+  const es = language === 'es';
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
+  const service = servicesData.find(item => item.id === serviceId);
+  const serviceTitle = service ? (es ? service.titleES : service.titleEN) : (es ? 'Consultoría o solución especial' : 'Consulting or custom solution');
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const channel = (event.nativeEvent as SubmitEvent).submitter as HTMLButtonElement | null;
+    const method = channel?.value === 'email' ? 'email' : 'whatsapp';
+    trackQuoteRequest(method, serviceId);
+    const draft = WHATSAPP_MESSAGES.customQuote(name.trim(), serviceTitle, message.trim(), language);
+    if (method === 'email') {
+      const subject = `${es ? 'Cotización de proyecto' : 'Project quote'}: ${serviceTitle}`;
+      window.location.href = `mailto:julioc4.dev@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(draft)}`;
+    } else {
+      window.open(getWhatsAppUrl(draft), '_blank', 'noopener,noreferrer');
     }
   };
-
+  const channels = [
+    { label: 'WhatsApp', value: WHATSAPP_DISPLAY_PHONE, href: getWhatsAppUrl(es ? WHATSAPP_MESSAGES.general : WHATSAPP_MESSAGES.generalEN), Icon: WhatsApp },
+    { label: 'Email', value: 'julioc4.dev@gmail.com', href: 'mailto:julioc4.dev@gmail.com', Icon: Mail },
+    { label: 'LinkedIn', value: 'juliocastroalejos', href: 'https://www.linkedin.com/in/juliocastroalejos/', Icon: Linkedin },
+    { label: 'GitHub', value: 'JulioXC4', href: 'https://github.com/JulioXC4', Icon: Github },
+  ];
   return (
-    <section id="contact" className={styles.contactSection} tabIndex={0} aria-label={t('contact.title')}>
-      <div className={`${styles.container} container`}>
+    <section id="contact" className={styles.section} tabIndex={0} aria-labelledby="contact-heading">
+      <div className="container">
         <div className={styles.grid}>
-          {/* Column 1: Info */}
-          <div className={styles.infoColumn}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>{t('contact.title')}</h2>
-              <p className={styles.sectionSubtitle}>{t('contact.subtitle')}</p>
-              <div className={styles.headerBar}></div>
-            </div>
-
-            <div className={styles.contactChannels}>
-              <a href="mailto:julioc4.dev@gmail.com" className={`${styles.channelCard} glass-card`}>
-                <div className={`${styles.iconWrapper} ${styles.iconEmail}`}>
-                  <Mail size={22} />
-                </div>
-                <div className={styles.channelDetails}>
-                  <span className={styles.channelLabel}>Email</span>
-                  <span className={styles.channelValue}>julioc4.dev@gmail.com</span>
-                </div>
-              </a>
-
-              <a href="https://www.linkedin.com/in/juliocastroalejos/" target="_blank" rel="noopener noreferrer" className={`${styles.channelCard} glass-card`}>
-                <div className={`${styles.iconWrapper} ${styles.iconLinkedin}`}>
-                  <Linkedin size={22} />
-                </div>
-                <div className={styles.channelDetails}>
-                  <span className={styles.channelLabel}>LinkedIn</span>
-                  <span className={styles.channelValue}>juliocastroalejos</span>
-                </div>
-              </a>
-
-              <a href="https://github.com/JulioXC4" target="_blank" rel="noopener noreferrer" className={`${styles.channelCard} glass-card`}>
-                <div className={`${styles.iconWrapper} ${styles.iconGithub}`}>
-                  <Github size={22} />
-                </div>
-                <div className={styles.channelDetails}>
-                  <span className={styles.channelLabel}>GitHub</span>
-                  <span className={styles.channelValue}>JulioXC4</span>
-                </div>
-              </a>
-            </div>
+          <div>
+            <div className="section-rule" aria-hidden="true" />
+            <h2 id="contact-heading" className={styles.title}>{t('contact.title')}</h2>
+            <p className={styles.intro}>{t('contact.subtitle')}</p>
+            <div className={styles.channels}>{channels.map(({ label, value, href, Icon }) => <a key={label} className={styles.channel} href={href} target={href.startsWith('https:') ? '_blank' : undefined} rel={href.startsWith('https:') ? 'noopener noreferrer' : undefined} onClick={label === 'WhatsApp' ? () => trackWhatsAppClick('contact_channel') : undefined}><Icon size={28} aria-hidden="true" /><span><span className={styles.channelLabel}>{label}</span><span className={styles.channelValue}>{value}</span></span><ArrowUpRight size={20} aria-hidden="true" /></a>)}</div>
           </div>
-
-          {/* Column 2: Form */}
           <div className={styles.formColumn}>
-            <div className={`${styles.formCard} glass-card`}>
-              <form onSubmit={handleSubmit} className={styles.form}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="name" className={styles.label}>{t('contact.name')}</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    disabled={status === 'sending'}
-                    className={styles.input}
-                    autoComplete="name"
-                  />
-                </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="email" className={styles.label}>{t('contact.email')}</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    disabled={status === 'sending'}
-                    className={styles.input}
-                    autoComplete="email"
-                  />
-                </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="message" className={styles.label}>{t('contact.message')}</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    disabled={status === 'sending'}
-                    className={styles.textarea}
-                    rows={5}
-                  />
-                </div>
-
-                {/* Status messages */}
-                {status === 'success' && (
-                  <div className={styles.successBox} role="status">
-                    <CheckCircle2 size={20} className={styles.successIcon} />
-                    <span>{t('contact.success')}</span>
-                  </div>
-                )}
-
-                {status === 'error' && (
-                  <div className={styles.errorBox} role="alert">
-                    <AlertCircle size={20} className={styles.errorIcon} />
-                    <span>{t('contact.error')}</span>
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={status === 'sending' || status === 'success'}
-                  className={`${styles.submitBtn} ${status === 'sending' ? styles.btnSending : ''}`}
-                >
-                  {status === 'sending' ? (
-                    <>
-                      <span>{t('contact.sending')}</span>
-                      <span className={styles.spinner}></span>
-                    </>
-                  ) : (
-                    <>
-                      <span>{t('contact.send')}</span>
-                      <Send size={16} />
-                    </>
-                  )}
-                </button>
-              </form>
-            </div>
+            <h3>{es ? 'Solicitar una cotización' : 'Request a project quote'}</h3>
+            <p className={styles.formIntro}>{es ? 'Cuéntame brevemente qué necesitas y te responderé con una estimación o propuesta a medida.' : 'Tell me about your project and I will get back to you with an estimate or proposal.'}</p>
+            <form onSubmit={handleSubmit} className={styles.form}>
+              <div className={styles.field}><label htmlFor="quote-name">{es ? 'Tu nombre o el de tu empresa' : 'Your name or company'}</label><input id="quote-name" name="name" autoComplete="name" value={name} onChange={e => setName(e.target.value)} placeholder={es ? 'Nombre o empresa…' : 'Name or company…'} required maxLength={150} /></div>
+              <div className={styles.field}><label htmlFor="quote-service">{es ? 'Tipo de servicio que necesitas' : 'Type of service'}</label><select id="quote-service" name="service" value={serviceId} onChange={e => onServiceChange(e.target.value)}>{servicesData.map(item => <option key={item.id} value={item.id}>{es ? item.titleES : item.titleEN}</option>)}<option value="consulting">{es ? 'Consultoría o solución especial' : 'Consulting or custom solution'}</option></select></div>
+              <div className={styles.field}><label htmlFor="quote-message">{es ? 'Detalles de tu proyecto' : 'Project details'}</label><textarea id="quote-message" name="message" value={message} onChange={e => setMessage(e.target.value)} placeholder={es ? 'Qué necesitas resolver, para quién y en qué plazo…' : 'What you need to solve, who it is for, and your timeline…'} rows={4} required maxLength={3000} /></div>
+              <div className={styles.actions}><button type="submit" name="channel" value="whatsapp" className={styles.primary}><WhatsApp size={21} aria-hidden="true" />{es ? 'Continuar en WhatsApp' : 'Continue in WhatsApp'}<ArrowUpRight size={19} aria-hidden="true" /></button><button type="submit" name="channel" value="email" className={styles.secondary}><Send size={18} aria-hidden="true" />{es ? 'Abrir en mi correo' : 'Open in my email app'}</button></div>
+              <p className={styles.note}>{es ? 'Se abrirá un borrador en WhatsApp o en tu aplicación de correo. Podrás revisarlo antes de enviarlo.' : 'A draft will open in WhatsApp or your email app. You can review it before sending.'}</p>
+            </form>
           </div>
         </div>
       </div>
     </section>
   );
-};
+}

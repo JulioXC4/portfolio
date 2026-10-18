@@ -1,9 +1,10 @@
 {
   "nav": {
     "about": "Sobre Mí",
+    "services": "Servicios",
     "experience": "Experiencia",
     "projects": "Proyectos",
-    "freelance": "Freelance",
+    "freelance": "Trabajos",
     "tech": "Tecnologías",
     "goals": "Objetivos",
     "contact": "Contacto"
@@ -18,14 +19,18 @@
     "cta_projects": "Conoce mi trabajo",
     "cta_contact": "Cuéntame qué necesitas"
   },
+  "services": {
+    "title": "Servicios de Desarrollo de Software",
+    "subtitle": "Soluciones digitales diseñadas para captar clientes, automatizar procesos y hacer crecer tu negocio con tecnología moderna."
+  },
   "about": {
     "title": "Sobre Mí",
     "paragraph1": "Estudiante de Ingeniería de Software (8.º ciclo) en la Universidad Peruana de Ciencias Aplicadas, con una formación sólida en fundamentos de programación, estructuras de datos, bases de datos, ingeniería de requisitos, arquitectura de software y seguridad informática.",
     "paragraph2": "A lo largo de la carrera he desarrollado proyectos académicos individuales y grupales, aplicando análisis de requerimientos, diseño de soluciones, buenas prácticas de desarrollo y control de versiones con Git. Tengo experiencia construyendo aplicaciones web y trabajando de forma colaborativa bajo metodologías ágiles.",
-    "paragraph3": "Complemento mi formación universitaria con experiencia práctica en desarrollo web full stack, lo que me ha permitido reforzar habilidades técnicas y una mentalidad orientada a la resolución de problemas. Me considero una persona proactiva, metódica y responsable, con interés en seguir aprendiendo y creciendo profesionalmente en el área de desarrollo de software.",
-    "profile_role": "Full Stack & Integraciones de IA · Solutions Builder",
+    "paragraph3": "Complemento mi formación universitaria con experiencia práctica en desarrollo web full stack y soluciones freelance para clientes reales, lo que me ha permitido consolidar una mentalidad pragmática orientada a resultados de negocio y satisfacción del cliente.",
+    "profile_role": "Full Stack Software Engineer & Desarrollador Freelance",
     "location_label": "Ubicación",
-    "location": "Perú",
+    "location": "Lima, Perú (Atención local e internacional)",
     "education_label": "Formación",
     "education_summary": "Ingeniería de Software · UPC · 8.º ciclo",
     "consulting_label": "Consultoría",
@@ -33,8 +38,8 @@
     "profile_link": "Ver perfil en LinkedIn"
   },
   "freelance": {
-    "title": "Trabajo freelance",
-    "subtitle": "Sitios web para empresas, pensados para presentar sus servicios y conectar con sus clientes.",
+    "title": "Trabajos Realizados",
+    "subtitle": "Sitios web y soluciones digitales desarrolladas para empresas y clientes reales hasta el momento.",
     "visit": "Visitar sitio",
     "preview": "Abrir vista previa del sitio",
     "screenshot": "Captura real del sitio web de"
@@ -52,8 +57,8 @@
     }
   },
   "projects": {
-    "title": "Proyectos académicos",
-    "subtitle": "Soluciones desarrolladas en equipo durante mi formación universitaria: Restock como caso principal y una plataforma de citas médicas en desarrollo.",
+    "title": "Proyectos de Ingeniería",
+    "subtitle": "Soluciones avanzadas desarrolladas con arquitectura escalable: Restock como caso principal de IoT y plataforma de gestión de citas médicas.",
     "category": {
       "all": "Todos",
       "web": "Web",
@@ -101,7 +106,7 @@
   },
   "contact": {
     "title": "Hablemos",
-    "subtitle": "Si tienes una propuesta de trabajo, un proyecto interesante o simplemente quieres saludar, mi buzón está abierto.",
+    "subtitle": "Si tienes una propuesta de trabajo, un proyecto que deseas cotizar o simplemente quieres saludar, conversemos directamente.",
     "name": "Nombre",
     "email": "Correo Electrónico",
     "message": "Mensaje",

@@ -1,0 +1,7 @@
+.container { position: fixed; bottom: max(24px,env(safe-area-inset-bottom)); right: max(24px,env(safe-area-inset-right)); z-index: 40; }
+.hidden { display: none; }
+.button { position: relative; width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-accent); border-radius: 50%; background: var(--bg-base); color: var(--color-primary); }
+.button:hover,.button:focus-visible { background: var(--color-primary); color: var(--bg-base); border-color: var(--color-primary); }
+.tooltip { position: absolute; right: calc(100% + 14px); padding: 10px 16px; border: 1px solid var(--border-color-hover); border-radius: 4px; background: var(--bg-base); color: var(--text-primary); white-space: nowrap; pointer-events: none; font-size: 14px; opacity: 0; transform: translateX(4px); transition: opacity var(--transition-fast),transform var(--transition-fast); }
+.button:hover .tooltip,.button:focus-visible .tooltip { opacity: 1; transform: translateX(0); }
+@media(max-width:760px) { .container { right: max(16px,env(safe-area-inset-right)); bottom: max(16px,env(safe-area-inset-bottom)); } .button { width: 48px; height: 48px; } .tooltip { display: none; } }

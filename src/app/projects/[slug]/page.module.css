@@ -21,6 +21,27 @@
 .btnPrimary,.btnBack { background: var(--color-primary); color: var(--bg-base); }
 .btnPrimary:hover,.btnBack:hover { background: var(--color-secondary); transform: translateY(-2px); }
 .btnSecondary { border: 1px solid var(--border-color-hover); }
+.btnQuoteProjectDetail {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-primary);
+  color: var(--bg-base);
+  border-radius: 4px;
+  padding: 12px 22px;
+  min-height: 48px;
+  font-size: 15px;
+  font-weight: 650;
+  text-decoration: none;
+
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.btnQuoteProjectDetail:hover {
+  background: var(--color-secondary);
+  color: var(--bg-base);
+  transform: translateY(-2px);
+
+}
 .projectArt { grid-column: 2; grid-row: 1 / 5; align-self: center; width: 100%; }
 .detailsLayout { display: grid; }
 .section { padding: 38px 0; border-top: 1px solid var(--border-color); }

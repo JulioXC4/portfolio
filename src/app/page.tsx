@@ -1,13 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Footer } from '@/components/common/Footer';
 import { Navbar } from '@/components/common/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
-import { Experience } from '@/components/sections/Experience';
-import { Projects } from '@/components/sections/Projects';
+import { Services } from '@/components/sections/Services';
 import { Freelance } from '@/components/sections/Freelance';
+import { Projects } from '@/components/sections/Projects';
+import { Experience } from '@/components/sections/Experience';
 import { TechStack } from '@/components/sections/TechStack';
 import { Goals } from '@/components/sections/Goals';
 import { GithubSection } from '@/components/sections/GithubSection';
@@ -15,10 +16,11 @@ import { Contact } from '@/components/sections/Contact';
 import { ScrollReveal } from '@/components/common/ScrollReveal';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './page.module.css';
+import { scrollToSection } from '@/lib/navigation';
 
 export default function Home() {
   const { t } = useLanguage();
-
+  const [quoteService, setQuoteService] = useState('web-development');
 
   return (
     <div className={styles.appWrapper}>
@@ -26,7 +28,9 @@ export default function Home() {
       <Navbar />
 
       {/* Main Sections */}
-      <a href="#main-content" className="skip-link">{t('nav.about') === 'Sobre Mí' ? 'Saltar al contenido' : 'Skip to content'}</a>
+      <a href="#main-content" className="skip-link">
+        {t('nav.about') === 'Sobre Mí' ? 'Saltar al contenido principal' : 'Skip to main content'}
+      </a>
       <main id="main-content" className={styles.mainContent}>
         {/* Hero Section */}
         <Hero />
@@ -36,18 +40,24 @@ export default function Home() {
           <About />
         </ScrollReveal>
 
-        {/* Experience Section */}
+        {/* Commercial Services Section */}
         <ScrollReveal>
-          <Experience />
+          <Services onRequestQuote={serviceId => { setQuoteService(serviceId); scrollToSection('contact'); }} />
         </ScrollReveal>
 
+        {/* Real Client Freelance Work */}
         <ScrollReveal>
           <Freelance />
         </ScrollReveal>
 
-        {/* Projects Section */}
+        {/* Engineering Projects Section */}
         <ScrollReveal>
           <Projects />
+        </ScrollReveal>
+
+        {/* Professional Experience Section */}
+        <ScrollReveal>
+          <Experience />
         </ScrollReveal>
 
         {/* Tech Stack Section */}
@@ -55,7 +65,7 @@ export default function Home() {
           <TechStack />
         </ScrollReveal>
 
-        {/* Goals & Education Section */}
+        {/* Goals & Learning Path Section */}
         <ScrollReveal>
           <Goals />
         </ScrollReveal>
@@ -65,9 +75,9 @@ export default function Home() {
           <GithubSection />
         </ScrollReveal>
 
-        {/* Contact Section */}
+        {/* Contact & Quote Section */}
         <ScrollReveal>
-          <Contact />
+          <Contact serviceId={quoteService} onServiceChange={setQuoteService} />
         </ScrollReveal>
       </main>
 

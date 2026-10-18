@@ -10,9 +10,10 @@ import { scrollToSection } from '@/lib/navigation';
 
 const navItems = [
   { id: 'about', labelKey: 'nav.about' },
-  { id: 'experience', labelKey: 'nav.experience' },
+  { id: 'services', labelKey: 'nav.services' },
   { id: 'freelance', labelKey: 'nav.freelance' },
   { id: 'projects', labelKey: 'nav.projects' },
+  { id: 'experience', labelKey: 'nav.experience' },
   { id: 'tech', labelKey: 'nav.tech' },
   { id: 'goals', labelKey: 'nav.goals' },
   { id: 'contact', labelKey: 'nav.contact' },

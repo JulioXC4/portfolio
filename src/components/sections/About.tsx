@@ -52,8 +52,8 @@ export const About: React.FC = () => {
           <p className={styles.profileRole}>{t('about.profile_role')}</p>
           <dl className={styles.profileFacts}>
             <div><dt><MapPin size={17} /><span className={styles.srOnly}>{t('about.location_label')}</span></dt><dd>{t('about.location')}</dd></div>
-            <div><dt><Image src="/images/brands/upc.png" width={32} height={32} alt="" className={styles.institutionMark} /><span className={styles.srOnly}>{t('about.education_label')}</span></dt><dd><a href="https://www.upc.edu.pe/" target="_blank" rel="noopener noreferrer">{t('about.education_summary')}<ArrowUpRight size={14} aria-hidden="true" /></a></dd></div>
-            <div><dt><Image src="/images/brands/180dc-icon.png" width={32} height={32} alt="" className={styles.institutionMark} /><span className={styles.srOnly}>{t('about.consulting_label')}</span></dt><dd><a href="https://180dc.org/" target="_blank" rel="noopener noreferrer">{t('about.consulting')}<ArrowUpRight size={14} aria-hidden="true" /></a></dd></div>
+            <div><dt><Image src="/images/brands/upc.png" width={32} height={32} alt="Universidad Peruana de Ciencias Aplicadas" className={styles.institutionMark} /><span className={styles.srOnly}>{t('about.education_label')}</span></dt><dd><a href="https://www.upc.edu.pe/" target="_blank" rel="noopener noreferrer">{t('about.education_summary')}<ArrowUpRight size={14} aria-hidden="true" /></a></dd></div>
+            <div><dt><Image src="/images/brands/180dc-icon.png" width={32} height={32} alt="180 Degrees Consulting UPC" className={styles.institutionMark} /><span className={styles.srOnly}>{t('about.consulting_label')}</span></dt><dd><a href="https://180dc.org/" target="_blank" rel="noopener noreferrer">{t('about.consulting')}<ArrowUpRight size={14} aria-hidden="true" /></a></dd></div>
           </dl>
           <a className={styles.profileLink} href="https://www.linkedin.com/in/juliocastroalejos/" target="_blank" rel="noopener noreferrer">{t('about.profile_link')}<ArrowUpRight size={18} /></a>
         </div>

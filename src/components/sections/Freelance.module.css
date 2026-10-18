@@ -14,8 +14,11 @@
 .description { font-size: 18px; line-height: 1.65; margin-top: 22px; }
 .platform { display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 26px; font-size: 14px; }
 .platform svg { color: var(--color-primary); }
-.visit { display: inline-flex; align-items: center; gap: 24px; background: var(--color-primary); color: var(--bg-base); border-radius: 4px; min-height: 56px; padding: 14px 24px; margin-top: 26px; font-size: 16px; font-weight: 600; }
+.caseActions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+.visit { display: inline-flex; align-items: center; gap: 12px; background: var(--color-primary); color: var(--bg-base); border-radius: 4px; min-height: 52px; padding: 12px 22px; font-size: 15px; font-weight: 600; }
 .visit:hover { background: var(--color-secondary); transform: translateY(-2px); }
+.btnQuoteSimilar { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border-accent); background: var(--color-primary-glow); color: var(--color-primary); padding: 12px 18px; font-size: 14px; font-weight: 600; min-height: 52px; border-radius: 4px; transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast); }
+.btnQuoteSimilar:hover { background: var(--color-primary); color: var(--bg-base); border-color: var(--color-primary); transform: translateY(-2px); }
 .preview { min-width: 0; padding: 22px; border: 1px solid var(--border-color-hover); border-radius: 5px; overflow: hidden; }
 .imageFrame { position: relative; aspect-ratio: 16/9; }
 .screenshot { object-fit: contain; transition: transform 450ms ease; }
@@ -25,4 +28,4 @@
 :global([data-theme="light"]) .visit { color: #fffaf2; }
 @media (prefers-reduced-motion: no-preference) { .details { animation: enter 320ms ease both; } .screenshot { animation: enter 320ms ease both; } }
 @media (max-width: 1100px) { .case { grid-template-columns: 1fr 1.4fr; gap: 28px; } .description { font-size: 15px; } .heading { font-size: 50px; } .intro { font-size: 18px; padding-left: 26px; } .title { font-size: 31px; } .preview { padding: 16px; } }
-@media (max-width: 760px) { .header { display: block; margin-bottom: 22px; } .heading { font-size: 38px; } .intro { padding: 0; border: 0; margin-top: 18px; font-size: 16px; } .tabs { gap: 22px; margin-bottom: 28px; } .tabs button { gap: 8px; font-size: 14px; min-height: 60px; } .tabs button span { font-size: 12px; } .case { display: flex; flex-direction: column; align-items: stretch; gap: 28px; } .title { font-size: 32px; } .description { font-size: 16px; margin-top: 18px; } .platform { margin-top: 22px; } .preview { padding: 12px; } .visit { margin-top: 22px; } .domain { font-size: 12px; margin-top: 12px; } }
+@media (max-width: 760px) { .header { display: block; margin-bottom: 22px; } .heading { font-size: 38px; } .intro { padding: 0; border: 0; margin-top: 18px; font-size: 16px; } .tabs { gap: 22px; margin-bottom: 28px; } .tabs button { gap: 8px; font-size: 14px; min-height: 60px; } .tabs button span { font-size: 12px; } .case { display: flex; flex-direction: column; align-items: stretch; gap: 28px; } .title { font-size: 32px; } .description { font-size: 16px; margin-top: 18px; } .platform { margin-top: 22px; } .preview { padding: 12px; } .caseActions { margin-top: 20px; flex-direction: column; align-items: stretch; } .visit, .btnQuoteSimilar { width: 100%; justify-content: center; } .domain { font-size: 12px; margin-top: 12px; } }
