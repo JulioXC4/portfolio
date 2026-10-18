@@ -9,12 +9,14 @@
     "contact": "Contact"
   },
   "hero": {
+    "title": "I build software that solves",
+    "title_accent": "real problems.",
     "greeting": "Hi, I am",
     "tagline": "Designing, building, and optimizing software end-to-end.",
     "role": "Full Stack Developer · Growing Engineer",
-    "description": "Software Engineering student with practical experience building real-world enterprise products. I am passionate about the complete product lifecycle: from structuring databases and modeling efficient APIs, to deploying containers and polishing interactive user experiences.",
-    "cta_projects": "View Works",
-    "cta_contact": "Let's Connect"
+    "description": "I'm Julio Castro, a Software Engineering student at UPC and a Full Stack developer. I work with clients and teams to understand their needs and turn them into software that makes their work easier and helps them reach their goals.",
+    "cta_projects": "Explore my work",
+    "cta_contact": "Tell me what you need"
   },
   "about": {
     "title": "About Me",

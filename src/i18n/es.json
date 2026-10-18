@@ -9,12 +9,14 @@
     "contact": "Contacto"
   },
   "hero": {
+    "title": "Creo software que resuelve",
+    "title_accent": "problemas reales.",
     "greeting": "Hola, soy",
     "tagline": "Diseño, construyo y optimizo software de extremo a extremo.",
     "role": "Full Stack Developer · Ingeniero en Crecimiento",
-    "description": "Estudiante de Ingeniería de Software con experiencia práctica en productos empresariales reales. Me apasiona el ciclo completo del desarrollo: desde estructurar bases de datos y modelar APIs eficientes, hasta desplegar contenedores y pulir experiencias interactivas para el usuario final.",
-    "cta_projects": "Ver Trabajos",
-    "cta_contact": "Hablemos"
+    "description": "Soy Julio Castro, estudiante de Ingeniería de Software en la UPC y desarrollador Full Stack. Trabajo con clientes y equipos para entender sus necesidades y convertirlas en software que facilite su trabajo y les ayude a alcanzar sus objetivos.",
+    "cta_projects": "Conoce mi trabajo",
+    "cta_contact": "Cuéntame qué necesitas"
   },
   "about": {
     "title": "Sobre Mí",
