@@ -6,6 +6,7 @@ import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
 import { Experience } from '@/components/sections/Experience';
 import { Projects } from '@/components/sections/Projects';
+import { Freelance } from '@/components/sections/Freelance';
 import { TechStack } from '@/components/sections/TechStack';
 import { Goals } from '@/components/sections/Goals';
 import { GithubSection } from '@/components/sections/GithubSection';
@@ -39,6 +40,10 @@ export default function Home() {
         {/* Experience Section */}
         <ScrollReveal>
           <Experience />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <Freelance />
         </ScrollReveal>
 
         {/* Projects Section */}
@@ -86,6 +91,9 @@ export default function Home() {
             </button>
             <button onClick={() => scrollToSection('experience')} className={styles.footerLink}>
               {t('nav.experience')}
+            </button>
+            <button onClick={() => scrollToSection('freelance')} className={styles.footerLink}>
+              {t('nav.freelance')}
             </button>
             <button onClick={() => scrollToSection('projects')} className={styles.footerLink}>
               {t('nav.projects')}

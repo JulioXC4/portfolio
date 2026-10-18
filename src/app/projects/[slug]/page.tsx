@@ -16,7 +16,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
   const { slug } = React.use(params);
   const { language: lang, t } = useLanguage();
 
-  const project = projectsData.find((p) => p.slug === slug);
+  const project = projectsData.find((p) => p.slug === slug && !p.hidden);
 
   if (!project) {
     return (

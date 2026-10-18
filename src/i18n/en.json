@@ -3,6 +3,7 @@
     "about": "About",
     "experience": "Experience",
     "projects": "Projects",
+    "freelance": "Freelance",
     "tech": "Tech Stack",
     "goals": "Future Paths",
     "contact": "Contact"
@@ -29,6 +30,13 @@
     "consulting": "Consultant at 180 Degrees Consulting UPC",
     "profile_link": "View LinkedIn profile"
   },
+  "freelance": {
+    "title": "Freelance work",
+    "subtitle": "Websites for businesses, designed to present their services and connect with their customers.",
+    "visit": "Visit website",
+    "preview": "Open website preview",
+    "screenshot": "Actual website screenshot of"
+  },
   "experience": {
     "title": "Professional Experience",
     "internship": {
@@ -42,8 +50,8 @@
     }
   },
   "projects": {
-    "title": "Featured Projects",
-    "subtitle": "A showcase of complete solutions demonstrating technical design, clean architecture, and execution.",
+    "title": "Academic projects",
+    "subtitle": "Solutions developed with university teams: Restock as the main case study and a medical booking platform currently in development.",
     "category": {
       "all": "All",
       "web": "Web",

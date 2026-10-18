@@ -11,6 +11,7 @@ import { scrollToSection } from '@/lib/navigation';
 const navItems = [
   { id: 'about', labelKey: 'nav.about' },
   { id: 'experience', labelKey: 'nav.experience' },
+  { id: 'freelance', labelKey: 'nav.freelance' },
   { id: 'projects', labelKey: 'nav.projects' },
   { id: 'tech', labelKey: 'nav.tech' },
   { id: 'goals', labelKey: 'nav.goals' },
@@ -61,7 +62,7 @@ export const Navbar: React.FC = () => {
         menuButtonRef.current?.focus();
       }
     };
-    const handleResize = () => { if (window.innerWidth > 900) setIsOpen(false); };
+    const handleResize = () => { if (window.innerWidth > 1080) setIsOpen(false); };
     window.addEventListener('keydown', handleKey);
     window.addEventListener('resize', handleResize);
     return () => {

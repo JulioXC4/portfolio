@@ -6,7 +6,7 @@
 .logoIcon { width: 44px; height: 44px; }
 .logoText { font-family: var(--font-display); font-size: 26px; font-weight: 500; letter-spacing: -.04em; }
 .logoLastName { font-weight: inherit; }
-.desktopMenu { display: flex; align-items: center; justify-content: flex-end; gap: clamp(18px,2.3vw,38px); width: 100%; margin-left: clamp(24px,8vw,128px); }
+.desktopMenu { display: flex; align-items: center; justify-content: flex-end; gap: clamp(14px,1.6vw,26px); width: 100%; margin-left: clamp(16px,3vw,48px); }
 .navLink { color: var(--text-secondary); font-size: 16px; min-height: 48px; position: relative; white-space: nowrap; }
 .navLink::after { content: ""; position: absolute; left: 0; right: 0; bottom: 8px; height: 1px; background: var(--color-primary); transform: scaleX(0); transform-origin: left; transition: transform var(--transition-normal); }
 .navLink:hover,.active { color: var(--text-primary); }
@@ -21,7 +21,7 @@
   .desktopMenu { gap: 18px; margin-left: 0; } .navLink { font-size: 14px; }
   .logo { gap: 10px; } .logoText { font-size: 23px; } .logoIcon { width: 36px; height: 36px; } .container { gap: 20px; }
 }
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   .container { min-height: 80px; gap: 8px; } .desktopMenu { display: none; }
   .mobileRight { display: flex; align-items: center; gap: 4px; } .themeBtn { margin: 0; }
   .themeBtn svg { width: 23px; height: 23px; } .langBtn { padding-left: 10px; min-width: 48px; } .menuBtn { margin-left: 6px; }

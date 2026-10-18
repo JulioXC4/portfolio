@@ -3,6 +3,7 @@
     "about": "Sobre Mí",
     "experience": "Experiencia",
     "projects": "Proyectos",
+    "freelance": "Freelance",
     "tech": "Tecnologías",
     "goals": "Objetivos",
     "contact": "Contacto"
@@ -29,6 +30,13 @@
     "consulting": "Consultor en 180 Degrees Consulting UPC",
     "profile_link": "Ver perfil en LinkedIn"
   },
+  "freelance": {
+    "title": "Trabajo freelance",
+    "subtitle": "Sitios web para empresas, pensados para presentar sus servicios y conectar con sus clientes.",
+    "visit": "Visitar sitio",
+    "preview": "Abrir vista previa del sitio",
+    "screenshot": "Captura real del sitio web de"
+  },
   "experience": {
     "title": "Experiencia Profesional",
     "internship": {
@@ -42,8 +50,8 @@
     }
   },
   "projects": {
-    "title": "Proyectos Destacados",
-    "subtitle": "Una muestra de soluciones completas que demuestran arquitectura, diseño y ejecución técnica.",
+    "title": "Proyectos académicos",
+    "subtitle": "Soluciones desarrolladas en equipo durante mi formación universitaria: Restock como caso principal y una plataforma de citas médicas en desarrollo.",
     "category": {
       "all": "Todos",
       "web": "Web",

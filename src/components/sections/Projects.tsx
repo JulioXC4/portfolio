@@ -15,8 +15,8 @@ const categoryKeys = ['all', 'web', 'mobile', 'backend', 'iot', 'ia'] as const;
 export function Projects() {
   const { language: lang, t: translate } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<string>('All');
-  const featuredProject = projectsData.find(project => project.featured) ?? projectsData[0];
-  const filteredProjects = projectsData.filter(project => !project.featured &&
+  const featuredProject = projectsData.find(project => project.featured && !project.hidden) ?? projectsData[0];
+  const filteredProjects = projectsData.filter(project => !project.hidden && !project.featured &&
     (activeCategory === 'All' || project.category.some(category => category === activeCategory)));
 
   return (

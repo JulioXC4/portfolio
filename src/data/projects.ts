@@ -12,6 +12,7 @@ export interface Project {
   status: 'finished' | 'in_development' | 'upcoming';
   technologies: string[];
   featured: boolean;
+  hidden?: boolean;
   githubUrl?: string;
   liveUrl?: string;
   featuresES: string[];
@@ -62,10 +63,9 @@ export const projectsData: Project[] = [
     problemSolvedES: 'Optimizar la reserva de citas en clínicas médicas para eliminar los cruces de horarios y la duplicidad de registros mediante validación activa en tiempo real.',
     problemSolvedEN: 'Optimizing clinic booking flows to eliminate scheduling conflicts and double bookings through real-time validation checks.',
     category: ['Web', 'Backend'],
-    status: 'finished',
+    status: 'in_development',
     technologies: ['Spring Boot', 'Java', 'Vue.js 3', 'Pinia', 'PostgreSQL', 'JWT'],
     featured: false,
-    githubUrl: 'https://github.com/JulioXC4/gestion-citas-medicas',
     featuresES: [
       'Control de acceso basado en roles para Pacientes, Doctores y Administradores.',
       'Autenticación robusta basada en JSON Web Tokens (JWT) con expiración y renovación.',
@@ -83,6 +83,7 @@ export const projectsData: Project[] = [
   },
   {
     slug: 'event-access-control',
+    hidden: true,
     titleES: 'Gobernanza de Acceso QR para Eventos',
     titleEN: 'QR Event Admission Governance',
     descriptionES: 'Sistema full-stack para check-in de eventos en tiempo real mediante escaneo de códigos QR encriptados. Backend modular y app móvil complementaria en Flutter.',
@@ -95,7 +96,6 @@ export const projectsData: Project[] = [
     status: 'finished',
     technologies: ['Spring Boot', 'Java', 'Flutter', 'Provider', 'PostgreSQL', 'Clean Architecture'],
     featured: false,
-    githubUrl: 'https://github.com/JulioXC4/event-access-control',
     featuresES: [
       'Generación y validación de códigos QR únicos y encriptados para evitar fraudes.',
       'Backend estructurado en capas desacopladas siguiendo Clean Architecture.',
@@ -113,6 +113,7 @@ export const projectsData: Project[] = [
   },
   {
     slug: 'inventory-management-system',
+    hidden: true,
     titleES: 'Consola de Inventarios con Laravel & Livewire',
     titleEN: 'Inventory Console (Laravel & Livewire)',
     descriptionES: 'Plataforma administrativa de control de stock con alertas automáticas de nivel bajo, historial de movimientos detallado y exportación de reportes operativos en PDF.',
@@ -125,7 +126,6 @@ export const projectsData: Project[] = [
     status: 'finished',
     technologies: ['Laravel 10', 'Livewire 3', 'MySQL', 'TailwindCSS', 'PHP'],
     featured: false,
-    githubUrl: 'https://github.com/JulioXC4/inventory-management-system',
     featuresES: [
       'Buscador dinámico e instantáneo de productos y transacciones (Livewire).',
       'Reportes de inventario exportables en PDF generados automáticamente.',
@@ -143,6 +143,7 @@ export const projectsData: Project[] = [
   },
   {
     slug: 'task-manager-springboot',
+    hidden: true,
     titleES: 'Consola de Productividad Organizacional',
     titleEN: 'Organizational Productivity Console',
     descriptionES: 'Ecosistema de gestión de tareas corporativas implementando Clean Architecture, seguridad JWT, roles y filtrado avanzado por prioridades y estados.',
@@ -155,7 +156,6 @@ export const projectsData: Project[] = [
     status: 'finished',
     technologies: ['Spring Boot', 'Java', 'PostgreSQL', 'JWT', 'Clean Architecture'],
     featured: false,
-    githubUrl: 'https://github.com/JulioXC4/task-manager-springboot',
     featuresES: [
       'Arquitectura Limpia con desacoplamiento total de entidades y persistencia.',
       'Autenticación y autorización granular mediante JWT.',
