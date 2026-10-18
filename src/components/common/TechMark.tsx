@@ -24,6 +24,10 @@ const brandAssets: Record<string, { file: string; monochrome?: boolean; companio
   'Microsoft Azure': { file: 'azure' },
   'Vercel Deployment': { file: 'vercel', monochrome: true },
   'Linux Shell': { file: 'linux' },
+  Astro: { file: 'astro', monochrome: true },
+  WordPress: { file: 'wordpress', monochrome: true },
+  Elementor: { file: 'elementor', monochrome: true },
+  Git: { file: 'git' },
 };
 
 export function TechMark({ name }: { name: string }) {

@@ -78,8 +78,8 @@
     "simulator_desc": "Use the sliders on the ingredient containers to simulate physical weight updates detected by the ESP32 load cells. Notice how the Edge filter instantly propagates telemetry to the Spring Boot Backend."
   },
   "tech": {
-    "title": "Tech Stack",
-    "subtitle": "Tools and languages structured by their role in the software architecture."
+    "title": "My toolkit",
+    "subtitle": "The tools I use to build my projects and work with clients."
   },
   "education": {
     "title": "Education",

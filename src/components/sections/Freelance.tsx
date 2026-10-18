@@ -1,55 +1,54 @@
 'use client';
 
+import { useRef, useState } from 'react';
+import type { KeyboardEvent } from 'react';
 import Image from 'next/image';
-import { ArrowRight, ArrowUpRight, LockKeyhole } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Layers3 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { freelanceProjects } from '@/data/freelance';
 import styles from './Freelance.module.css';
 
 export function Freelance() {
   const { language, t } = useLanguage();
+  const [active, setActive] = useState(0);
+  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const project = freelanceProjects[active];
   const isSpanish = language === 'es';
-
+  const selectWithKeyboard = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    let next: number;
+    if (event.key === 'ArrowRight') next = (index + 1) % freelanceProjects.length;
+    else if (event.key === 'ArrowLeft') next = (index + freelanceProjects.length - 1) % freelanceProjects.length;
+    else if (event.key === 'Home') next = 0;
+    else if (event.key === 'End') next = freelanceProjects.length - 1;
+    else return;
+    event.preventDefault();
+    setActive(next);
+    tabs.current[next]?.focus({ preventScroll: true });
+  };
   return (
     <section id="freelance" className={styles.section} tabIndex={0} aria-labelledby="freelance-heading">
       <div className="container">
         <header className={styles.header}>
-          <div>
-            <div className="section-rule" />
-            <h2 id="freelance-heading" className={styles.heading}>{t('freelance.title')}</h2>
-          </div>
+          <h2 id="freelance-heading" className={styles.heading}>{t('freelance.title')}</h2>
           <p className={styles.intro}>{t('freelance.subtitle')}</p>
         </header>
-
-        <div className={styles.projects}>
-          {freelanceProjects.map(project => (
-            <article key={project.id} className={styles.project} aria-labelledby={`${project.id}-title`}>
-              <a className={styles.preview} href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`${t('freelance.preview')} — ${project.name}`}>
-                <div className={styles.browserBar} aria-hidden="true">
-                  <span className={styles.browserDots}><i /><i /><i /></span>
-                  <LockKeyhole size={13} />
-                  <span className={styles.domain}>{project.domain}</span>
-                  <ArrowUpRight size={18} className={styles.previewArrow} />
-                </div>
-                <div className={styles.imageFrame} style={{ backgroundColor: project.previewBackground }}>
-                  <Image src={project.image} fill sizes="(max-width: 760px) 90vw, (max-width: 1600px) 44vw, 720px" alt={`${t('freelance.screenshot')} ${project.name}`} className={styles.screenshot} />
-                </div>
-              </a>
-
-              <h3 id={`${project.id}-title`} className={styles.title}>
-                <a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}<ArrowUpRight size={28} aria-hidden="true" /></a>
-              </h3>
-              <p className={styles.category}>{isSpanish ? project.categoryES : project.categoryEN}</p>
-              <p className={styles.description}>{isSpanish ? project.descriptionES : project.descriptionEN}</p>
-              <div className={styles.footer}>
-                <p className={styles.platform}>{isSpanish ? project.platformES : project.platformEN}</p>
-                <a href={project.url} target="_blank" rel="noopener noreferrer" className={styles.visit} aria-label={`${t('freelance.visit')} — ${project.name}`}>
-                  {t('freelance.visit')}<ArrowRight size={20} aria-hidden="true" />
-                </a>
-              </div>
-            </article>
-          ))}
+        <div className={styles.tabs} role="tablist" aria-label={t('freelance.title')}>
+          {freelanceProjects.map((item,index) => <button key={item.id} ref={node => { tabs.current[index] = node; }} id={`freelance-tab-${item.id}`} role="tab" aria-selected={active === index} tabIndex={active === index ? 0 : -1} aria-controls="freelance-case" onClick={() => setActive(index)} onKeyDown={event => selectWithKeyboard(event,index)} className={active === index ? styles.activeTab : ''}><span aria-hidden="true">0{index+1}</span>{item.name}</button>)}
         </div>
+        <article id="freelance-case" role="tabpanel" aria-labelledby={`freelance-tab-${project.id}`} className={styles.case}>
+          <div key={project.id} className={styles.details}>
+            <span className={styles.number} aria-hidden="true">0{active+1}</span>
+            <h3 className={styles.title}>{project.name}</h3>
+            <p className={styles.category}>{isSpanish ? project.categoryES : project.categoryEN}</p>
+            <p className={styles.description}>{isSpanish ? project.descriptionES : project.descriptionEN}</p>
+            <p className={styles.platform}><Layers3 size={22} aria-hidden="true" />{isSpanish ? project.platformES : project.platformEN}</p>
+            <a href={project.url} target="_blank" rel="noopener noreferrer" className={styles.visit} aria-label={`${t('freelance.visit')} — ${project.name}`}>{t('freelance.visit')}<ArrowRight size={20} aria-hidden="true" /></a>
+          </div>
+          <a href={project.url} target="_blank" rel="noopener noreferrer" className={styles.preview} aria-label={`${t('freelance.preview')} — ${project.name}`} style={{ backgroundColor: project.previewBackground }}>
+            <div className={styles.imageFrame}><Image key={project.id} src={project.image} fill sizes="(max-width: 760px) 88vw, 60vw" alt={`${t('freelance.screenshot')} ${project.name}`} className={styles.screenshot} /></div>
+            <span className={styles.domain}>{project.domain}<ArrowUpRight size={18} aria-hidden="true" /></span>
+          </a>
+        </article>
       </div>
     </section>
   );

@@ -36,15 +36,14 @@ export const Navbar: React.FC = () => {
       const progress = maxScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
       if (progressRef.current) progressRef.current.style.transform = `scaleX(${progress})`;
 
-      // Simple scroll spy logic
-      const sections = navItems.map(item => document.getElementById(item.id));
+      const sections = document.querySelectorAll<HTMLElement>('#main-content section[id]');
       const headerHeight = document.querySelector('[data-header-bar]')?.getBoundingClientRect().height ?? 88;
       const scrollPosition = window.scrollY + headerHeight + 32;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         if (section && section.getBoundingClientRect().top + window.scrollY <= scrollPosition) {
-          setActiveSection(navItems[i].id);
+          setActiveSection(section.id);
           break;
         }
       }
@@ -99,7 +98,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+    <nav aria-label={language === 'es' ? 'Navegación principal' : 'Main navigation'} className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container} data-header-bar>
         {/* Brand Logo */}
         <button type="button" aria-label={language === 'es' ? 'Volver al inicio' : 'Back to top'} className={styles.logo} onClick={() => scrollToSection('home')}>

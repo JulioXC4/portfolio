@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { Footer } from '@/components/common/Footer';
 import { Navbar } from '@/components/common/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
@@ -15,12 +15,10 @@ import { Contact } from '@/components/sections/Contact';
 import { ScrollReveal } from '@/components/common/ScrollReveal';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './page.module.css';
-import { BrandMark } from '@/components/common/BrandMark';
-import { scrollToSection } from '@/lib/navigation';
 
 export default function Home() {
-  const { language, t } = useLanguage();
-  const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
+
 
   return (
     <div className={styles.appWrapper}>
@@ -73,50 +71,7 @@ export default function Home() {
         </ScrollReveal>
       </main>
 
-      {/* Footer */}
-      <footer id="footer" className={styles.footer} tabIndex={0} aria-label={language === 'es' ? 'Pie de página' : 'Footer'}>
-        <div className={`${styles.footerContainer} container`}>
-          <div className={styles.footerLeft}>
-            <button type="button" aria-label={language === 'es' ? 'Volver al inicio' : 'Back to top'} className={styles.footerLogo} onClick={() => scrollToSection('home')}>
-              <BrandMark className={styles.logoIcon} />
-              <span className={styles.logoText}>Julio <span className={styles.logoLastName}>Castro</span></span>
-              <ArrowUpRight className={styles.backToTopIcon} aria-hidden="true" />
-            </button>
-            <p className={styles.footerSubtitle}>
-              {t('nav.about') === 'Sobre Mí' ? 'Ingeniería con propósito' : 'Engineering with purpose'}
-            </p>
-          </div>
-          
-          <div className={styles.footerLinks}>
-            <button onClick={() => scrollToSection('about')} className={styles.footerLink}>
-              {t('nav.about')}
-            </button>
-            <button onClick={() => scrollToSection('experience')} className={styles.footerLink}>
-              {t('nav.experience')}
-            </button>
-            <button onClick={() => scrollToSection('freelance')} className={styles.footerLink}>
-              {t('nav.freelance')}
-            </button>
-            <button onClick={() => scrollToSection('projects')} className={styles.footerLink}>
-              {t('nav.projects')}
-            </button>
-            <button onClick={() => scrollToSection('tech')} className={styles.footerLink}>
-              {t('nav.tech')}
-            </button>
-            <button onClick={() => scrollToSection('goals')} className={styles.footerLink}>
-              {t('nav.goals')}
-            </button>
-            <button onClick={() => scrollToSection('contact')} className={styles.footerLink}>
-              {t('nav.contact')}
-            </button>
-          </div>
-        </div>
-        <div className={styles.footerBottom}>
-          <p className={styles.copyright}>
-            © {currentYear} Julio Castro Alejos. {t('nav.about') === 'Sobre Mí' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

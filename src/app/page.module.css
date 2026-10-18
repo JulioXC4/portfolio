@@ -1,21 +1,2 @@
 .appWrapper { overflow: clip; }
 .mainContent { width: 100%; }
-.footer { padding: 0 var(--gutter) 36px; max-width: var(--max-width); margin-inline: auto; scroll-snap-align: end; scroll-margin: 0; }
-.footerContainer { border-top: 1px solid var(--border-color); padding: 48px 0 30px; display: flex; align-items: center; justify-content: space-between; gap: 48px; }
-.footerLeft { display: flex; flex-direction: column; gap: 6px; }
-.footerLogo { display: inline-flex; align-items: center; gap: 12px; width: fit-content; }
-.footerLogo svg { width: 42px; height: 42px; }
-.footerLogo .backToTopIcon { width: 20px; height: 20px; margin-left: 6px; color: var(--color-primary); }
-.footerLogo:hover .backToTopIcon { transform: translate(3px,-3px); }
-.logoText { font: 500 27px/1.2 var(--font-display); letter-spacing: -.04em; } .logoLastName { font-weight: inherit; }
-.footerSubtitle { font-size: 15px; }
-.footerLinks { display: flex; gap: clamp(20px,2.5vw,40px); flex-wrap: wrap; }
-.footerLink { position: relative; font-size: 14px; color: var(--text-secondary); min-height: 44px; } .footerLink:hover { color: var(--color-primary); }
-.footerLink::after { content: ""; position: absolute; left: 0; bottom: 8px; width: 100%; height: 1px; background: var(--color-primary); transform: scaleX(0); transform-origin: left; transition: transform var(--transition-normal); }
-.footerLink:hover::after,.footerLink:focus-visible::after { transform: scaleX(1); }
-.copyright { font-size: 13px; color: var(--text-muted); }
-@media (max-width: 760px) {
-  .footerContainer { padding: 34px 0 22px; flex-direction: column; align-items: flex-start; gap: 24px; }
-  .footerLinks { width: 100%; display: grid; grid-template-columns: repeat(3,1fr); gap: 10px 16px; }
-  .footerLink { text-align: left; font-size: 13px; } .copyright { font-size: 12px; max-width: 300px; }
-}

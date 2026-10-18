@@ -78,8 +78,8 @@
     "simulator_desc": "Usa los deslizadores de los contenedores para simular cambios de peso físicos detectados por las celdas de carga del ESP32. Observa cómo el filtro Edge notifica en tiempo real al Backend en Spring Boot."
   },
   "tech": {
-    "title": "Stack Tecnológico",
-    "subtitle": "Herramientas y lenguajes estructurados según su rol en la arquitectura de software."
+    "title": "Mis herramientas",
+    "subtitle": "Las herramientas con las que construyo mis proyectos y trabajo con clientes."
   },
   "education": {
     "title": "Formación Académica",

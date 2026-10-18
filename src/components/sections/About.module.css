@@ -10,6 +10,10 @@
 .profileFacts > div { display: flex; gap: 12px; font-size: 13px; line-height: 1.6; }
 .profileFacts dt { color: var(--color-primary); display: flex; padding-top: 2px; }
 .profileFacts dd { color: var(--text-secondary); }
+.profileFacts > div { align-items: center; }
+.profileFacts dd a { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; }
+.profileFacts dd a:hover { color: var(--color-primary); }
+.institutionMark { width: 32px; height: 32px; object-fit: contain; border-radius: 4px; }
 .profileLink { display: inline-flex; gap: 10px; align-items: center; min-height: 44px; color: var(--color-primary); font-size: 14px; margin-top: 12px; }
 .srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .grid { display: contents; }
