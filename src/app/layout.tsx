@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
-import { Outfit, Inter } from "next/font/google";
+import { Manrope, DM_Sans } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import "./globals.css";
 
-const outfit = Outfit({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-primary",
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -48,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" data-scroll-behavior="smooth" className={`${outfit.variable} ${inter.variable}`}>
+    <html lang="es" data-scroll-behavior="smooth" className={`${manrope.variable} ${dmSans.variable}`}>
       <body>
         <ThemeProvider>
           <LanguageProvider>

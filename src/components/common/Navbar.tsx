@@ -24,12 +24,17 @@ export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
+  const progressRef = useRef<HTMLSpanElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
+    let frame = 0;
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = maxScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
+      if (progressRef.current) progressRef.current.style.transform = `scaleX(${progress})`;
 
       // Simple scroll spy logic
       const sections = navItems.map(item => document.getElementById(item.id));
@@ -48,9 +53,22 @@ export const Navbar: React.FC = () => {
       }
     };
 
+    const scheduleScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        handleScroll();
+      });
+    };
+
     handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', scheduleScroll, { passive: true });
+    window.addEventListener('resize', scheduleScroll);
+    return () => {
+      window.removeEventListener('scroll', scheduleScroll);
+      window.removeEventListener('resize', scheduleScroll);
+      window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   useEffect(() => {
@@ -125,6 +143,8 @@ export const Navbar: React.FC = () => {
           </button>
         </div>
       </div>
+
+      <div className={styles.progressTrack} aria-hidden="true"><span ref={progressRef} className={styles.progress} /></div>
 
       {/* Mobile Drawer */}
       {isOpen && <div id="mobile-navigation" ref={drawerRef} className={styles.mobileDrawer}>

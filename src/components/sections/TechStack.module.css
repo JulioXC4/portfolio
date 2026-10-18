@@ -17,6 +17,8 @@
 .panelTitle { font-size: clamp(26px,2.8vw,42px); }
 .techBadgeGrid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px 18px; padding: 44px 0; }
 .techBadgeCard { display: flex; align-items: center; flex-direction: column; gap: 16px; color: var(--color-primary); }
+.techBadgeCard { transition: transform var(--transition-normal); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { .techBadgeCard:hover { transform: translateY(-6px); } }
 .techBadgeCard svg { width: 70px; height: 70px; }
 .badgeName { font-size: 16px; font-weight: 500; color: var(--text-primary); white-space: nowrap; }
 .detailsGroup { margin-top: 24px; }

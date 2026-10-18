@@ -14,6 +14,8 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, delayMs = 
 
   useEffect(() => {
     const currentElement = elementRef.current;
+    if (!currentElement || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    currentElement.dataset.revealReady = 'true';
     
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -38,6 +40,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, delayMs = 
     return () => {
       if (currentElement) {
         observer.unobserve(currentElement);
+        delete currentElement.dataset.revealReady;
       }
     };
   }, []);
@@ -46,7 +49,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, delayMs = 
     <div
       ref={elementRef}
       className={`${styles.revealWrapper} ${isVisible ? styles.revealVisible : ''}`}
-      style={{ transitionDelay: `${delayMs}ms` }}
+      style={{ '--reveal-delay': `${delayMs}ms` } as React.CSSProperties}
     >
       {children}
     </div>

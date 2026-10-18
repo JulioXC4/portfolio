@@ -1,20 +1,24 @@
 .heroSection { isolation: isolate; }
 .container { position: relative; text-align: center; padding-block: 120px 160px; }
 .textColumn { display: flex; flex-direction: column; align-items: center; }
-.title { font-size: clamp(52px,6.7vw,104px); font-weight: 700; line-height: 1.04; letter-spacing: -.045em; width: 100%; }
+.title { font-size: clamp(52px,6.7vw,104px); font-weight: 750; line-height: 1.09; letter-spacing: -.055em; width: 100%; }
 .firstLine { display: block; }
 .accent { display: inline-block; position: relative; color: var(--color-primary); padding-bottom: 38px; }
 .underline { position: absolute; width: 73%; height: 38px; bottom: 0; left: 27%; overflow: visible; stroke: currentColor; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
-.description { max-width: 1080px; margin-top: 42px; font-size: clamp(18px,1.5vw,23px); line-height: 1.55; }
+.description { max-width: 1080px; margin-top: 42px; font-size: clamp(18px,1.45vw,22px); line-height: 1.65; letter-spacing: -.015em; }
 .actions { display: flex; justify-content: center; gap: 24px; margin-top: 46px; }
 .btnPrimary,.btnSecondary { display: inline-flex; align-items: center; justify-content: center; gap: 26px; min-height: 64px; padding: 16px 32px; font-size: 18px; border-radius: 4px; }
-.btnPrimary { background: var(--color-primary); color: #131514; border: 1px solid var(--color-primary); }
+.btnPrimary { position: relative; overflow: hidden; isolation: isolate; background: var(--color-primary); color: #131514; border: 1px solid var(--color-primary); }
 .btnPrimary:hover { background: var(--color-secondary); transform: translateY(-3px); }
 .btnSecondary { border: 1px solid var(--text-secondary); }
 .btnSecondary:hover { border-color: var(--color-primary); color: var(--color-primary); transform: translateY(-3px); }
 .bottomRule { position: absolute; bottom: 0; height: 1px; background: var(--border-color-hover); left: var(--gutter); right: var(--gutter); }
 :global([data-theme="light"]) .btnPrimary { color: #fffaf2; }
 @media (prefers-reduced-motion: no-preference) {
+  .btnPrimary::before { content: ""; position: absolute; inset: -50% -20%; background: linear-gradient(110deg,transparent 35%,#fff3 50%,transparent 65%); transform: translateX(-120%); pointer-events: none; transition: transform 650ms cubic-bezier(.2,.65,.3,1); }
+  .btnPrimary:hover::before,.btnPrimary:focus-visible::before { transform: translateX(120%); }
+  .underline { transition: transform 450ms cubic-bezier(.2,.65,.3,1); }
+  .title:hover .underline { transform: translateX(7px) scaleX(1.025); }
   .title { animation: appear 700ms cubic-bezier(.2,.65,.3,1) both; }
   .underline path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 850ms 350ms cubic-bezier(.2,.65,.3,1) forwards; }
   .description { animation: appear 700ms 140ms cubic-bezier(.2,.65,.3,1) both; }

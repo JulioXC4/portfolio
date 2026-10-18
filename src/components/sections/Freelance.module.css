@@ -15,6 +15,8 @@
 .imageFrame { position: relative; width: 100%; height: clamp(210px,34dvh,380px); overflow: hidden; }
 .screenshot { object-fit: contain; transition: transform 400ms ease; }
 .preview:hover .screenshot { transform: scale(1.015); }
+.project:focus-within .preview,.preview:hover { border-color: var(--color-primary); }
+.title a:hover svg { transform: translate(4px,-4px); }
 .title { font-size: clamp(28px,2.7vw,42px); line-height: 1.2; margin-top: 20px; }
 .title a { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 48px; }
 .title svg { color: var(--color-primary); stroke-width: 1.4; }
