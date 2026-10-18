@@ -39,7 +39,7 @@
   },
   "freelance": {
     "title": "Client Work & Deliveries",
-    "subtitle": "Websites and digital solutions built and delivered for companies and clients to date.",
+    "subtitle": "Websites I built for businesses and organizations.",
     "visit": "Visit website",
     "preview": "Open website preview",
     "screenshot": "Actual website screenshot of"
@@ -57,8 +57,8 @@
     }
   },
   "projects": {
-    "title": "Engineering Projects",
-    "subtitle": "Advanced solutions engineered with scalable architectures: Restock IoT inventory case study and clinical scheduling platform.",
+    "title": "Projects",
+    "subtitle": "Software, automations, and team projects. What they solve, how they work, and where to explore them.",
     "category": {
       "all": "All",
       "web": "Web",

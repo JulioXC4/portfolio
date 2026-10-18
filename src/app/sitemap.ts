@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic project routes
   projectsData
-    .filter((project) => !project.hidden)
+    .filter((project) => !project.hidden && project.hasDetailPage !== false)
     .forEach((project) => {
       routes.push({
         url: `${baseUrl}/projects/${project.slug}`,

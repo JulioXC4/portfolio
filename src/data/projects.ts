@@ -12,6 +12,18 @@ export interface Project {
   status: 'finished' | 'in_development' | 'upcoming';
   technologies: string[];
   featured: boolean;
+  hasDetailPage?: boolean;
+  presentation?: {
+    titleES: string;
+    titleEN: string;
+    contextES: string;
+    contextEN: string;
+    summaryES: string;
+    summaryEN: string;
+    stepsES: string[];
+    stepsEN: string[];
+    technologies: string[];
+  };
   hidden?: boolean;
   githubUrl?: string;
   liveUrl?: string;
@@ -33,7 +45,16 @@ export const projectsData: Project[] = [
     category: ['IoT', 'Backend', 'Web', 'Mobile'],
     status: 'finished',
     technologies: ['Spring Boot', 'Java', 'MongoDB', 'Angular', 'Flutter', 'Python', 'Flask', 'MQTT', 'ESP32', 'C++'],
-    featured: true,
+    featured: false,
+    hasDetailPage: false,
+    presentation: {
+      titleES: 'Restock', titleEN: 'Restock',
+      contextES: 'Universitario · En equipo', contextEN: 'University · Team project',
+      summaryES: 'Control de inventario para restaurantes con sensores y seguimiento desde web y móvil.',
+      summaryEN: 'Restaurant inventory tracking with sensors and monitoring through web and mobile apps.',
+      stepsES: ['Sensores', 'API', 'Web y móvil'], stepsEN: ['Sensors', 'API', 'Web and mobile'],
+      technologies: ['Spring Boot', 'Angular', 'Flutter', 'MQTT'],
+    },
     githubUrl: 'https://github.com/desarrollo-de-soluciones-iot-17757',
     featuresES: [
       'Monitoreo en tiempo real de peso, temperatura y humedad en contenedores de ingredientes.',
@@ -53,7 +74,58 @@ export const projectsData: Project[] = [
     ]
   },
   {
+    slug: 'markdown-to-pptx-automator',
+    titleES: 'Markdown to PPTX', titleEN: 'Markdown to PPTX',
+    descriptionES: 'Convierte documentación técnica de GitHub en presentaciones PowerPoint con ayuda de IA.',
+    descriptionEN: 'Turns technical documentation from GitHub into PowerPoint presentations with AI assistance.',
+    longDescriptionES: 'Herramienta de línea de comandos que descarga documentación Markdown de GitHub, la resume con Gemini y genera presentaciones PowerPoint con Node.js y Python. Puede reutilizar una plantilla PPTX y conservar sus estilos.',
+    longDescriptionEN: 'A command-line tool that downloads Markdown documentation from GitHub, summarizes it with Gemini, and generates PowerPoint presentations using Node.js and Python. It can reuse a PPTX template and preserve its styles.',
+    category: ['IA'], status: 'finished', featured: false, hasDetailPage: false,
+    technologies: ['Node.js', 'Python', 'Gemini', 'python-pptx'],
+    githubUrl: 'https://github.com/JulioXC4/markdown-to-pptx-automator',
+    presentation: {
+      titleES: 'Markdown to PPTX', titleEN: 'Markdown to PPTX',
+      contextES: 'Herramienta CLI', contextEN: 'CLI tool',
+      summaryES: 'Convierte documentación técnica de GitHub en presentaciones PowerPoint con ayuda de IA.',
+      summaryEN: 'Turns technical documentation from GitHub into PowerPoint presentations with AI assistance.',
+      stepsES: ['Markdown', 'Gemini', 'PowerPoint'], stepsEN: ['Markdown', 'Gemini', 'PowerPoint'],
+      technologies: ['Node.js', 'Python', 'Gemini', 'python-pptx'],
+    },
+    featuresES: ['Lee documentación Markdown de GitHub.', 'Resume y estructura contenido con Gemini.', 'Genera un PPTX y puede reutilizar estilos de una plantilla.'],
+    featuresEN: ['Reads Markdown documentation from GitHub.', 'Summarizes and structures content with Gemini.', 'Generates a PPTX and can reuse template styles.'],
+  },
+  {
+    slug: 'portfolio',
+    titleES: 'Portafolio profesional', titleEN: 'Professional portfolio',
+    descriptionES: 'Este sitio reúne mis trabajos, proyectos y servicios, con navegación en español e inglés.',
+    descriptionEN: 'This website brings together my work, projects, and services, with navigation in Spanish and English.',
+    longDescriptionES: 'Mi portafolio profesional desarrollado con Next.js, React y TypeScript. Incluye trabajos para empresas y organizaciones, proyectos de software, servicios y un cotizador que prepara mensajes para WhatsApp o correo.',
+    longDescriptionEN: 'My professional portfolio built with Next.js, React, and TypeScript. It includes work for businesses and organizations, software projects, services, and a quote form that prepares drafts for WhatsApp or email.',
+    category: ['Web'], status: 'finished', featured: false, hasDetailPage: false,
+    technologies: ['Next.js', 'React', 'TypeScript', 'CSS Modules'],
+    githubUrl: 'https://github.com/JulioXC4/portfolio',
+    liveUrl: 'https://juliocastro.vercel.app/',
+    presentation: {
+      titleES: 'Portafolio profesional', titleEN: 'Professional portfolio',
+      contextES: 'Proyecto personal', contextEN: 'Personal project',
+      summaryES: 'Este sitio reúne mis trabajos, proyectos y servicios, con navegación en español e inglés.',
+      summaryEN: 'This website brings together my work, projects, and services, with navigation in Spanish and English.',
+      stepsES: ['Contenido', 'Next.js', 'Contacto'], stepsEN: ['Content', 'Next.js', 'Contact'],
+      technologies: ['Next.js', 'React', 'TypeScript', 'CSS Modules'],
+    },
+    featuresES: ['Navegación en español e inglés.', 'Tema claro y oscuro con diseño adaptable.', 'Cotizador con borradores de WhatsApp y correo.'],
+    featuresEN: ['Navigation in Spanish and English.', 'Responsive design with light and dark themes.', 'Quote form with WhatsApp and email drafts.'],
+  },
+  {
     slug: 'gestion-citas-medicas',
+    presentation: {
+      titleES: 'Citas médicas', titleEN: 'Medical booking',
+      contextES: 'Universitario · En desarrollo', contextEN: 'University · In development',
+      summaryES: 'Plataforma para reservar citas y gestionar la disponibilidad de médicos según el rol de cada usuario.',
+      summaryEN: 'A platform for booking appointments and managing doctor availability based on each user’s role.',
+      stepsES: ['Reserva', 'Validación', 'Confirmación'], stepsEN: ['Booking', 'Validation', 'Confirmation'],
+      technologies: ['Spring Boot', 'Vue.js', 'PostgreSQL', 'JWT'],
+    },
     titleES: 'Optimización de Agendamiento Clínico',
     titleEN: 'Clinical Booking Optimization Platform',
     descriptionES: 'Sistema full-stack para agendar y gestionar citas clínicas con control de roles (Administrador, Doctor, Paciente), autenticación segura JWT y validación de disponibilidad en tiempo real.',

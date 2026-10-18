@@ -10,3 +10,5 @@ Retrieved 2026-10-17. Assets are served locally; no external icon CDN is require
 Client website previews in `public/images/freelance/` are actual viewport captures of https://www.eecconsultores.com/ and https://rock-hunters.com/, captured 2026-10-17. Julio confirmed authorship of both sites, including EEC's original WordPress site and its current Astro version. The screenshots are not generated mock websites.
 
 Added 2026-10-18: 180DC's original favicon from https://180dc.org/ (`https://cdn.prod.website-files.com/63b610d81215b25001c51b2b/6473fe278341277e720ad75b_180DC_favicon.png`); Devdatep's original logo from https://devdatep.com/assets/Logo-BVts1fjM.webp. Artwork is preserved to identify the stated institutions and employer. Astro, WordPress and Git SVGs are from Devicon; Elementor is the original monochrome mark from Simple Icons. The institution links point to their official sites.
+
+Added 2026-10-18: `public/images/freelance/180dc-upc.jpg` is an actual 1280×720 browser capture of https://180dc-upc.vercel.app/. It identifies the website added by Julio to his work selection; it is not an AI-generated preview.

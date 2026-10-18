@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { projectsData } from '@/data/projects';
 import { ProjectClient } from './ProjectClient';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -10,7 +10,7 @@ interface PageProps {
 
 export async function generateStaticParams() {
   return projectsData
-    .filter((project) => !project.hidden)
+    .filter((project) => !project.hidden && project.hasDetailPage !== false)
     .map((project) => ({
       slug: project.slug,
     }));
@@ -65,6 +65,7 @@ export default async function ProjectPage({ params }: PageProps) {
   if (!project) {
     notFound();
   }
+  if (project.hasDetailPage === false) permanentRedirect('/#projects');
 
   const projectBreadcrumbSchema = {
     '@context': 'https://schema.org',

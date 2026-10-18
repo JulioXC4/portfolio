@@ -17,7 +17,7 @@ export const toolkit: ToolCategory[] = [
       { name: 'Livewire 3', usage: ['Interfaces con Laravel', 'Laravel interfaces'] },
     ],
     summary: ['Angular y Flutter en Restock; Vue y Pinia en Citas Médicas; React y Next.js en este portafolio.', 'Angular and Flutter in Restock; Vue and Pinia in Medical Booking; React and Next.js in this portfolio.'],
-    links: [{ label: 'Restock', href: '/projects/restock' }, { label: 'Citas Médicas', href: '/projects/gestion-citas-medicas' }],
+    links: [{ label: 'Restock', href: 'https://github.com/desarrollo-de-soluciones-iot-17757' }, { label: 'Citas Médicas', href: '/projects/gestion-citas-medicas' }],
   },
   {
     id: 'backend', title: ['Backend y APIs', 'Backend and APIs'],
@@ -28,7 +28,7 @@ export const toolkit: ToolCategory[] = [
       { name: 'Flask (Python)', usage: ['Restock · servicio edge', 'Restock · edge service'] },
     ],
     summary: ['Java y Spring Boot para el backend de Restock y Citas Médicas; PHP y Laravel en mi experiencia con EmiteFacil; Python y Flask en el servicio edge de Restock.', 'Java and Spring Boot for Restock and Medical Booking; PHP and Laravel in my work on EmiteFacil; Python and Flask for the Restock edge service.'],
-    links: [{ label: 'Restock', href: '/projects/restock' }, { label: 'Devdatep', href: 'https://devdatep.com/' }],
+    links: [{ label: 'Restock', href: 'https://github.com/desarrollo-de-soluciones-iot-17757' }, { label: 'Devdatep', href: 'https://devdatep.com/' }],
   },
   {
     id: 'data', title: ['Bases de datos', 'Databases'],
@@ -39,7 +39,7 @@ export const toolkit: ToolCategory[] = [
       { name: 'SQLite', usage: ['Restock · almacenamiento local', 'Restock · local storage'] },
     ],
     summary: ['MongoDB y SQLite en Restock, PostgreSQL en Citas Médicas y MySQL en el desarrollo de EmiteFacil.', 'MongoDB and SQLite in Restock, PostgreSQL in Medical Booking, and MySQL in EmiteFacil development.'],
-    links: [{ label: 'Restock', href: '/projects/restock' }, { label: 'Citas Médicas', href: '/projects/gestion-citas-medicas' }],
+    links: [{ label: 'Restock', href: 'https://github.com/desarrollo-de-soluciones-iot-17757' }, { label: 'Citas Médicas', href: '/projects/gestion-citas-medicas' }],
   },
   {
     id: 'cms', title: ['Web y CMS', 'Web and CMS'],
@@ -59,7 +59,7 @@ export const toolkit: ToolCategory[] = [
       { name: 'Python Flask Edge', usage: ['Restock · procesamiento local', 'Restock · local processing'] },
     ],
     summary: ['ESP32 y C++ para los sensores de Restock, MQTT para la comunicación y Python con Flask para el procesamiento edge.', 'ESP32 and C++ for Restock sensors, MQTT for communication, and Python with Flask for edge processing.'],
-    links: [{ label: 'Restock', href: '/projects/restock' }],
+    links: [{ label: 'Restock', href: 'https://github.com/desarrollo-de-soluciones-iot-17757' }],
   },
   {
     id: 'delivery', title: ['Despliegue y herramientas', 'Deployment and tools'],

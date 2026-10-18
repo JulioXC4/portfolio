@@ -28,6 +28,7 @@ export function Freelance() {
     event.preventDefault();
     setActive(next);
     tabs.current[next]?.focus({ preventScroll: true });
+    tabs.current[next]?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
   };
 
   const handleQuoteClick = () => {
@@ -99,7 +100,7 @@ export function Freelance() {
             rel="noopener noreferrer"
             className={styles.preview}
             aria-label={`${t('freelance.preview')} — ${project.name}`}
-            style={{ backgroundColor: project.previewBackground }}
+            style={{ backgroundColor: project.previewBackground, color: project.previewForeground }}
           >
             <div className={styles.imageFrame}>
               <Image

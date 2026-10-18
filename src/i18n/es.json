@@ -39,7 +39,7 @@
   },
   "freelance": {
     "title": "Trabajos Realizados",
-    "subtitle": "Sitios web y soluciones digitales desarrolladas para empresas y clientes reales hasta el momento.",
+    "subtitle": "Sitios web que desarrollé para empresas y organizaciones.",
     "visit": "Visitar sitio",
     "preview": "Abrir vista previa del sitio",
     "screenshot": "Captura real del sitio web de"
@@ -57,8 +57,8 @@
     }
   },
   "projects": {
-    "title": "Proyectos de Ingeniería",
-    "subtitle": "Soluciones avanzadas desarrolladas con arquitectura escalable: Restock como caso principal de IoT y plataforma de gestión de citas médicas.",
+    "title": "Proyectos",
+    "subtitle": "Software, automatizaciones y proyectos en equipo. Qué resuelven, cómo funcionan y dónde puedes verlos.",
     "category": {
       "all": "Todos",
       "web": "Web",
