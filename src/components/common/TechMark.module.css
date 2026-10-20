@@ -1,9 +1,15 @@
 .mark { width: 70px; height: 70px; object-fit: contain; }
 .monochrome { filter: brightness(0) invert(1); opacity: .92; }
+.inverted { filter: invert(1); }
+:global([data-theme="light"]) .inverted { filter: none; }
 :global([data-theme="light"]) .monochrome { filter: brightness(0); }
 .pair { position: relative; display: block; width: 70px; height: 70px; }
 .pair .mark { width: 54px; height: 54px; position: absolute; top: 0; left: 0; }
 .pair .companion { width: 34px; height: 34px; position: absolute; bottom: 0; right: -4px; object-fit: contain; }
+.compact { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 22px; height: 22px; }
+.compact .mark,.compact .pair { width: 22px; height: 22px; }
+.compact .pair .mark { width: 18px; height: 18px; }
+.compact .pair .companion { width: 12px; height: 12px; right: -1px; }
 @media (max-width: 760px) {
   .mark,.pair { width: 48px; height: 48px; }
   .pair .mark { width: 36px; height: 36px; }

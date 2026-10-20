@@ -15,9 +15,9 @@
     "greeting": "Hola, soy",
     "tagline": "Diseño, construyo y optimizo software de extremo a extremo.",
     "role": "Full Stack Developer · Ingeniero en Crecimiento",
-    "description": "Soy Julio Castro, estudiante de Ingeniería de Software en la UPC y desarrollador Full Stack. Trabajo con clientes y equipos para entender sus necesidades y convertirlas en software que facilite su trabajo y les ayude a alcanzar sus objetivos.",
-    "cta_projects": "Conoce mi trabajo",
-    "cta_contact": "Cuéntame qué necesitas"
+    "description": "Estudio Ingeniería de Software en la UPC. Desarrollo aplicaciones, plataformas e integraciones para clientes y equipos.",
+    "cta_projects": "Ver proyectos",
+    "cta_contact": "Hablemos de tu proyecto"
   },
   "services": {
     "title": "Servicios de Desarrollo de Software",
@@ -58,7 +58,7 @@
   },
   "projects": {
     "title": "Proyectos",
-    "subtitle": "Software, automatizaciones y proyectos en equipo. Qué resuelven, cómo funcionan y dónde puedes verlos.",
+    "subtitle": "Software, automatizaciones y proyectos en equipo. Qué resuelven y dónde puedes verlos.",
     "category": {
       "all": "Todos",
       "web": "Web",

@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowRight, ArrowUpRight, CalendarDays, Database, FileText, Laptop, Wrench } from 'lucide-react';
+import { ExternalLink, CalendarDays, Database, FileText, Laptop, Wrench } from 'lucide-react';
 import { Github } from '@/components/common/BrandIcons';
+import { TechMark } from '@/components/common/TechMark';
 import { useLanguage } from '@/context/LanguageContext';
 import { projectsData } from '@/data/projects';
 import styles from './Projects.module.css';
@@ -27,18 +28,16 @@ export function Projects() {
             const view = project.presentation;
             const title = view ? (es ? view.titleES : view.titleEN) : (es ? project.titleES : project.titleEN);
             const summary = view ? (es ? view.summaryES : view.summaryEN) : (es ? project.descriptionES : project.descriptionEN);
-            const steps = view ? (es ? view.stepsES : view.stepsEN) : [];
             const tools = view?.technologies ?? project.technologies;
             const Icon = projectIcons[project.slug as keyof typeof projectIcons] ?? FileText;
             return (
               <article id={`project-${project.slug}`} key={project.slug} className={styles.card} aria-labelledby={`project-heading-${project.slug}`}>
-                <div className={styles.cardHeader}><Icon size={36} strokeWidth={1.4} aria-hidden="true" /><div>{view && <p className={styles.context}>{es ? view.contextES : view.contextEN}</p>}<h3 id={`project-heading-${project.slug}`}>{title}</h3></div></div>
+                <div className={styles.cardHeader}><div><h3 id={`project-heading-${project.slug}`}>{title}</h3>{view && <p className={styles.context}>{es ? view.contextES : view.contextEN}</p>}</div><Icon size={26} strokeWidth={1.4} aria-hidden="true" /></div>
                 <p className={styles.description}>{summary}</p>
-                {steps.length > 0 && <div className={styles.process}><p>{es ? 'Cómo funciona' : 'How it works'}</p><ol>{steps.map((step, index) => <li key={step}><span>{step}</span>{index < steps.length - 1 && <ArrowRight size={21} aria-hidden="true" />}</li>)}</ol></div>}
                 <div className={styles.cardFooter}>
-                  <div className={styles.tools}><p>{es ? 'Tecnologías' : 'Tools'}</p><span>{tools.join(' · ')}</span></div>
+                  <div className={styles.tools}><p>{es ? 'Tecnologías' : 'Tools'}</p><ul>{tools.map(tool => <li key={tool}><TechMark name={tool} compact /><span>{tool}</span></li>)}</ul></div>
                   <div className={styles.actions}>
-                    {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`${es ? 'Ver sitio' : 'View site'} — ${title}`}><ArrowUpRight size={20} aria-hidden="true" />{es ? 'Ver sitio' : 'View site'}</a>}
+                    {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`${es ? 'Ver sitio' : 'View site'} — ${title}`}><ExternalLink size={18} aria-hidden="true" />{es ? 'Ver sitio' : 'View site'}</a>}
                     {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`${es ? 'Ver código' : 'View code'} — ${title}`}><Github size={21} aria-hidden="true" />{project.slug === 'restock' ? (es ? 'Ver repositorios' : 'View repositories') : (es ? 'Ver código' : 'View code')}</a>}
                     {!project.githubUrl && !project.liveUrl && <span className={styles.status}><Wrench size={18} aria-hidden="true" />{t(`projects.status.${project.status}`)}</span>}
                   </div>

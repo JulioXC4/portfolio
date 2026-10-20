@@ -3,6 +3,18 @@ import Image from 'next/image';
 import styles from './TechMark.module.css';
 
 const brandAssets: Record<string, { file: string; monochrome?: boolean; companion?: string; companionMonochrome?: boolean }> = {
+  'Spring Boot': { file: 'spring' },
+  Flutter: { file: 'flutter' },
+  MQTT: { file: 'mqtt', monochrome: true },
+  Python: { file: 'python' },
+  'python-pptx': { file: 'python' },
+  Gemini: { file: 'gemini', monochrome: true },
+  'Next.js': { file: 'nextjs' },
+  React: { file: 'react' },
+  TypeScript: { file: 'typescript' },
+  'CSS Modules': { file: 'cssmodules', monochrome: true },
+  'Vue.js': { file: 'vuejs' },
+  JWT: { file: 'jwt', monochrome: true },
   'Vue.js 3': { file: 'vuejs' },
   Angular: { file: 'angular' },
   'React / Next.js': { file: 'react', companion: 'nextjs' },
@@ -30,11 +42,12 @@ const brandAssets: Record<string, { file: string; monochrome?: boolean; companio
   Git: { file: 'git' },
 };
 
-export function TechMark({ name }: { name: string }) {
+export function TechMark({ name, compact = false }: { name: string; compact?: boolean }) {
   const asset = brandAssets[name];
   if (asset) {
-    const mark = <Image src={`/images/brands/${asset.file}.svg`} width={70} height={70} alt="" className={`${styles.mark} ${asset.monochrome ? styles.monochrome : ''}`} />;
-    return asset.companion ? <span className={styles.pair}>{mark}<Image src={`/images/brands/${asset.companion}.svg`} width={34} height={34} alt="" className={`${styles.companion} ${asset.companionMonochrome ? styles.monochrome : ''}`} /></span> : mark;
+    const mark = <Image src={`/images/brands/${asset.file}.svg`} width={70} height={70} alt="" className={`${styles.mark} ${asset.monochrome ? styles.monochrome : ''} ${name === 'Next.js' ? styles.inverted : ''}`} />;
+    const content = asset.companion ? <span className={styles.pair}>{mark}<Image src={`/images/brands/${asset.companion}.svg`} width={34} height={34} alt="" className={`${styles.companion} ${asset.companionMonochrome ? styles.monochrome : ''}`} /></span> : mark;
+    return compact ? <span className={styles.compact} aria-hidden="true">{content}</span> : content;
   }
-  return <Code2 size={38} strokeWidth={1.3} aria-hidden="true" />;
+  return <Code2 size={compact ? 20 : 38} strokeWidth={1.3} aria-hidden="true" />;
 }

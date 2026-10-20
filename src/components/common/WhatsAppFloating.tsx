@@ -22,7 +22,7 @@ export function WhatsAppFloating() {
       }
       setHiddenPath(visible.size > 0 ? pathname : null);
     });
-    document.querySelectorAll('#services, #projects, #contact, #footer').forEach(element => observer.observe(element));
+    document.querySelectorAll('#home, #services, #projects, #contact, #footer').forEach(element => observer.observe(element));
     return () => observer.disconnect();
   }, [pathname]);
   return (

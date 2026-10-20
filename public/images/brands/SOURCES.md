@@ -12,3 +12,7 @@ Client website previews in `public/images/freelance/` are actual viewport captur
 Added 2026-10-18: 180DC's original favicon from https://180dc.org/ (`https://cdn.prod.website-files.com/63b610d81215b25001c51b2b/6473fe278341277e720ad75b_180DC_favicon.png`); Devdatep's original logo from https://devdatep.com/assets/Logo-BVts1fjM.webp. Artwork is preserved to identify the stated institutions and employer. Astro, WordPress and Git SVGs are from Devicon; Elementor is the original monochrome mark from Simple Icons. The institution links point to their official sites.
 
 Added 2026-10-18: `public/images/freelance/180dc-upc.jpg` is an actual 1280×720 browser capture of https://180dc-upc.vercel.app/. It identifies the website added by Julio to his work selection; it is not an AI-generated preview.
+
+Updated 2026-10-20: the active 180DC UPC preview is `public/images/freelance/180dc-upc-ns.png`, an actual desktop browser capture of https://julioxc4.github.io/180dc-upc-ns/. This newer version replaces the previous Vercel URL in the work selection.
+
+Added 2026-10-20: TypeScript logo from Devicon (icons/typescript/typescript-original.svg); Gemini, CSS Modules and JSON Web Tokens marks from Simple Icons (googlegemini.svg, cssmodules.svg, jsonwebtokens.svg). Downloaded from their official GitHub repositories. python-pptx uses the Python language mark alongside its library name; no separate library logo is invented.
