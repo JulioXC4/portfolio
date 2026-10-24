@@ -51,6 +51,13 @@ export function Hero() {
 
   return (
     <section id="home" className={styles.heroSection} tabIndex={0} aria-label={es ? 'Inicio' : 'Home'}>
+      <div className={styles.artwork} aria-hidden="true">
+        <video ref={videoRef} className={styles.video} muted loop playsInline preload="metadata"
+          width={1920} height={1080} poster="/images/hero/portal-poster.webp"
+          aria-hidden="true" tabIndex={-1} disablePictureInPicture>
+          <source src="/videos/hero-portal-loop.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div className={styles.container + ' container'}>
         <div className={styles.main}>
           <div className={styles.textColumn}>
@@ -67,15 +74,6 @@ export function Hero() {
               <button onClick={() => navigateTo('projects')} className={styles.btnSecondary}>
                 <span>{t('hero.cta_projects')}</span><ArrowUpRight size={19} aria-hidden="true" />
               </button>
-            </div>
-          </div>
-          <div className={styles.artwork}>
-            <div className={styles.videoFrame}>
-              <video ref={videoRef} className={styles.video} muted loop playsInline preload="metadata"
-                width={1280} height={720} poster="/images/hero/video-loop-poster.webp"
-                aria-hidden="true" tabIndex={-1} disablePictureInPicture>
-                <source src="/videos/hero-studio-loop.mp4" type="video/mp4" />
-              </video>
             </div>
           </div>
         </div>
