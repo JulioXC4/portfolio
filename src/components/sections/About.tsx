@@ -12,31 +12,31 @@ export const About: React.FC = () => {
   const traits = [
     {
       icon: <Settings size={28} className={styles.traitIcon} />,
-      titleES: 'Soluciones Reales',
-      titleEN: 'Real Solutions',
-      descES: 'Desarrollo software robusto y tolerante a fallos pensado para producción.',
-      descEN: 'Developing robust, fault-tolerant software designed for production environments.'
+      titleES: "Resolver necesidades",
+      titleEN: "Addressing needs",
+      descES: "Parto del problema que necesita resolver cada proyecto.",
+      descEN: "I start with the problem each project needs to address.",
     },
     {
       icon: <ChartNoAxesColumnIncreasing size={28} className={styles.traitIcon} />,
-      titleES: 'Foco en el Negocio',
-      titleEN: 'Business Value',
-      descES: 'Entiendo el problema operativo para aportar valor tecnológico con propósito.',
-      descEN: 'Understanding the operational problem to deliver purposeful technical value.'
+      titleES: "Entender el negocio",
+      titleEN: "Understanding the business",
+      descES: "Busco entender cómo se usará la solución y a quién debe ayudar.",
+      descEN: "I aim to understand how the solution will be used and who it should help.",
     },
     {
       icon: <Layers size={28} className={styles.traitIcon} />,
-      titleES: 'Arquitectura Limpia',
-      titleEN: 'Clean Architecture',
-      descES: 'Aplico patrones (DDD, CQRS, DTO) para mantener la escalabilidad.',
-      descEN: 'Applying design patterns (DDD, CQRS, DTO) to maintain long-term scalability.'
+      titleES: "Código organizado",
+      titleEN: "Organized code",
+      descES: "Organizo el código para facilitar su mantenimiento y los cambios futuros.",
+      descEN: "I organize code to make maintenance and future changes easier.",
     },
     {
       icon: <BookOpen size={28} className={styles.traitIcon} />,
-      titleES: 'Aprendizaje Activo',
-      titleEN: 'Continuous Growth',
-      descES: 'Evoluciono constantemente investigando mejores prácticas de arquitectura y experiencia de usuario.',
-      descEN: 'Constantly evolving by researching software architecture patterns and UX best practices.'
+      titleES: "Seguir aprendiendo",
+      titleEN: "Continuing to learn",
+      descES: "Sigo aprendiendo sobre desarrollo web, arquitectura y experiencia de usuario.",
+      descEN: "I keep learning about web development, architecture, and user experience.",
     }
   ];
 

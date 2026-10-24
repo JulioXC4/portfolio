@@ -4,9 +4,9 @@
     "services": "Services",
     "experience": "Experience",
     "projects": "Projects",
-    "freelance": "Client Work",
-    "tech": "Tech Stack",
-    "goals": "Future Paths",
+    "freelance": "Websites",
+    "tech": "Tools",
+    "goals": "Learning",
     "contact": "Contact"
   },
   "hero": {
@@ -20,15 +20,15 @@
     "cta_contact": "Let’s discuss your project"
   },
   "services": {
-    "title": "Software Development Services",
-    "subtitle": "Digital solutions engineered to win customers, automate operations, and scale your business with modern technology."
+    "title": "What I can build for you",
+    "subtitle": "Websites, online stores, and custom applications to suit your business needs."
   },
   "about": {
     "title": "About Me",
-    "paragraph1": "I am an eighth-semester Software Engineering student at Universidad Peruana de Ciencias Aplicadas, with a solid foundation in programming, data structures, databases, requirements engineering, software architecture, and information security.",
-    "paragraph2": "Throughout my degree, I have developed individual and team academic projects, applying requirements analysis, solution design, development best practices, and version control with Git. I have experience building web applications and collaborating using agile methodologies.",
-    "paragraph3": "I complement my university studies with practical experience in full stack web development and freelance client deliveries, developing a pragmatic mindset focused on business outcomes and client satisfaction.",
-    "profile_role": "Full Stack Software Engineer & Freelance Solutions Builder",
+    "paragraph1": "I study Software Engineering at UPC (eighth semester). I build websites and web applications for businesses, organizations, and team projects.",
+    "paragraph2": "My freelance work involves building websites and their functionality. I have also developed individual and team projects at university.",
+    "paragraph3": "I have five months of professional backend experience at Devdatep Consulting, working with APIs, databases, and integrations for EmiteFacil. That experience complements my work as a Full Stack developer.",
+    "profile_role": "Full Stack Developer & Freelancer",
     "location_label": "Location",
     "location": "Lima, Peru (Local & Remote Worldwide)",
     "education_label": "Education",
@@ -38,10 +38,10 @@
     "profile_link": "View LinkedIn profile"
   },
   "freelance": {
-    "title": "Client Work & Deliveries",
+    "title": "Client websites",
     "subtitle": "Websites I built for businesses and organizations.",
     "visit": "Visit website",
-    "preview": "Open website preview",
+    "preview": "Visit the website",
     "screenshot": "Actual website screenshot of"
   },
   "experience": {
@@ -58,7 +58,7 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Software, automations, and team projects. What they solve and where to explore them.",
+    "subtitle": "Applications and automations: the problems they address, the tools I used, and where to explore them.",
     "category": {
       "all": "All",
       "web": "Web",
@@ -93,8 +93,8 @@
     "period": "8th semester · In Progress"
   },
   "goals": {
-    "title": "Growth Roadmap",
-    "subtitle": "Continuous improvement and specialization paths across software architecture and engineering.",
+    "title": "What I am learning",
+    "subtitle": "Areas I want to keep developing as a software developer.",
     "arch_title": "Software Architecture & Design",
     "arch_desc": "Deepening Domain-Driven Design (DDD), microservices patterns, and real-time messaging.",
     "devops_title": "DevOps & Cloud Culture",
@@ -106,13 +106,22 @@
   },
   "contact": {
     "title": "Let's Talk",
-    "subtitle": "If you have a project to quote, a freelance inquiry, or want to collaborate, feel free to reach out directly.",
+    "subtitle": "Need a website or application, or want to discuss working together? Tell me what you have in mind.",
     "name": "Name",
     "email": "Email Address",
     "message": "Message",
     "send": "Send Message",
     "sending": "Sending...",
     "success": "Message sent successfully! I will reach out shortly.",
-    "error": "An error occurred while sending. Please try again."
+    "error": "An error occurred while sending. Please try again.",
+    "form": {
+      "heading": "Tell me about your project",
+      "intro": "Name and project details are required. Choose the service that best fits your project.",
+      "nameLabel": "Name or company",
+      "serviceLabel": "Service you need",
+      "messagePlaceholder": "For example: a website for my consultancy, with services and a contact form.",
+      "emailButton": "Open draft in my email app",
+      "note": "The message will open as a draft. Review and send it from WhatsApp or your email app."
+    }
   }
 }

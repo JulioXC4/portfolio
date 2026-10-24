@@ -4,9 +4,9 @@
     "services": "Servicios",
     "experience": "Experiencia",
     "projects": "Proyectos",
-    "freelance": "Trabajos",
-    "tech": "Tecnologías",
-    "goals": "Objetivos",
+    "freelance": "Webs",
+    "tech": "Herramientas",
+    "goals": "Aprendizaje",
     "contact": "Contacto"
   },
   "hero": {
@@ -20,15 +20,15 @@
     "cta_contact": "Hablemos de tu proyecto"
   },
   "services": {
-    "title": "Servicios de Desarrollo de Software",
-    "subtitle": "Soluciones digitales diseñadas para captar clientes, automatizar procesos y hacer crecer tu negocio con tecnología moderna."
+    "title": "Qué puedo desarrollar para ti",
+    "subtitle": "Sitios web, tiendas online y aplicaciones a medida, según lo que necesite tu negocio."
   },
   "about": {
     "title": "Sobre Mí",
-    "paragraph1": "Estudiante de Ingeniería de Software (8.º ciclo) en la Universidad Peruana de Ciencias Aplicadas, con una formación sólida en fundamentos de programación, estructuras de datos, bases de datos, ingeniería de requisitos, arquitectura de software y seguridad informática.",
-    "paragraph2": "A lo largo de la carrera he desarrollado proyectos académicos individuales y grupales, aplicando análisis de requerimientos, diseño de soluciones, buenas prácticas de desarrollo y control de versiones con Git. Tengo experiencia construyendo aplicaciones web y trabajando de forma colaborativa bajo metodologías ágiles.",
-    "paragraph3": "Complemento mi formación universitaria con experiencia práctica en desarrollo web full stack y soluciones freelance para clientes reales, lo que me ha permitido consolidar una mentalidad pragmática orientada a resultados de negocio y satisfacción del cliente.",
-    "profile_role": "Full Stack Software Engineer & Desarrollador Freelance",
+    "paragraph1": "Estudio Ingeniería de Software en la UPC (8.º ciclo). Desarrollo sitios y aplicaciones web para empresas, organizaciones y proyectos en equipo.",
+    "paragraph2": "En mis trabajos freelance participo en la construcción de la web y sus funcionalidades. También he desarrollado proyectos universitarios individuales y en equipo.",
+    "paragraph3": "Cuento con cinco meses de experiencia profesional en backend en Devdatep Consulting, trabajando con APIs, bases de datos e integraciones para EmiteFacil. Esa experiencia complementa mi trabajo como desarrollador Full Stack.",
+    "profile_role": "Desarrollador Full Stack y freelance",
     "location_label": "Ubicación",
     "location": "Lima, Perú (Atención local e internacional)",
     "education_label": "Formación",
@@ -38,10 +38,10 @@
     "profile_link": "Ver perfil en LinkedIn"
   },
   "freelance": {
-    "title": "Trabajos Realizados",
+    "title": "Webs para clientes",
     "subtitle": "Sitios web que desarrollé para empresas y organizaciones.",
     "visit": "Visitar sitio",
-    "preview": "Abrir vista previa del sitio",
+    "preview": "Visitar el sitio web",
     "screenshot": "Captura real del sitio web de"
   },
   "experience": {
@@ -58,7 +58,7 @@
   },
   "projects": {
     "title": "Proyectos",
-    "subtitle": "Software, automatizaciones y proyectos en equipo. Qué resuelven y dónde puedes verlos.",
+    "subtitle": "Aplicaciones y automatizaciones: qué resuelven, con qué las construí y dónde puedes explorarlas.",
     "category": {
       "all": "Todos",
       "web": "Web",
@@ -93,8 +93,8 @@
     "period": "8.º ciclo · En curso"
   },
   "goals": {
-    "title": "Ruta de Aprendizaje y Crecimiento",
-    "subtitle": "Hacia dónde dirijo mis esfuerzos de mejora continua y especialización a corto y mediano plazo.",
+    "title": "Lo que estoy aprendiendo",
+    "subtitle": "Áreas en las que quiero seguir creciendo como desarrollador.",
     "arch_title": "Arquitectura y Diseño de Software",
     "arch_desc": "Profundización en Domain-Driven Design (DDD), patrones de microservicios y mensajería en tiempo real.",
     "devops_title": "Cultura DevOps y Cloud",
@@ -106,13 +106,22 @@
   },
   "contact": {
     "title": "Hablemos",
-    "subtitle": "Si tienes una propuesta de trabajo, un proyecto que deseas cotizar o simplemente quieres saludar, conversemos directamente.",
+    "subtitle": "¿Necesitas una web, una aplicación o quieres proponerme una colaboración? Cuéntame qué tienes en mente.",
     "name": "Nombre",
     "email": "Correo Electrónico",
     "message": "Mensaje",
     "send": "Enviar Mensaje",
     "sending": "Enviando...",
     "success": "¡Mensaje enviado con éxito! Me pondré en contacto contigo a la brevedad.",
-    "error": "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+    "error": "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+    "form": {
+      "heading": "Cuéntame tu proyecto",
+      "intro": "Nombre y detalles son obligatorios. Elige el servicio que mejor encaje con tu proyecto.",
+      "nameLabel": "Nombre o empresa",
+      "serviceLabel": "Servicio que necesitas",
+      "messagePlaceholder": "Por ejemplo: una web para mi consultora, con servicios y un formulario de contacto.",
+      "emailButton": "Abrir borrador en mi correo",
+      "note": "El mensaje se abrirá como borrador. Revísalo y envíalo desde WhatsApp o tu aplicación de correo."
+    }
   }
 }

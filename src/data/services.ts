@@ -17,12 +17,12 @@ export interface Service {
 export const servicesData: Service[] = [
   {
     id: 'web-development',
-    titleES: 'Páginas Web Corporativas & Landing Pages',
-    titleEN: 'Corporate Websites & High-Converting Landing Pages',
+    titleES: "Sitios web y landing pages",
+    titleEN: "Websites and landing pages",
     badgeES: 'Presencia Digital & Clientes',
     badgeEN: 'Digital Presence & Leads',
-    summaryES: 'Diseño y desarrollo de sitios web profesionales orientados a convertir visitantes en clientes reales, con carga ultrarrápida y optimización para Google.',
-    summaryEN: 'Design and engineering of professional websites focused on turning visitors into real customers, with lightning-fast speeds and top-tier SEO.',
+    summaryES: "Desarrollo sitios web para presentar tu negocio, mostrar tus servicios y facilitar el contacto con tus clientes.",
+    summaryEN: "I build websites to introduce your business, showcase your services, and help customers get in touch.",
     targetES: 'Ideal para empresas, consultoras y profesionales que necesitan transmitir autoridad y captar cotizaciones.',
     targetEN: 'Perfect for businesses, consultancies, and professionals aiming to project authority and capture inbound leads.',
     benefitsES: [
@@ -42,12 +42,12 @@ export const servicesData: Service[] = [
   },
   {
     id: 'ecommerce',
-    titleES: 'Tiendas Virtuales & E-commerce',
-    titleEN: 'E-commerce Stores & Online Sales',
+    titleES: "Tiendas online",
+    titleEN: "Online stores",
     badgeES: 'Ventas 24/7',
     badgeEN: '24/7 Online Sales',
-    summaryES: 'Implementación de tiendas online seguras y fáciles de administrar, con catálogo de productos, carrito de compras y pasarelas de pago integradas.',
-    summaryEN: 'Secure, easy-to-manage online storefronts featuring dynamic catalogs, shopping carts, and seamless payment gateway integrations.',
+    summaryES: "Creo tiendas con catálogo, carrito de compras y pagos integrados para que puedas vender y gestionar tus productos.",
+    summaryEN: "I build online stores with catalogs, shopping carts, and integrated payments so you can sell and manage your products.",
     targetES: 'Para marcas y negocios minoristas o mayoristas que desean vender en todo el Perú y el extranjero sin intermediarios.',
     targetEN: 'For brands and merchants looking to sell products directly to customers with automated checkout flows.',
     benefitsES: [
@@ -67,12 +67,12 @@ export const servicesData: Service[] = [
   },
   {
     id: 'custom-software',
-    titleES: 'Desarrollo de Software & Sistemas a Medida',
-    titleEN: 'Custom Software & Web Application Development',
+    titleES: "Aplicaciones web a medida",
+    titleEN: "Custom web applications",
     badgeES: 'Automatización & Eficiencia',
     badgeEN: 'Automation & Scalability',
-    summaryES: 'Construcción de aplicaciones web, paneles administrativos (dashboards) y plataformas SaaS creadas exactamente para los flujos de tu negocio.',
-    summaryEN: 'Tailor-made web applications, administrative dashboards, and SaaS platforms engineered around your company’s exact operational workflows.',
+    summaryES: "Desarrollo sistemas y paneles para organizar la información y automatizar tareas de tu negocio.",
+    summaryEN: "I build applications and dashboards to organize information and automate tasks for your business.",
     targetES: 'Para empresas que necesitan dejar atrás hojas de cálculo dispersas y automatizar procesos operativos y de control.',
     targetEN: 'For growing companies needing to replace messy spreadsheets with centralized, automated software.',
     benefitsES: [
@@ -92,12 +92,12 @@ export const servicesData: Service[] = [
   },
   {
     id: 'backend-apis',
-    titleES: 'Desarrollo Backend & Integración de APIs (SUNAT, Pagos, ERP)',
-    titleEN: 'Backend Development & API Integrations (SUNAT, Payments, ERP)',
+    titleES: "APIs e integraciones",
+    titleEN: "APIs and integrations",
     badgeES: 'Conectividad & Seguridad',
     badgeEN: 'Connectivity & Security',
-    summaryES: 'Diseño de APIs RESTful seguras, integración de facturación electrónica con SUNAT, pasarelas de pago y conexión con sistemas existentes.',
-    summaryEN: 'Engineering of secure RESTful APIs, SUNAT electronic billing integration, payment services, and legacy ERP connections.',
+    summaryES: "Desarrollo APIs y conecto aplicaciones con SUNAT, servicios de pago y otros sistemas.",
+    summaryEN: "I develop APIs and connect applications to SUNAT, payment services, and other systems.",
     targetES: 'Para plataformas y empresas que requieren interoperabilidad confiable, cumplimiento tributario o sincronización de datos.',
     targetEN: 'For businesses needing tax-compliant electronic invoicing, resilient microservices, or external API bridges.',
     benefitsES: [
