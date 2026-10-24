@@ -91,6 +91,10 @@
     "subtitle": "Tecnologías y herramientas de IA que utilizo para desarrollar, explorar ideas y resolver problemas."
   },
   "education": {
+    "section_title": "Formación y aprendizaje",
+    "academic": "Alto rendimiento académico",
+    "foundation": "Mi formación combina programación, estructuras de datos, bases de datos, ingeniería de requisitos, arquitectura de software y seguridad informática. La complemento con proyectos en equipo y trabajo con clientes.",
+    "statement": "Construir cosas que funcionen. Documentar lo que importa. Mejorar lo que se puede medir.",
     "title": "Formación Académica",
     "degree": "Ingeniería de Software",
     "university": "Universidad Peruana de Ciencias Aplicadas",

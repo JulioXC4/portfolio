@@ -91,6 +91,10 @@
     "subtitle": "Technologies and AI tools I use to develop software, explore ideas, and solve problems."
   },
   "education": {
+    "section_title": "Education and learning",
+    "academic": "Strong academic record",
+    "foundation": "My education covers programming, data structures, databases, requirements engineering, software architecture, and information security. I complement it with team projects and client work.",
+    "statement": "Build things that work. Document what matters. Improve what can be measured.",
     "title": "Academic Background",
     "degree": "Software Engineering",
     "university": "Universidad Peruana de Ciencias Aplicadas",

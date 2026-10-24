@@ -3,85 +3,52 @@
 import React from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import { Boxes, Monitor, Cloud, BrainCircuit, HeartHandshake } from 'lucide-react';
+import { Boxes, Monitor, Cloud, BrainCircuit, BadgeCheck, ExternalLink, Plus } from 'lucide-react';
 import styles from './Goals.module.css';
 
 export const Goals: React.FC = () => {
   const { t } = useLanguage();
-
   const growthItems = [
-    {
-      icon: <Boxes size={24} />,
-      title: t('goals.arch_title'),
-      desc: t('goals.arch_desc')
-    },
-    {
-      icon: <Cloud size={24} />,
-      title: t('goals.devops_title'),
-      desc: t('goals.devops_desc')
-    },
-    {
-      icon: <Monitor size={24} />,
-      title: t('goals.front_title'),
-      desc: t('goals.front_desc')
-    },
-    {
-      icon: <BrainCircuit size={24} />,
-      title: t('goals.ai_title'),
-      desc: t('goals.ai_desc')
-    }
+    { icon: Boxes, title: t('goals.arch_title'), desc: t('goals.arch_desc') },
+    { icon: Cloud, title: t('goals.devops_title'), desc: t('goals.devops_desc') },
+    { icon: Monitor, title: t('goals.front_title'), desc: t('goals.front_desc') },
+    { icon: BrainCircuit, title: t('goals.ai_title'), desc: t('goals.ai_desc') },
   ];
 
   return (
-    <section id="goals" className={`${styles.goalsSection} editorial-band`} tabIndex={0} aria-label={t('goals.title')}>
-      <div className={`${styles.container} container`}>
+    <section id="goals" className={`${styles.goalsSection} editorial-band`} tabIndex={0} aria-labelledby="education-heading">
+      <div className="container">
+        <header className={styles.sectionHeader}>
+          <div className="section-rule" aria-hidden="true" />
+          <h2 id="education-heading" className={styles.sectionTitle}>{t('education.section_title')}</h2>
+        </header>
         <div className={styles.grid}>
-          {/* Left Column: Education / Formación */}
           <div className={styles.educationColumn}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>{t('education.title')}</h2>
-              <div className={styles.headerBar}></div>
-            </div>
-
-            <div className={`${styles.educationCard} glass-card`}>
-              <Image src="/images/brands/upc.png" width={90} height={90} alt="UPC — Universidad Peruana de Ciencias Aplicadas" className={styles.universityLogo} />
-              <div className={styles.eduDetails}>
-                <h3 className={styles.degree}>{t('education.degree')}</h3>
-                <span className={styles.university}>{t('education.university')}</span>
-                <div className={styles.eduMeta}>
-                  <span className={styles.eduStatusBadge}>{t('education.period')}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Value statement card */}
-            <div className={`${styles.statementCard} glass-card`}>
-              <HeartHandshake size={28} className={styles.statementIcon} />
-              <p className={styles.statementText}>
-                &quot;Construir cosas que funcionen. Documentar lo que importa. Mejorar lo que se puede medir.&quot;
-              </p>
-            </div>
-            <Image src="/images/learning-path.png" width={1536} height={1024} sizes="(max-width: 760px) 80vw, 25vw" alt="" className={styles.learningArt} />
+            <a href="https://www.upc.edu.pe/" target="_blank" rel="noopener noreferrer" className={styles.universityLink}>
+              <Image src="/images/brands/upc.png" width={52} height={52} alt="UPC" className={styles.universityLogo} />
+              <span>{t('education.university')}</span><ExternalLink size={16} aria-hidden="true" />
+            </a>
+            <h3 className={styles.degree}>{t('education.degree')}</h3>
+            <p className={styles.period}>{t('education.period')}</p>
+            <p className={styles.academic}><BadgeCheck size={19} aria-hidden="true" />{t('education.academic')}</p>
+            <p className={styles.foundation}>{t('education.foundation')}</p>
+            <blockquote className={styles.statement}>{t('education.statement')}</blockquote>
           </div>
-
-          {/* Right Column: Growth Goals / Objetivos */}
           <div className={styles.growthColumn}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>{t('goals.title')}</h2>
-              <p className={styles.sectionSubtitle}>{t('goals.subtitle')}</p>
-              <div className={styles.headerBar}></div>
-            </div>
-
+            <h3 className={styles.growthHeading}>{t('goals.title')}</h3>
+            <p className={styles.sectionSubtitle}>{t('goals.subtitle')}</p>
             <div className={styles.growthList}>
-              {growthItems.map((item, idx) => (
-                <div key={idx} className={styles.growthCard}>
-                  <div className={styles.growthIcon}>{item.icon}</div>
-                  <div className={styles.growthContent}>
-                    <h3 className={styles.growthTitle}>{item.title}</h3>
-                    <p className={styles.growthDesc}>{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+              {growthItems.map((item, index) => {
+                const Icon = item.icon;
+                return <details key={item.title} className={styles.growthCard} open={index === 0}>
+                  <summary className={styles.growthToggle}>
+                    <Icon size={25} strokeWidth={1.5} aria-hidden="true" />
+                    <span>{item.title}</span>
+                    <Plus size={18} className={styles.toggleMark} aria-hidden="true" />
+                  </summary>
+                  <p className={styles.growthDesc}>{item.desc}</p>
+                </details>;
+              })}
             </div>
           </div>
         </div>
