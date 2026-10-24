@@ -25,10 +25,10 @@
   },
   "about": {
     "title": "Sobre Mí",
-    "paragraph1": "Estudio Ingeniería de Software en la UPC (8.º ciclo). Desarrollo sitios y aplicaciones web para empresas, organizaciones y proyectos en equipo.",
-    "paragraph2": "En mis trabajos freelance participo en la construcción de la web y sus funcionalidades. También he desarrollado proyectos universitarios individuales y en equipo.",
-    "paragraph3": "Cuento con cinco meses de experiencia profesional en backend en Devdatep Consulting, trabajando con APIs, bases de datos e integraciones para EmiteFacil. Esa experiencia complementa mi trabajo como desarrollador Full Stack.",
-    "profile_role": "Desarrollador Full Stack y freelance",
+    "paragraph1": "Me gusta entender los problemas y convertirlos en software útil. Soy organizado y metódico: prefiero aclarar lo que hace falta, ordenar el trabajo y construir una solución que tenga sentido para quien la va a usar.",
+    "paragraph2": "Estudio Ingeniería de Software en la UPC (8.º ciclo), con un alto rendimiento académico, y soy consultor en 180 Degrees Consulting UPC. Combino mi formación técnica con el interés por entender las necesidades de las personas y las organizaciones.",
+    "paragraph3": "Trabajo como desarrollador Full Stack freelance y cuento con cinco meses de experiencia en backend en Devdatep Consulting, donde trabajé con APIs, bases de datos e integraciones para EmiteFacil. Me gusta colaborar, asumir responsabilidades y seguir aprendiendo en cada proyecto.",
+    "profile_role": "Desarrollador Full Stack · Consultor",
     "location_label": "Ubicación",
     "location": "Lima, Perú (Atención local e internacional)",
     "education_label": "Formación",
@@ -50,10 +50,14 @@
       "role": "Backend Developer Intern",
       "company": "Devdatep Consulting",
       "period": "2026 · Lima, Perú",
-      "bullet1": "Diseño e implementación de APIs RESTful usando Laravel 11 y PHP 8.2 bajo una arquitectura orientada a servicios (SOA) utilizando los patrones Repository y DTO.",
-      "bullet2": "Integración de firma digital y comunicación SOAP/XML con SUNAT para la plataforma SaaS de facturación electrónica EmiteFacil.",
-      "bullet3": "Implementación de validaciones automáticas de datos fiscales (RUC, DNI) conectándose con APIs gubernamentales.",
-      "bullet4": "Manejo de seguridad y sesiones mediante tokens con Laravel Sanctum y diseño de base de datos relacionales en MySQL."
+      "duration": "5 meses",
+      "product_summary": "Trabajé en el backend de esta plataforma SaaS de facturación electrónica, conectando sus servicios, datos y procesos de validación.",
+      "contributions": "Mi aportación al producto",
+      "tools": "Tecnologías utilizadas",
+      "bullet1": "Desarrollé APIs REST con Laravel 11 y PHP 8.2, aplicando una arquitectura orientada a servicios y los patrones Repository y DTO.",
+      "bullet2": "Integré firma digital y comunicación SOAP/XML con SUNAT para la facturación electrónica de EmiteFacil.",
+      "bullet3": "Automaticé la validación de RUC y DNI mediante consultas a APIs gubernamentales.",
+      "bullet4": "Implementé autenticación y sesiones con Laravel Sanctum y participé en el diseño de bases de datos relacionales en MySQL."
     }
   },
   "projects": {
@@ -84,7 +88,7 @@
   },
   "tech": {
     "title": "Mis herramientas",
-    "subtitle": "Las herramientas con las que construyo mis proyectos y trabajo con clientes."
+    "subtitle": "Tecnologías y herramientas de IA que utilizo para desarrollar, explorar ideas y resolver problemas."
   },
   "education": {
     "title": "Formación Académica",

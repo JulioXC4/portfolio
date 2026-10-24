@@ -3,6 +3,10 @@ import Image from 'next/image';
 import styles from './TechMark.module.css';
 
 const brandAssets: Record<string, { file: string; monochrome?: boolean; companion?: string; companionMonochrome?: boolean }> = {
+  ChatGPT: { file: 'chatgpt', monochrome: true },
+  Codex: { file: 'codex', monochrome: true },
+  Claude: { file: 'claude' },
+  Antigravity: { file: 'antigravity' },
   'Spring Boot': { file: 'spring' },
   Flutter: { file: 'flutter' },
   MQTT: { file: 'mqtt', monochrome: true },
@@ -22,6 +26,8 @@ const brandAssets: Record<string, { file: string; monochrome?: boolean; companio
   'Livewire 3': { file: 'livewire' },
   'Spring Boot (Java)': { file: 'spring', companion: 'java' },
   'Laravel (PHP)': { file: 'laravel', companion: 'php' },
+  Laravel: { file: 'laravel' },
+  PHP: { file: 'php' },
   'Node.js': { file: 'nodejs' },
   'Flask (Python)': { file: 'flask', monochrome: true, companion: 'python' },
   PostgreSQL: { file: 'postgresql' },
@@ -42,12 +48,12 @@ const brandAssets: Record<string, { file: string; monochrome?: boolean; companio
   Git: { file: 'git' },
 };
 
-export function TechMark({ name, compact = false }: { name: string; compact?: boolean }) {
+export function TechMark({ name, compact = false, size = 'default' }: { name: string; compact?: boolean; size?: 'default' | 'medium' }) {
   const asset = brandAssets[name];
   if (asset) {
     const mark = <Image src={`/images/brands/${asset.file}.svg`} width={70} height={70} alt="" className={`${styles.mark} ${asset.monochrome ? styles.monochrome : ''} ${name === 'Next.js' ? styles.inverted : ''}`} />;
     const content = asset.companion ? <span className={styles.pair}>{mark}<Image src={`/images/brands/${asset.companion}.svg`} width={34} height={34} alt="" className={`${styles.companion} ${asset.companionMonochrome ? styles.monochrome : ''}`} /></span> : mark;
-    return compact ? <span className={styles.compact} aria-hidden="true">{content}</span> : content;
+    return compact || size === 'medium' ? <span className={compact ? styles.compact : styles.medium} aria-hidden="true">{content}</span> : content;
   }
   return <Code2 size={compact ? 20 : 38} strokeWidth={1.3} aria-hidden="true" />;
 }

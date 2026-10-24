@@ -10,6 +10,10 @@
 .compact .mark,.compact .pair { width: 22px; height: 22px; }
 .compact .pair .mark { width: 18px; height: 18px; }
 .compact .pair .companion { width: 12px; height: 12px; right: -1px; }
+.medium { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 48px; height: 48px; }
+.medium .mark,.medium .pair { width: 44px; height: 44px; }
+.medium .pair .mark { width: 34px; height: 34px; }
+.medium .pair .companion { width: 22px; height: 22px; right: -1px; }
 @media (max-width: 760px) {
   .mark,.pair { width: 48px; height: 48px; }
   .pair .mark { width: 36px; height: 36px; }

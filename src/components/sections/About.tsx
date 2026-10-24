@@ -3,40 +3,40 @@
 import React from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import { Settings, ChartNoAxesColumnIncreasing, Layers, BookOpen, MapPin, ArrowUpRight } from 'lucide-react';
+import { Settings, ListChecks, Users, BookOpen, MapPin, ArrowUpRight } from 'lucide-react';
 import styles from './About.module.css';
 
 export const About: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const traits = [
     {
       icon: <Settings size={28} className={styles.traitIcon} />,
-      titleES: "Resolver necesidades",
-      titleEN: "Addressing needs",
-      descES: "Parto del problema que necesita resolver cada proyecto.",
-      descEN: "I start with the problem each project needs to address.",
+      titleES: "Entender antes de construir",
+      titleEN: "Understand before building",
+      descES: "Escucho, hago preguntas y busco el problema que realmente hay que resolver.",
+      descEN: "I listen, ask questions, and look for the problem that actually needs solving.",
     },
     {
-      icon: <ChartNoAxesColumnIncreasing size={28} className={styles.traitIcon} />,
-      titleES: "Entender el negocio",
-      titleEN: "Understanding the business",
-      descES: "Busco entender cómo se usará la solución y a quién debe ayudar.",
-      descEN: "I aim to understand how the solution will be used and who it should help.",
+      icon: <ListChecks size={28} className={styles.traitIcon} />,
+      titleES: "Trabajo con orden",
+      titleEN: "An organized approach",
+      descES: "Divido los retos en tareas claras, priorizo y documento lo que importa.",
+      descEN: "I break challenges into clear tasks, set priorities, and document what matters.",
     },
     {
-      icon: <Layers size={28} className={styles.traitIcon} />,
-      titleES: "Código organizado",
-      titleEN: "Organized code",
-      descES: "Organizo el código para facilitar su mantenimiento y los cambios futuros.",
-      descEN: "I organize code to make maintenance and future changes easier.",
+      icon: <Users size={28} className={styles.traitIcon} />,
+      titleES: "Colaboración",
+      titleEN: "Collaboration",
+      descES: "Comparto ideas, escucho otras perspectivas y me hago responsable de mi parte.",
+      descEN: "I share ideas, listen to other perspectives, and take responsibility for my work.",
     },
     {
       icon: <BookOpen size={28} className={styles.traitIcon} />,
-      titleES: "Seguir aprendiendo",
-      titleEN: "Continuing to learn",
-      descES: "Sigo aprendiendo sobre desarrollo web, arquitectura y experiencia de usuario.",
-      descEN: "I keep learning about web development, architecture, and user experience.",
+      titleES: "Aprendizaje continuo",
+      titleEN: "Continuous learning",
+      descES: "Me gusta investigar, probar y mejorar a partir de lo que aprendo en cada proyecto.",
+      descEN: "I enjoy researching, experimenting, and improving through what each project teaches me.",
     }
   ];
 
@@ -73,10 +73,10 @@ export const About: React.FC = () => {
                 <div className={styles.iconWrapper}>{trait.icon}</div>
                 <div className={styles.traitContent}>
                   <h3 className={styles.traitTitle}>
-                    {t('nav.about') === 'Sobre Mí' ? trait.titleES : trait.titleEN}
+                    {language === 'es' ? trait.titleES : trait.titleEN}
                   </h3>
                   <p className={styles.traitDesc}>
-                    {t('nav.about') === 'Sobre Mí' ? trait.descES : trait.descEN}
+                    {language === 'es' ? trait.descES : trait.descEN}
                   </p>
                 </div>
               </div>

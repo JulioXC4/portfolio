@@ -61,6 +61,15 @@ a:hover > svg:last-child,button:hover > svg:last-child { transform: translateX(3
 .skip-link:focus { transform: translateY(0); }
 @keyframes enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes spin { to { transform: rotate(360deg); } }
+/* Theme changes crossfade a captured frame, including the outgoing hero video. */
+html[data-theme-transition="snapshot"]::view-transition-group(root) { animation-duration: 550ms; }
+html[data-theme-transition="snapshot"]::view-transition-old(root) { animation: none; mix-blend-mode: normal; }
+html[data-theme-transition="snapshot"]::view-transition-new(root) { animation: theme-reveal 550ms cubic-bezier(.2,.65,.3,1) both; mix-blend-mode: normal; }
+html[data-theme-transition]::view-transition { pointer-events: none; }
+@keyframes theme-reveal { from { opacity: 0; } to { opacity: 1; } }
+/* Older browsers still ease palette changes without changing layout or hover motion. */
+html[data-theme-transition="fallback"],html[data-theme-transition="fallback"] *,html[data-theme-transition="fallback"] *::before,html[data-theme-transition="fallback"] *::after { transition: background-color 550ms ease,color 550ms ease,border-color 550ms ease,fill 550ms ease,stroke 550ms ease !important; }
+html[data-theme-transition="fallback"] #home video { animation: theme-reveal 550ms ease both; }
 @media (max-width: 1080px) { :root { --nav-height: 80px; } }
 @media (max-width: 700px) { .section-rule { width: 32px; margin-bottom: 20px; } }
 @media (prefers-reduced-motion: reduce) {

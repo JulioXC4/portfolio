@@ -8,6 +8,18 @@ export interface ToolCategory {
 
 export const toolkit: ToolCategory[] = [
   {
+    id: 'ai', title: ['IA y desarrollo asistido', 'AI-assisted development'],
+    tools: [
+      { name: 'ChatGPT', usage: ['Exploración de ideas y consultas', 'Exploring ideas and questions'] },
+      { name: 'Codex', usage: ['Desarrollo y revisión de código', 'Development and code review'] },
+      { name: 'Claude', usage: ['Análisis y apoyo al desarrollo', 'Analysis and development assistance'] },
+      { name: 'Gemini', usage: ['Automatización y creación de contenido', 'Automation and content creation'] },
+      { name: 'Antigravity', usage: ['Entorno de desarrollo con IA', 'AI-assisted development environment'] },
+    ],
+    summary: ['Uso estas herramientas como apoyo para explorar soluciones, desarrollar y revisar mi trabajo. Gemini también forma parte de mi automatizador de Markdown a PowerPoint.', 'I use these tools to help explore solutions, develop, and review my work. Gemini is also part of my Markdown-to-PowerPoint automator.'],
+    links: [{ label: 'Markdown to PPTX', href: 'https://github.com/JulioXC4/markdown-to-pptx-automator' }],
+  },
+  {
     id: 'frontend', title: ['Frontend y móvil', 'Frontend and mobile'],
     tools: [
       { name: 'Vue.js 3', usage: ['Citas Médicas · en desarrollo', 'Medical booking · in development'] },

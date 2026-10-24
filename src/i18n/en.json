@@ -25,10 +25,10 @@
   },
   "about": {
     "title": "About Me",
-    "paragraph1": "I study Software Engineering at UPC (eighth semester). I build websites and web applications for businesses, organizations, and team projects.",
-    "paragraph2": "My freelance work involves building websites and their functionality. I have also developed individual and team projects at university.",
-    "paragraph3": "I have five months of professional backend experience at Devdatep Consulting, working with APIs, databases, and integrations for EmiteFacil. That experience complements my work as a Full Stack developer.",
-    "profile_role": "Full Stack Developer & Freelancer",
+    "paragraph1": "I enjoy understanding problems and turning them into useful software. I take an organized, methodical approach: clarify what is needed, plan the work, and build a solution that makes sense for the people using it.",
+    "paragraph2": "I study Software Engineering at UPC (eighth semester), with a strong academic record, and work as a consultant at 180 Degrees Consulting UPC. I combine my technical education with an interest in understanding the needs of people and organizations.",
+    "paragraph3": "I work as a freelance Full Stack developer and have five months of backend experience at Devdatep Consulting, where I worked with APIs, databases, and integrations for EmiteFacil. I enjoy collaborating, taking responsibility, and learning through each project.",
+    "profile_role": "Full Stack Developer · Consultant",
     "location_label": "Location",
     "location": "Lima, Peru (Local & Remote Worldwide)",
     "education_label": "Education",
@@ -50,10 +50,14 @@
       "role": "Backend Developer Intern",
       "company": "Devdatep Consulting",
       "period": "2026 · Lima, Perú",
-      "bullet1": "Design and implementation of RESTful APIs using Laravel 11 and PHP 8.2 under a Service-Oriented Architecture (SOA) applying Repository and DTO patterns.",
-      "bullet2": "Integration of digital signatures and SOAP/XML communications with SUNAT for the EmiteFacil electronic billing SaaS platform.",
-      "bullet3": "Automated validation of fiscal tax identifiers (RUC, DNI) via government APIs.",
-      "bullet4": "Token-based session authentication with Laravel Sanctum and relational database design in MySQL."
+      "duration": "5 months",
+      "product_summary": "I worked on the backend of this electronic invoicing SaaS platform, connecting its services, data, and validation processes.",
+      "contributions": "My contribution to the product",
+      "tools": "Tools I used",
+      "bullet1": "I developed REST APIs with Laravel 11 and PHP 8.2, using a service-oriented architecture and the Repository and DTO patterns.",
+      "bullet2": "I integrated digital signatures and SOAP/XML communication with SUNAT for EmiteFacil’s electronic invoicing.",
+      "bullet3": "I automated RUC and DNI validation through queries to government APIs.",
+      "bullet4": "I implemented authentication and sessions with Laravel Sanctum and contributed to relational database design in MySQL."
     }
   },
   "projects": {
@@ -84,7 +88,7 @@
   },
   "tech": {
     "title": "My Tools",
-    "subtitle": "The modern toolstack I use to build robust software for clients and production."
+    "subtitle": "Technologies and AI tools I use to develop software, explore ideas, and solve problems."
   },
   "education": {
     "title": "Academic Background",
