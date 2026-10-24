@@ -1,0 +1,684 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T05:27:38.506Z",
+  "title": "Design System: Julio Castro Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "primary",
+        "tonalRamp": [
+          "oklch(15.000% 0.08674 55.598)",
+          "oklch(26.429% 0.08674 55.598)",
+          "oklch(37.857% 0.08674 55.598)",
+          "oklch(49.286% 0.08674 55.598)",
+          "oklch(60.714% 0.08674 55.598)",
+          "oklch(72.143% 0.08674 55.598)",
+          "oklch(83.571% 0.08674 55.598)",
+          "oklch(95.000% 0.08674 55.598)"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "primary hover",
+        "tonalRamp": [
+          "oklch(15.000% 0.07552 61.618)",
+          "oklch(26.429% 0.07552 61.618)",
+          "oklch(37.857% 0.07552 61.618)",
+          "oklch(49.286% 0.07552 61.618)",
+          "oklch(60.714% 0.07552 61.618)",
+          "oklch(72.143% 0.07552 61.618)",
+          "oklch(83.571% 0.07552 61.618)",
+          "oklch(95.000% 0.07552 61.618)"
+        ]
+      },
+      "primary-glow": {
+        "role": "primary",
+        "displayName": "primary glow",
+        "tonalRamp": [
+          "oklch(15.000% 0.08674 55.598)",
+          "oklch(26.429% 0.08674 55.598)",
+          "oklch(37.857% 0.08674 55.598)",
+          "oklch(49.286% 0.08674 55.598)",
+          "oklch(60.714% 0.08674 55.598)",
+          "oklch(72.143% 0.08674 55.598)",
+          "oklch(83.571% 0.08674 55.598)",
+          "oklch(95.000% 0.08674 55.598)"
+        ]
+      },
+      "bg-base": {
+        "role": "neutral",
+        "displayName": "bg base",
+        "tonalRamp": [
+          "oklch(15.000% 0.00371 164.630)",
+          "oklch(26.429% 0.00371 164.630)",
+          "oklch(37.857% 0.00371 164.630)",
+          "oklch(49.286% 0.00371 164.630)",
+          "oklch(60.714% 0.00371 164.630)",
+          "oklch(72.143% 0.00371 164.630)",
+          "oklch(83.571% 0.00371 164.630)",
+          "oklch(95.000% 0.00371 164.630)"
+        ]
+      },
+      "bg-surface": {
+        "role": "neutral",
+        "displayName": "bg surface",
+        "tonalRamp": [
+          "oklch(15.000% 0.00591 156.725)",
+          "oklch(26.429% 0.00591 156.725)",
+          "oklch(37.857% 0.00591 156.725)",
+          "oklch(49.286% 0.00591 156.725)",
+          "oklch(60.714% 0.00591 156.725)",
+          "oklch(72.143% 0.00591 156.725)",
+          "oklch(83.571% 0.00591 156.725)",
+          "oklch(95.000% 0.00591 156.725)"
+        ]
+      },
+      "bg-surface-hover": {
+        "role": "neutral",
+        "displayName": "bg surface hover",
+        "tonalRamp": [
+          "oklch(15.000% 0.00941 145.292)",
+          "oklch(26.429% 0.00941 145.292)",
+          "oklch(37.857% 0.00941 145.292)",
+          "oklch(49.286% 0.00941 145.292)",
+          "oklch(60.714% 0.00941 145.292)",
+          "oklch(72.143% 0.00941 145.292)",
+          "oklch(83.571% 0.00941 145.292)",
+          "oklch(95.000% 0.00941 145.292)"
+        ]
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "text primary",
+        "tonalRamp": [
+          "oklch(15.000% 0.01111 89.723)",
+          "oklch(26.429% 0.01111 89.723)",
+          "oklch(37.857% 0.01111 89.723)",
+          "oklch(49.286% 0.01111 89.723)",
+          "oklch(60.714% 0.01111 89.723)",
+          "oklch(72.143% 0.01111 89.723)",
+          "oklch(83.571% 0.01111 89.723)",
+          "oklch(95.000% 0.01111 89.723)"
+        ]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "text secondary",
+        "tonalRamp": [
+          "oklch(15.000% 0.00706 115.744)",
+          "oklch(26.429% 0.00706 115.744)",
+          "oklch(37.857% 0.00706 115.744)",
+          "oklch(49.286% 0.00706 115.744)",
+          "oklch(60.714% 0.00706 115.744)",
+          "oklch(72.143% 0.00706 115.744)",
+          "oklch(83.571% 0.00706 115.744)",
+          "oklch(95.000% 0.00706 115.744)"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "text muted",
+        "tonalRamp": [
+          "oklch(15.000% 0.01038 140.508)",
+          "oklch(26.429% 0.01038 140.508)",
+          "oklch(37.857% 0.01038 140.508)",
+          "oklch(49.286% 0.01038 140.508)",
+          "oklch(60.714% 0.01038 140.508)",
+          "oklch(72.143% 0.01038 140.508)",
+          "oklch(83.571% 0.01038 140.508)",
+          "oklch(95.000% 0.01038 140.508)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "border",
+        "tonalRamp": [
+          "oklch(15.000% 0.01111 89.723)",
+          "oklch(26.429% 0.01111 89.723)",
+          "oklch(37.857% 0.01111 89.723)",
+          "oklch(49.286% 0.01111 89.723)",
+          "oklch(60.714% 0.01111 89.723)",
+          "oklch(72.143% 0.01111 89.723)",
+          "oklch(83.571% 0.01111 89.723)",
+          "oklch(95.000% 0.01111 89.723)"
+        ]
+      },
+      "border-hover": {
+        "role": "neutral",
+        "displayName": "border hover",
+        "tonalRamp": [
+          "oklch(15.000% 0.01111 89.723)",
+          "oklch(26.429% 0.01111 89.723)",
+          "oklch(37.857% 0.01111 89.723)",
+          "oklch(49.286% 0.01111 89.723)",
+          "oklch(60.714% 0.01111 89.723)",
+          "oklch(72.143% 0.01111 89.723)",
+          "oklch(83.571% 0.01111 89.723)",
+          "oklch(95.000% 0.01111 89.723)"
+        ]
+      },
+      "border-accent": {
+        "role": "neutral",
+        "displayName": "border accent",
+        "tonalRamp": [
+          "oklch(15.000% 0.08674 55.598)",
+          "oklch(26.429% 0.08674 55.598)",
+          "oklch(37.857% 0.08674 55.598)",
+          "oklch(49.286% 0.08674 55.598)",
+          "oklch(60.714% 0.08674 55.598)",
+          "oklch(72.143% 0.08674 55.598)",
+          "oklch(83.571% 0.08674 55.598)",
+          "oklch(95.000% 0.08674 55.598)"
+        ]
+      },
+      "light-primary": {
+        "role": "primary",
+        "displayName": "light primary",
+        "tonalRamp": [
+          "oklch(15.000% 0.09019 52.014)",
+          "oklch(26.429% 0.09019 52.014)",
+          "oklch(37.857% 0.09019 52.014)",
+          "oklch(49.286% 0.09019 52.014)",
+          "oklch(60.714% 0.09019 52.014)",
+          "oklch(72.143% 0.09019 52.014)",
+          "oklch(83.571% 0.09019 52.014)",
+          "oklch(95.000% 0.09019 52.014)"
+        ]
+      },
+      "light-primary-glow": {
+        "role": "primary",
+        "displayName": "light primary glow",
+        "tonalRamp": [
+          "oklch(15.000% 0.09019 52.014)",
+          "oklch(26.429% 0.09019 52.014)",
+          "oklch(37.857% 0.09019 52.014)",
+          "oklch(49.286% 0.09019 52.014)",
+          "oklch(60.714% 0.09019 52.014)",
+          "oklch(72.143% 0.09019 52.014)",
+          "oklch(83.571% 0.09019 52.014)",
+          "oklch(95.000% 0.09019 52.014)"
+        ]
+      },
+      "light-bg-base": {
+        "role": "neutral",
+        "displayName": "light bg base",
+        "tonalRamp": [
+          "oklch(15.000% 0.01111 89.723)",
+          "oklch(26.429% 0.01111 89.723)",
+          "oklch(37.857% 0.01111 89.723)",
+          "oklch(49.286% 0.01111 89.723)",
+          "oklch(60.714% 0.01111 89.723)",
+          "oklch(72.143% 0.01111 89.723)",
+          "oklch(83.571% 0.01111 89.723)",
+          "oklch(95.000% 0.01111 89.723)"
+        ]
+      },
+      "light-bg-surface": {
+        "role": "neutral",
+        "displayName": "light bg surface",
+        "tonalRamp": [
+          "oklch(15.000% 0.01246 91.523)",
+          "oklch(26.429% 0.01246 91.523)",
+          "oklch(37.857% 0.01246 91.523)",
+          "oklch(49.286% 0.01246 91.523)",
+          "oklch(60.714% 0.01246 91.523)",
+          "oklch(72.143% 0.01246 91.523)",
+          "oklch(83.571% 0.01246 91.523)",
+          "oklch(95.000% 0.01246 91.523)"
+        ]
+      },
+      "light-bg-surface-hover": {
+        "role": "neutral",
+        "displayName": "light bg surface hover",
+        "tonalRamp": [
+          "oklch(15.000% 0.01414 88.690)",
+          "oklch(26.429% 0.01414 88.690)",
+          "oklch(37.857% 0.01414 88.690)",
+          "oklch(49.286% 0.01414 88.690)",
+          "oklch(60.714% 0.01414 88.690)",
+          "oklch(72.143% 0.01414 88.690)",
+          "oklch(83.571% 0.01414 88.690)",
+          "oklch(95.000% 0.01414 88.690)"
+        ]
+      },
+      "light-text-primary": {
+        "role": "neutral",
+        "displayName": "light text primary",
+        "tonalRamp": [
+          "oklch(15.000% 0.00845 223.858)",
+          "oklch(26.429% 0.00845 223.858)",
+          "oklch(37.857% 0.00845 223.858)",
+          "oklch(49.286% 0.00845 223.858)",
+          "oklch(60.714% 0.00845 223.858)",
+          "oklch(72.143% 0.00845 223.858)",
+          "oklch(83.571% 0.00845 223.858)",
+          "oklch(95.000% 0.00845 223.858)"
+        ]
+      },
+      "light-text-secondary": {
+        "role": "neutral",
+        "displayName": "light text secondary",
+        "tonalRamp": [
+          "oklch(15.000% 0.00709 223.551)",
+          "oklch(26.429% 0.00709 223.551)",
+          "oklch(37.857% 0.00709 223.551)",
+          "oklch(49.286% 0.00709 223.551)",
+          "oklch(60.714% 0.00709 223.551)",
+          "oklch(72.143% 0.00709 223.551)",
+          "oklch(83.571% 0.00709 223.551)",
+          "oklch(95.000% 0.00709 223.551)"
+        ]
+      },
+      "light-text-muted": {
+        "role": "neutral",
+        "displayName": "light text muted",
+        "tonalRamp": [
+          "oklch(15.000% 0.00870 186.673)",
+          "oklch(26.429% 0.00870 186.673)",
+          "oklch(37.857% 0.00870 186.673)",
+          "oklch(49.286% 0.00870 186.673)",
+          "oklch(60.714% 0.00870 186.673)",
+          "oklch(72.143% 0.00870 186.673)",
+          "oklch(83.571% 0.00870 186.673)",
+          "oklch(95.000% 0.00870 186.673)"
+        ]
+      },
+      "light-border": {
+        "role": "neutral",
+        "displayName": "light border",
+        "tonalRamp": [
+          "oklch(15.000% 0.00845 223.858)",
+          "oklch(26.429% 0.00845 223.858)",
+          "oklch(37.857% 0.00845 223.858)",
+          "oklch(49.286% 0.00845 223.858)",
+          "oklch(60.714% 0.00845 223.858)",
+          "oklch(72.143% 0.00845 223.858)",
+          "oklch(83.571% 0.00845 223.858)",
+          "oklch(95.000% 0.00845 223.858)"
+        ]
+      },
+      "light-border-hover": {
+        "role": "neutral",
+        "displayName": "light border hover",
+        "tonalRamp": [
+          "oklch(15.000% 0.00845 223.858)",
+          "oklch(26.429% 0.00845 223.858)",
+          "oklch(37.857% 0.00845 223.858)",
+          "oklch(49.286% 0.00845 223.858)",
+          "oklch(60.714% 0.00845 223.858)",
+          "oklch(72.143% 0.00845 223.858)",
+          "oklch(83.571% 0.00845 223.858)",
+          "oklch(95.000% 0.00845 223.858)"
+        ]
+      },
+      "light-border-accent": {
+        "role": "neutral",
+        "displayName": "light border accent",
+        "tonalRamp": [
+          "oklch(15.000% 0.09019 52.014)",
+          "oklch(26.429% 0.09019 52.014)",
+          "oklch(37.857% 0.09019 52.014)",
+          "oklch(49.286% 0.09019 52.014)",
+          "oklch(60.714% 0.09019 52.014)",
+          "oklch(72.143% 0.09019 52.014)",
+          "oklch(83.571% 0.09019 52.014)",
+          "oklch(95.000% 0.09019 52.014)"
+        ]
+      },
+      "editorial-text-secondary": {
+        "role": "neutral",
+        "displayName": "editorial text secondary",
+        "tonalRamp": [
+          "oklch(15.000% 0.01234 219.739)",
+          "oklch(26.429% 0.01234 219.739)",
+          "oklch(37.857% 0.01234 219.739)",
+          "oklch(49.286% 0.01234 219.739)",
+          "oklch(60.714% 0.01234 219.739)",
+          "oklch(72.143% 0.01234 219.739)",
+          "oklch(83.571% 0.01234 219.739)",
+          "oklch(95.000% 0.01234 219.739)"
+        ]
+      },
+      "editorial-text-muted": {
+        "role": "neutral",
+        "displayName": "editorial text muted",
+        "tonalRamp": [
+          "oklch(15.000% 0.00920 216.682)",
+          "oklch(26.429% 0.00920 216.682)",
+          "oklch(37.857% 0.00920 216.682)",
+          "oklch(49.286% 0.00920 216.682)",
+          "oklch(60.714% 0.00920 216.682)",
+          "oklch(72.143% 0.00920 216.682)",
+          "oklch(83.571% 0.00920 216.682)",
+          "oklch(95.000% 0.00920 216.682)"
+        ]
+      },
+      "editorial-border": {
+        "role": "neutral",
+        "displayName": "editorial border",
+        "tonalRamp": [
+          "oklch(15.000% 0.09019 52.014)",
+          "oklch(26.429% 0.09019 52.014)",
+          "oklch(37.857% 0.09019 52.014)",
+          "oklch(49.286% 0.09019 52.014)",
+          "oklch(60.714% 0.09019 52.014)",
+          "oklch(72.143% 0.09019 52.014)",
+          "oklch(83.571% 0.09019 52.014)",
+          "oklch(95.000% 0.09019 52.014)"
+        ]
+      },
+      "editorial-border-accent": {
+        "role": "neutral",
+        "displayName": "editorial border accent",
+        "tonalRamp": [
+          "oklch(15.000% 0.09019 52.014)",
+          "oklch(26.429% 0.09019 52.014)",
+          "oklch(37.857% 0.09019 52.014)",
+          "oklch(49.286% 0.09019 52.014)",
+          "oklch(60.714% 0.09019 52.014)",
+          "oklch(72.143% 0.09019 52.014)",
+          "oklch(83.571% 0.09019 52.014)",
+          "oklch(95.000% 0.09019 52.014)"
+        ]
+      },
+      "editorial-surface-hover": {
+        "role": "neutral",
+        "displayName": "editorial surface hover",
+        "tonalRamp": [
+          "oklch(15.000% 0.01407 88.688)",
+          "oklch(26.429% 0.01407 88.688)",
+          "oklch(37.857% 0.01407 88.688)",
+          "oklch(49.286% 0.01407 88.688)",
+          "oklch(60.714% 0.01407 88.688)",
+          "oklch(72.143% 0.01407 88.688)",
+          "oklch(83.571% 0.01407 88.688)",
+          "oklch(95.000% 0.01407 88.688)"
+        ]
+      },
+      "primary-label-light": {
+        "role": "neutral",
+        "displayName": "primary label light",
+        "tonalRamp": [
+          "oklch(15.000% 0.01184 79.785)",
+          "oklch(26.429% 0.01184 79.785)",
+          "oklch(37.857% 0.01184 79.785)",
+          "oklch(49.286% 0.01184 79.785)",
+          "oklch(60.714% 0.01184 79.785)",
+          "oklch(72.143% 0.01184 79.785)",
+          "oklch(83.571% 0.01184 79.785)",
+          "oklch(95.000% 0.01184 79.785)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "display",
+        "purpose": "Rol observado en DESIGN.md; conservar sus excepciones locales."
+      },
+      "display-accent": {
+        "displayName": "display accent",
+        "purpose": "Fraunces cursiva en el acento del hero; el estilo italic se aplica en CSS."
+      },
+      "headline": {
+        "displayName": "headline",
+        "purpose": "Rol observado en DESIGN.md; conservar sus excepciones locales."
+      },
+      "title": {
+        "displayName": "title",
+        "purpose": "Rol observado en DESIGN.md; conservar sus excepciones locales."
+      },
+      "body": {
+        "displayName": "body",
+        "purpose": "Rol observado en DESIGN.md; conservar sus excepciones locales."
+      },
+      "project-body": {
+        "displayName": "project body",
+        "purpose": "Rol observado en DESIGN.md; conservar sus excepciones locales."
+      },
+      "label": {
+        "displayName": "label",
+        "purpose": "Rol observado en DESIGN.md; conservar sus excepciones locales."
+      },
+      "hero-identity": {
+        "displayName": "hero identity",
+        "purpose": "Rol observado en DESIGN.md; conservar sus excepciones locales."
+      }
+    },
+    "rampNote": "Rampas derivadas en OKLCH para visualización: no son nuevos tokens aprobados. En colores con alpha, la rampa representa el RGB base sin transparencia.",
+    "shadows": [
+      {
+        "name": "navbar-scrolled",
+        "value": "0 8px 32px #00000010",
+        "purpose": "Sombra de la barra sticky al desplazar, sin extenderla a tarjetas."
+      }
+    ],
+    "motion": [
+      {
+        "name": "transition-fast",
+        "value": "180ms cubic-bezier(.2,.65,.3,1)",
+        "purpose": "Feedback de controles."
+      },
+      {
+        "name": "transition-normal",
+        "value": "240ms cubic-bezier(.2,.65,.3,1)",
+        "purpose": "Transiciones estándar existentes."
+      },
+      {
+        "name": "transition-slow",
+        "value": "450ms cubic-bezier(.2,.65,.3,1)",
+        "purpose": "Transiciones lentas existentes."
+      },
+      {
+        "name": "interaction-ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "WAAPI del selector y filtrado."
+      },
+      {
+        "name": "tab-indicator",
+        "value": "300ms",
+        "purpose": "Interacción documentada en Components / Motion."
+      },
+      {
+        "name": "case-description",
+        "value": "180ms",
+        "purpose": "Interacción documentada en Components / Motion."
+      },
+      {
+        "name": "case-image",
+        "value": "360ms",
+        "purpose": "Interacción documentada en Components / Motion."
+      },
+      {
+        "name": "filter-exit",
+        "value": "120ms",
+        "purpose": "Interacción documentada en Components / Motion."
+      },
+      {
+        "name": "filter-layout",
+        "value": "280ms",
+        "purpose": "Interacción documentada en Components / Motion."
+      },
+      {
+        "name": "filter-enter",
+        "value": "220ms",
+        "purpose": "Interacción documentada en Components / Motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "max-width-360",
+        "value": "360px",
+        "query": "(max-width: 360px)"
+      },
+      {
+        "name": "max-width-700",
+        "value": "700px",
+        "query": "(max-width: 700px)"
+      },
+      {
+        "name": "max-width-760",
+        "value": "760px",
+        "query": "(max-width: 760px)"
+      },
+      {
+        "name": "max-width-1000",
+        "value": "1000px",
+        "query": "(max-width: 1000px)"
+      },
+      {
+        "name": "max-width-1080",
+        "value": "1080px",
+        "query": "(max-width: 1080px)"
+      },
+      {
+        "name": "max-width-1100",
+        "value": "1100px",
+        "query": "(max-width: 1100px)"
+      },
+      {
+        "name": "max-width-1120",
+        "value": "1120px",
+        "query": "(max-width: 1120px)"
+      },
+      {
+        "name": "hero-compact-height",
+        "value": "820px",
+        "query": "(max-height: 820px) and (min-width: 761px)"
+      }
+    ],
+    "focus": {
+      "global": "2px solid var(--color-primary); outline-offset:5px",
+      "input": "outline-offset:3px",
+      "scrollableControls": "outline-offset:-3px"
+    },
+    "provenance": {
+      "sourceRevision": "bf8d58f",
+      "sampledViewports": [
+        1440,
+        390
+      ],
+      "sampledThemes": [
+        "dark",
+        "light"
+      ],
+      "sourceHashes": {
+        "src/app/globals.css": "4e446dc03bf9c7090879a221030409246e284ca31ffb481dbcbdb0a403297188",
+        "src/app/layout.tsx": "4696e2d13fe89967022a6ec02f2c5cf504faa548accfcc2c588c8aedd6826c32",
+        "src/components/sections/Hero.module.css": "3de5a659a39a709234ad5a08d6900a9e41af4e2c7fe2003c786579001cbc59d0",
+        "src/components/sections/Projects.module.css": "8cd5d6c767ac0fcc1f0ef6e916ddcf63009e88c166a59dbb8f5df2bbf06c2806",
+        "src/components/sections/Contact.module.css": "da4f92dbe09d52c2cd977b53902f3612f0f331fdb63ada547199469df07fb5eb",
+        "src/components/common/Navbar.module.css": "974ae5b0f76c5b0510d0ef1924bdfc18ffb287f222fee987c587d91193057d52",
+        "src/components/sections/Freelance.module.css": "5f3b2b809d3b1ab443736f44fa9a4c6eabb7495d5b7f3084c8434dbb898a6444",
+        "src/components/sections/Freelance.tsx": "78dc01ffa7eef287c5853cbcbd3adc1ec17f92c48dc6fe3361f06570a09f8cf2",
+        "src/components/sections/Projects.tsx": "7bd24210d5ace5357c02eb1163187524cffa96eeb17fbed2ef87b3afdee4519c",
+        "src/hooks/useMotion.ts": "849ae5a67e8740b7af98c768c2d675ac692fd0bcad878cdd0e6c5134ac6ef963"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Hero primary",
+      "kind": "button",
+      "refersTo": "hero-primary",
+      "description": "CTA principal del hero; usa altura mínima y variante de texto propia en tema claro.",
+      "html": "<button class=\"ds-primary\">Hablemos de tu proyecto<svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-primary{font-family:var(--font-primary,\"DM Sans\",Arial,sans-serif);display: inline-flex; align-items: center; justify-content: center; gap: 26px; min-height: 58px; padding: 14px 30px; font-size: 17px; line-height: 1.4; border-radius: 4px; border: 1px solid; white-space: nowrap;background: var(--color-primary); color: #131514; border-color: var(--color-primary);transition:color var(--transition-fast,180ms),background var(--transition-fast,180ms),border-color var(--transition-fast,180ms),transform var(--transition-fast,180ms);}.ds-primary:hover{background: var(--color-secondary); border-color: var(--color-secondary);}.ds-primary:focus-visible{outline:2px solid var(--color-primary,#c58d66);outline-offset:5px;}.ds-primary:active{transform:translateY(1px) scale(.985)}.ds-primary:disabled{cursor:default;opacity:.6}@media(max-width:760px){.ds-primary{min-height:52px;padding:13px 20px;font-size:15px;gap:20px}}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}.ds-primary:active{transform:none}}:host-context([data-theme=\"light\"]) .ds-primary{color:#fffaf2}"
+    },
+    {
+      "name": "Hero secondary",
+      "kind": "button",
+      "refersTo": "hero-secondary",
+      "description": "Acción secundaria de borde fino, sin elevación.",
+      "html": "<button class=\"ds-secondary\">Ver proyectos<svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-secondary{font-family:var(--font-primary,\"DM Sans\",Arial,sans-serif);color:var(--text-primary,#f3f0e8);background:transparent;display: inline-flex; align-items: center; justify-content: center; gap: 26px; min-height: 58px; padding: 14px 30px; font-size: 17px; line-height: 1.4; border-radius: 4px; border: 1px solid; white-space: nowrap;display: inline-flex; align-items: center; justify-content: center; gap: 26px; min-height: 58px; padding: 14px 30px; font-size: 17px; line-height: 1.4; border-radius: 4px; border: 1px solid; white-space: nowrap;transition:color var(--transition-fast,180ms),background var(--transition-fast,180ms),border-color var(--transition-fast,180ms),transform var(--transition-fast,180ms);}.ds-secondary:hover{color: var(--color-primary); border-color: var(--color-primary);}.ds-secondary:focus-visible{outline:2px solid var(--color-primary,#c58d66);outline-offset:5px;}.ds-secondary:active{transform:translateY(1px) scale(.985)}.ds-secondary:disabled{cursor:default;opacity:.6}@media(max-width:760px){.ds-secondary{min-height:52px;padding:13px 20px;font-size:15px;gap:20px}}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}.ds-secondary:active{transform:none}}"
+    },
+    {
+      "name": "Contact input",
+      "kind": "input",
+      "refersTo": "contact-input",
+      "description": "Etiqueta persistente y campo de contacto de 54px mínimos.",
+      "html": "<label class=\"ds-label\" for=\"ds-name\">Nombre o empresa</label><input class=\"ds-input\" id=\"ds-name\" autocomplete=\"name\" placeholder=\"Nombre o empresa…\" required maxlength=\"150\">",
+      "css": ".ds-label{display:block;font-family:var(--font-primary,\"DM Sans\",Arial,sans-serif);font-size:15px;color:var(--text-primary,#f3f0e8);margin-bottom:8px}.ds-input{font: inherit; font-size: 16px; width: 100%; min-width: 0; padding: 14px 16px; border: 1px solid var(--border-color-hover); border-radius: 4px; color: var(--text-primary); background: var(--bg-base);min-height:54px;font-family:var(--font-primary,\"DM Sans\",Arial,sans-serif);line-height:1.65}.ds-input::placeholder{color: var(--text-muted); opacity: 1;}.ds-input:hover{border-color:var(--text-muted,#969b95)}.ds-input:focus-visible{outline:2px solid var(--color-primary,#c58d66);outline-offset:3px;border-color:var(--color-primary,#c58d66)}"
+    },
+    {
+      "name": "Project card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Tarjeta abierta con divisor, contexto y enlace; sin sombra ni panel redondeado.",
+      "html": "<article class=\"ds-card\"><h3>Restock</h3><p class=\"ds-context\">Universitario · En equipo</p><p class=\"ds-description\">Control de inventario para restaurantes con sensores y seguimiento desde web y móvil.</p><a class=\"ds-link\" href=\"https://github.com/desarrollo-de-soluciones-iot-17757\">Ver repositorios</a></article>",
+      "css": ".ds-card{min-width: 0; display: flex; flex-direction: column; border-top: 1px solid var(--border-color-hover); padding: 20px 0 12px; scroll-margin-top: 24px;font-family:var(--font-primary,\"DM Sans\",Arial,sans-serif);color:var(--text-primary,#f3f0e8)}.ds-card h3{font-family:var(--font-display,Manrope,Arial,sans-serif);font-weight:650;margin:0;font-size: clamp(26px,2.1vw,32px); text-wrap: pretty; line-height: 1.2; letter-spacing: -.025em;}.ds-context{color: var(--text-muted); font-size: 14px; margin-top: 8px; line-height: 1.5;}.ds-description{margin-top: 14px; font-size: 16px; line-height: 1.65; letter-spacing: 0; min-height: 44px; max-width: 64ch;color:var(--text-secondary,#b7b8b3)}.ds-link{display:inline-flex;align-items:center;min-height:44px;color:var(--text-primary,#f3f0e8);text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--border-color-hover,#f3f0e849);font-size:14px}.ds-link:hover{color:var(--color-primary,#c58d66);text-decoration-color:currentColor}.ds-link:focus-visible{outline:2px solid var(--color-primary,#c58d66);outline-offset:5px;}"
+    },
+    {
+      "name": "Project filter",
+      "kind": "button",
+      "refersTo": "project-filter",
+      "description": "Filtro con aria-pressed y subrayado cobre; el snippet ilustra el estado visual, no ejecuta filtrado.",
+      "html": "<div class=\"ds-filters\" role=\"group\" aria-label=\"Filtrar proyectos\"><button class=\"ds-filter\" aria-pressed=\"true\">Todos</button><button class=\"ds-filter\" aria-pressed=\"false\">Web</button><button class=\"ds-filter\" aria-pressed=\"false\">IA</button></div>",
+      "css": ".ds-filters{display:flex;gap:28px;overflow-x:auto}.ds-filter{font-family:var(--font-primary,\"DM Sans\",Arial,sans-serif);background:transparent;border:0;cursor:pointer;flex-shrink: 0; min-height: 48px; padding: 8px 6px 12px; border-bottom: 2px solid transparent; color: var(--text-secondary); font-size: 15px;transition:color var(--transition-fast,180ms),background var(--transition-fast,180ms),border-color var(--transition-fast,180ms),transform var(--transition-fast,180ms);}.ds-filter:hover,.ds-filter[aria-pressed=true]{color:var(--color-primary,#c58d66)}.ds-filter[aria-pressed=true]{border-bottom-color:var(--color-primary,#c58d66)}.ds-filter:focus-visible{outline:2px solid var(--color-primary,#c58d66);outline-offset:-3px}@media(prefers-reduced-motion:reduce){.ds-filter{transition:none}}"
+    },
+    {
+      "name": "Navigation link",
+      "kind": "nav",
+      "refersTo": "navigation-link",
+      "description": "Enlace visual de navegación sticky; el shell y el drawer pertenecen a Navbar.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navegación\"><a class=\"ds-nav-link\" href=\"#services\">Servicios</a><a class=\"ds-nav-link\" href=\"#freelance\">Webs</a><a class=\"ds-nav-link\" href=\"#contact\">Contacto</a></nav>",
+      "css": ".ds-nav{display:flex;gap:26px}.ds-nav-link{font-family:var(--font-primary,\"DM Sans\",Arial,sans-serif);display:inline-flex;align-items:center;color: var(--text-secondary); font-size: 15px; font-weight: 500; letter-spacing: -.01em; min-height: 48px; position: relative; white-space: nowrap;text-decoration:none;transition:color var(--transition-fast,180ms),background var(--transition-fast,180ms),border-color var(--transition-fast,180ms),transform var(--transition-fast,180ms);}.ds-nav-link::after{content: \"\"; position: absolute; left: 0; right: 0; bottom: 8px; height: 1px; background: var(--color-primary); transform: scaleX(0); transform-origin: left; transition: transform var(--transition-normal);}.ds-nav-link:hover{color:var(--text-primary,#f3f0e8)}.ds-nav-link:hover::after{transform:scaleX(1)}.ds-nav-link:focus-visible{outline:2px solid var(--color-primary,#c58d66);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-nav-link,.ds-nav-link::after{transition:none}}"
+    },
+    {
+      "name": "Project status",
+      "kind": "chip",
+      "refersTo": "project-status",
+      "description": "Etiqueta de estado de una página de proyecto; no es un filtro interactivo.",
+      "html": "<span class=\"ds-status\">En desarrollo</span>",
+      "css": ".ds-status{display:inline-flex;font-family:var(--font-primary,\"DM Sans\",Arial,sans-serif);font-size:12px;color:var(--color-primary,#c58d66);padding:4px 12px;border:1px solid var(--border-accent,#c58d6670);border-radius:4px}"
+    },
+    {
+      "name": "Freelance tab",
+      "kind": "custom",
+      "refersTo": "freelance-tab",
+      "description": "Apariencia de la pestaña seleccionada. La navegación y el indicador animado requieren el componente React real.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\" aria-label=\"Webs para clientes\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\">180DC UPC</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">EEC Consultores</button></div>",
+      "css": ".ds-tabs{display:flex;gap:40px;border-bottom:1px solid var(--border-color-hover,#f3f0e849);overflow-x:auto}.ds-tab{font-family:var(--font-primary,\"DM Sans\",Arial,sans-serif);background:transparent;border:0;cursor:pointer;flex-shrink: 0; display: flex; align-items: center; gap: 18px; position: relative; min-height: 64px; padding: 10px 0 18px; font-size: 18px; color: var(--text-secondary);}.ds-tab[aria-selected=true]{color:var(--text-primary,#f3f0e8);font-weight:600}.ds-tab::after{content: \"\"; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--color-primary); transform: scaleX(0); transform-origin: left; transition: transform var(--transition-normal);}.ds-tab[aria-selected=true]::after{transform:scaleX(1)}.ds-tab:focus-visible{outline:2px solid var(--color-primary,#c58d66);outline-offset:-3px}@media(prefers-reduced-motion:reduce){.ds-tab,.ds-tab::after{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Software con acento editorial",
+    "overview": "Esta frase describe la implementación aprobada; no establece una nueva marca. El portafolio combina una presentación editorial con trabajos reales, controles discretos y un acento tipográfico reconocible. La composición del hero, el vídeo aportado por el usuario y la combinación Manrope / DM Sans / Fraunces son decisiones aceptadas en la sesión.\n\nLa documentación registra el estado de `bf8d58f`. Los valores del frontmatter proceden del código; no son una propuesta de rediseño. Los nombres semánticos permiten describir roles, pero no implican que existan variables CSS para cada medida. Las excepciones de componentes y de temas siguen siendo parte de la implementación.",
+    "keyCharacteristics": [
+      "Neutros cálidos, cobre y alternancia con superficies marfil.",
+      "Titulares expresivos y texto de lectura sobrio.",
+      "Tarjetas abiertas, divisores finos y radios pequeños.",
+      "Capturas reales y un vídeo decorativo en el hero.",
+      "Movimiento breve, interrumpible y vinculado a cambios de estado."
+    ],
+    "rules": [
+      {
+        "name": "The Semantic Theme Rule",
+        "body": "Consumir las variables CSS semánticas existentes; no aplicar el cobre oscuro a todos los temas ni recolorear los activos de clientes.",
+        "section": "colors"
+      },
+      {
+        "name": "The Approved Accent Rule",
+        "body": "Fraunces cursiva corresponde al acento del hero; Fraunces normal corresponde a los títulos de sección. No extender la cursiva a párrafos o botones.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Conservar la composición aprobada del hero, su vídeo y la etiqueta Full Stack.",
+      "Reutilizar las variables semánticas de ambos temas y los overrides de bandas editoriales.",
+      "Mantener los roles de Manrope, DM Sans y Fraunces y las excepciones documentadas.",
+      "Usar capturas, logos y tecnologías vinculados a datos reales del portafolio.",
+      "Probar textos en español e inglés, foco de teclado y movimiento reducido.",
+      "Mostrar una propuesta revisable antes de aplicar cambios visuales, según la preferencia del usuario."
+    ],
+    "donts": [
+      "Recuperar la escultura JC, su interacción de exploración o un trazo SVG como hero vigente: corresponden a versiones anteriores.",
+      "Tratar las maquetas rechazadas o el antiguo brief `.impeccable/hero-direction.md` como autoridad sobre el código y las decisiones posteriores aprobadas.",
+      "Introducir una nueva paleta, familia tipográfica o composición mediante una tarea de polish.",
+      "Presentar medidas observadas, scroll interno o problemas pendientes como requisitos universales.",
+      "Usar animación para ocultar controles, retrasar acciones o ignorar movimiento reducido.",
+      "Inventar métricas, capturas, experiencia o resultados de clientes para completar una composición."
+    ]
+  }
+}
