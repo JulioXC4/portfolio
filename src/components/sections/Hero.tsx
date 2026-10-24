@@ -54,7 +54,7 @@ export function Hero() {
       <div className={styles.container + ' container'}>
         <div className={styles.main}>
           <div className={styles.textColumn}>
-            <p className={styles.identity}>Julio Castro <span aria-hidden="true">·</span> Backend &amp; Full Stack</p>
+            <p className={styles.identity}>Julio Castro <span aria-hidden="true">·</span> Full Stack</p>
             <h1 className={styles.title}>
               <span className={styles.firstLine}>{t('hero.title')}</span>{' '}
               <span className={styles.accent}>{t('hero.title_accent')}</span>

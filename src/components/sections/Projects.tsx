@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { ExternalLink, CalendarDays, Database, FileText, Laptop, Wrench } from 'lucide-react';
 import { Github } from '@/components/common/BrandIcons';
 import { TechMark } from '@/components/common/TechMark';
 import { useLanguage } from '@/context/LanguageContext';
 import { projectsData } from '@/data/projects';
 import styles from './Projects.module.css';
+import { useMotion } from '@/hooks/useMotion';
 
 const categories = ['All', 'Web', 'Mobile', 'Backend', 'IoT', 'IA'] as const;
 const categoryKeys = ['all', 'web', 'mobile', 'backend', 'iot', 'ia'] as const;
@@ -16,14 +17,65 @@ export function Projects() {
   const { language, t } = useLanguage();
   const es = language === 'es';
   const [activeCategory, setActiveCategory] = useState<string>('All');
+  const grid = useRef<HTMLDivElement>(null);
+  const shell = useRef<HTMLDivElement>(null);
+  const ghosts = useRef<HTMLDivElement>(null);
+  const positions = useRef<Map<string, DOMRect> | null>(null);
+  const outgoing = useRef<{ element: HTMLElement; rect: DOMRect }[]>([]);
+  const { animate, cancel } = useMotion();
   const projects = projectsData.filter(project => !project.hidden && (activeCategory === 'All' || project.category.some(category => category === activeCategory)));
+
+  const selectCategory = (category: string) => {
+    if (category === activeCategory || !grid.current) return;
+    const cards = Array.from(grid.current.children) as HTMLElement[];
+    positions.current = new Map(cards.map(card => [card.id, card.getBoundingClientRect()]));
+    cancel();
+    outgoing.current = [];
+    if (ghosts.current && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const visible = new Set(projectsData.filter(project => !project.hidden && (category === 'All' || project.category.some(value => value === category))).map(project => `project-${project.slug}`));
+      for (const card of cards) {
+        if (visible.has(card.id)) continue;
+        const clone = card.cloneNode(true) as HTMLElement;
+        clone.removeAttribute('id');
+        clone.querySelectorAll('[id]').forEach(element => element.removeAttribute('id'));
+        clone.inert = true;
+        const rect = positions.current.get(card.id)!;
+        Object.assign(clone.style, { position: 'absolute', width: `${rect.width}px`, height: `${rect.height}px`, margin: '0' });
+        ghosts.current.append(clone);
+        outgoing.current.push({ element: clone, rect });
+      }
+    }
+    setActiveCategory(category);
+  };
+
+  useLayoutEffect(() => {
+    if (!positions.current || !grid.current || !shell.current) return;
+    const origin = shell.current.getBoundingClientRect();
+    for (const { element, rect } of outgoing.current) {
+      element.style.left = `${rect.left - origin.left}px`;
+      element.style.top = `${rect.top - origin.top}px`;
+      animate(element, [{ opacity: .4 }, { opacity: 0 }], 120, () => element.remove());
+    }
+    outgoing.current = [];
+    for (const card of Array.from(grid.current.children) as HTMLElement[]) {
+      const before = positions.current.get(card.id);
+      const after = card.getBoundingClientRect();
+      if (before) {
+        animate(card, [{ transform: `translate(${before.left - after.left}px,${before.top - after.top}px)` }, { transform: 'none' }], 280);
+      } else {
+        animate(card, [{ opacity: .45, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], 220);
+      }
+    }
+    positions.current = null;
+  }, [activeCategory, animate]);
   return (
     <section id="projects" className={styles.section} tabIndex={0} aria-labelledby="projects-heading">
       <div className="container">
         <header className={styles.header}><div className="section-rule" aria-hidden="true" /><h2 id="projects-heading">{t('projects.title')}</h2><p>{t('projects.subtitle')}</p></header>
-        <div className={styles.filters} role="group" aria-label={es ? 'Filtrar proyectos' : 'Filter projects'}>{categories.map((category, index) => <button key={category} type="button" aria-pressed={category === activeCategory} className={category === activeCategory ? styles.active : ''} onClick={() => setActiveCategory(category)}>{t(`projects.category.${categoryKeys[index]}`)}</button>)}</div>
+        <div className={styles.filters} role="group" aria-label={es ? 'Filtrar proyectos' : 'Filter projects'}>{categories.map((category, index) => <button key={category} type="button" aria-pressed={category === activeCategory} className={category === activeCategory ? styles.active : ''} onClick={() => selectCategory(category)}>{t(`projects.category.${categoryKeys[index]}`)}</button>)}</div>
         <p className={styles.srOnly} role="status">{projects.length} {es ? 'proyectos visibles' : 'projects shown'}</p>
-        <div className={styles.grid}>
+        <div ref={shell} className={styles.gridShell}>
+        <div ref={grid} className={styles.grid}>
           {projects.map(project => {
             const view = project.presentation;
             const title = view ? (es ? view.titleES : view.titleEN) : (es ? project.titleES : project.titleEN);
@@ -45,6 +97,8 @@ export function Projects() {
               </article>
             );
           })}
+        </div>
+        <div ref={ghosts} className={styles.ghostLayer} aria-hidden="true" inert />
         </div>
         {projects.length === 0 && <p className={styles.empty}>{es ? 'No hay proyectos en esta categoría.' : 'No projects in this category.'}</p>}
       </div>

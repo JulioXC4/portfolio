@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import type { KeyboardEvent } from 'react';
 import Image from 'next/image';
 import { ArrowRight, ArrowUpRight, Layers3 } from 'lucide-react';
@@ -10,13 +10,65 @@ import { freelanceProjects } from '@/data/freelance';
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/lib/whatsapp';
 import { trackWhatsAppClick } from '@/lib/analytics';
 import styles from './Freelance.module.css';
+import { useMotion } from '@/hooks/useMotion';
 
 export function Freelance() {
   const { language, t } = useLanguage();
   const [active, setActive] = useState(0);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const tablist = useRef<HTMLDivElement>(null);
+  const indicator = useRef<HTMLSpanElement>(null);
+  const details = useRef<HTMLDivElement>(null);
+  const imageFrame = useRef<HTMLDivElement>(null);
+  const previous = useRef(active);
+  const direction = useRef(1);
+  const changed = useRef(false);
+  const { animate, cancel } = useMotion();
   const project = freelanceProjects[active];
   const isSpanish = language === 'es';
+
+  useLayoutEffect(() => {
+    if (previous.current !== active) {
+      cancel();
+      direction.current = active > previous.current ? 1 : -1;
+      changed.current = true;
+      previous.current = active;
+      if (details.current) animate(details.current, [{ opacity: .45 }, { opacity: 1 }], 180);
+    }
+  }, [active, animate, cancel]);
+
+  useLayoutEffect(() => {
+    const list = tablist.current;
+    const line = indicator.current;
+    const selected = tabs.current[active];
+    if (!list || !line || !selected) return;
+    let disposed = false;
+    const move = (withMotion: boolean) => {
+      if (disposed) return;
+      const from = getComputedStyle(line).transform;
+      const to = `translateX(${selected.offsetLeft}px) scaleX(${selected.offsetWidth})`;
+      const ready = list.dataset.indicatorReady === 'true';
+      if (ready && line.style.transform === to) return;
+      line.getAnimations().forEach(animation => animation.cancel());
+      line.style.transform = to;
+      list.dataset.indicatorReady = 'true';
+      if (withMotion && ready && from !== 'none') animate(line, [{ transform: from }, { transform: to }], 300);
+    };
+    move(true);
+    const observer = new ResizeObserver(() => move(false));
+    observer.observe(list);
+    tabs.current.forEach(tab => { if (tab) observer.observe(tab); });
+    void document.fonts.ready.then(() => move(false));
+    return () => { disposed = true; observer.disconnect(); };
+  }, [active, language, animate]);
+
+  const revealImage = () => {
+    if (!changed.current || !imageFrame.current) return;
+    animate(imageFrame.current, [
+      { clipPath: direction.current > 0 ? 'inset(0 0 0 12%)' : 'inset(0 12% 0 0)', opacity: .4 },
+      { clipPath: 'inset(0 0 0 0)', opacity: 1 },
+    ], 360);
+  };
 
   const selectWithKeyboard = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
     let next: number;
@@ -42,7 +94,7 @@ export function Freelance() {
           <h2 id="freelance-heading" className={styles.heading}>{t('freelance.title')}</h2>
           <p className={styles.intro}>{t('freelance.subtitle')}</p>
         </header>
-        <div className={styles.tabs} role="tablist" aria-label={t('freelance.title')}>
+        <div ref={tablist} className={styles.tabs} role="tablist" aria-label={t('freelance.title')}>
           {freelanceProjects.map((item, index) => (
             <button
               key={item.id}
@@ -59,9 +111,10 @@ export function Freelance() {
               <span aria-hidden="true">0{index + 1}</span>{item.name}
             </button>
           ))}
+          <span ref={indicator} className={styles.indicator} aria-hidden="true" />
         </div>
         <article id="freelance-case" role="tabpanel" aria-labelledby={`freelance-tab-${project.id}`} className={styles.case}>
-          <div key={project.id} className={styles.details}>
+          <div ref={details} key={project.id} className={styles.details}>
             <span className={styles.number} aria-hidden="true">0{active + 1}</span>
             <h3 className={styles.title}>{project.name}</h3>
             <p className={styles.category}>{isSpanish ? project.categoryES : project.categoryEN}</p>
@@ -102,7 +155,7 @@ export function Freelance() {
             aria-label={`${t('freelance.preview')} — ${project.name}`}
             style={{ backgroundColor: project.previewBackground, color: project.previewForeground }}
           >
-            <div className={styles.imageFrame}>
+            <div ref={imageFrame} className={styles.imageFrame}>
               <Image
                 key={project.id}
                 src={project.image}
@@ -110,6 +163,7 @@ export function Freelance() {
                 sizes="(max-width: 760px) 88vw, 60vw"
                 alt={`${t('freelance.screenshot')} ${project.name}`}
                 className={styles.screenshot}
+                onLoad={revealImage}
               />
             </div>
             <span className={styles.domain}>

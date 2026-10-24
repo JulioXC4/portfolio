@@ -1,26 +1,26 @@
 .section { width: 100%; }
-.header { margin-bottom: 18px; }
+.header { margin-bottom: 20px; }
 .header :global(.section-rule) { margin-bottom: 16px; }
 .header h2 { font-size: clamp(36px,4.2vw,64px); }
 .header p { max-width: 1120px; margin-top: 18px; font-size: clamp(16px,1.4vw,21px); }
-.filters { display: flex; gap: 32px; margin-bottom: 12px; overflow-x: auto; }
-.filters button { flex-shrink: 0; min-height: 48px; padding: 8px 2px 12px; border-bottom: 2px solid transparent; color: var(--text-secondary); font-size: 15px; }
+.filters { display: flex; gap: 28px; margin-bottom: 20px; overflow-x: auto; }
+.filters button { flex-shrink: 0; min-height: 48px; padding: 8px 6px 12px; border-bottom: 2px solid transparent; color: var(--text-secondary); font-size: 15px; }
 .filters button:hover,.filters .active { color: var(--color-primary); }
 .filters .active { border-bottom-color: var(--color-primary); }
 .filters button:focus-visible { outline-offset: -3px; }
-.grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 48px; row-gap: 8px; }
-.card { min-width: 0; display: flex; flex-direction: column; border-top: 1px solid var(--border-color-hover); padding: 18px 0 12px; scroll-margin-top: 24px; }
+.grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 48px; row-gap: 16px; }
+.card { min-width: 0; display: flex; flex-direction: column; border-top: 1px solid var(--border-color-hover); padding: 20px 0 12px; scroll-margin-top: 24px; }
 .cardHeader { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
 .cardHeader > svg { color: var(--color-primary); flex-shrink: 0; margin-top: 6px; }
-.context { color: var(--text-muted); font-size: 13px; margin-top: 4px; }
+.context { color: var(--text-muted); font-size: 14px; margin-top: 8px; line-height: 1.5; }
 .card h3 { font-size: clamp(26px,2.1vw,32px); text-wrap: pretty; line-height: 1.2; letter-spacing: -.025em; }
-.description { margin-top: 14px; font-size: 16px; line-height: 1.55; min-height: 44px; max-width: 64ch; }
-.cardFooter { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 22px; }
+.description { margin-top: 14px; font-size: 16px; line-height: 1.65; letter-spacing: 0; min-height: 44px; max-width: 64ch; }
+.cardFooter { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: auto; padding-top: 20px; }
 .tools { min-width: 0; }
-.tools > p { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; }
+.tools > p { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
 .tools ul { display: flex; flex-wrap: wrap; gap: 12px 22px; list-style: none; }
 .tools li { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
-.actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 24px; }
+.actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; }
 .actions a,.status { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; font-size: 14px; }
 .actions a { color: var(--text-primary); text-decoration: underline; text-decoration-color: var(--border-color-hover); text-underline-offset: 6px; }
 .actions a svg { color: var(--color-primary); }
@@ -29,5 +29,8 @@
 .empty { padding-block: 24px; }
 .srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media(max-width:1100px) { .grid { column-gap: 32px; } .card h3 { font-size: 27px; } }
-@media(max-width:760px) { .header h2 { font-size: 36px; } .grid { grid-template-columns: 1fr; gap: 8px; } .filters { gap: 26px; } .card { padding: 24px 0 20px; } .cardHeader { gap: 16px; } .card h3 { font-size: 27px; } .description { min-height: 0; } .actions { gap: 24px; } }
+@media(max-width:760px) { .header h2 { font-size: 36px; } .grid { grid-template-columns: 1fr; gap: 16px; } .filters { gap: 20px; } .card { padding: 20px 0 12px; } .cardHeader { gap: 16px; } .card h3 { font-size: 27px; } .description { min-height: 0; } .actions { gap: 12px 24px; } .cardFooter { gap: 12px; } }
 
+
+.gridShell { position: relative; isolation: isolate; }
+.ghostLayer { position: absolute; inset: 0; pointer-events: none; z-index: -1; }

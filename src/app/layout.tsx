@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
@@ -17,6 +18,17 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-primary",
   display: "swap",
+});
+
+const fraunces = localFont({
+  src: [
+    { path: "./fonts/Fraunces-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/Fraunces-SemiBoldItalic.ttf", weight: "600", style: "italic" },
+  ],
+  variable: "--font-accent",
+  display: "swap",
+  fallback: ["Georgia"],
+  adjustFontFallback: "Times New Roman",
 });
 
 const siteUrl = "https://juliocastro.vercel.app";
@@ -99,7 +111,7 @@ export default function RootLayout({
     <html
       lang="es"
       data-scroll-behavior="smooth"
-      className={`${manrope.variable} ${dmSans.variable}`}
+      className={`${manrope.variable} ${dmSans.variable} ${fraunces.variable}`}
     >
       <head>
         <JsonLd data={mainWebsiteSchema} />
