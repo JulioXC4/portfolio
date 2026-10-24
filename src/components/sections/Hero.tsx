@@ -3,11 +3,13 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useTheme } from '@/context/ThemeContext';
 import { scrollToSection } from '@/lib/navigation';
 import styles from './Hero.module.css';
 
 export function Hero() {
   const { language, t } = useLanguage();
+  const { theme } = useTheme();
   const videoRef = useRef<HTMLVideoElement>(null);
   const es = language === 'es';
 
@@ -42,7 +44,7 @@ export function Hero() {
       document.removeEventListener('visibilitychange', syncPlayback);
       video.pause();
     };
-  }, []);
+  }, [theme]);
 
   function navigateTo(id: string) {
     scrollToSection(id);
@@ -52,10 +54,10 @@ export function Hero() {
   return (
     <section id="home" className={styles.heroSection} tabIndex={0} aria-label={es ? 'Inicio' : 'Home'}>
       <div className={styles.artwork} aria-hidden="true">
-        <video ref={videoRef} className={styles.video} muted loop playsInline preload="metadata"
-          width={1920} height={1080} poster="/images/hero/portal-poster.webp"
+        <video key={theme} ref={videoRef} className={styles.video} muted loop playsInline preload="metadata"
+          src={theme === 'light' ? '/videos/hero-portal-light-loop.mp4' : '/videos/hero-portal-loop.mp4'}
+          width={1920} height={1080} poster={theme === 'light' ? '/images/hero/portal-light-poster.webp' : '/images/hero/portal-poster.webp'}
           aria-hidden="true" tabIndex={-1} disablePictureInPicture>
-          <source src="/videos/hero-portal-loop.mp4" type="video/mp4" />
         </video>
       </div>
       <div className={styles.container + ' container'}>
