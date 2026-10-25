@@ -25,6 +25,7 @@ export function Freelance() {
   const changed = useRef(false);
   const { animate, cancel } = useMotion();
   const project = freelanceProjects[active];
+  const Preview = project.url ? 'a' : 'div';
   const isSpanish = language === 'es';
 
   useLayoutEffect(() => {
@@ -124,7 +125,7 @@ export function Freelance() {
               {isSpanish ? project.platformES : project.platformEN}
             </p>
             <div className={styles.caseActions}>
-              <a
+              {project.url && <a
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -133,7 +134,7 @@ export function Freelance() {
               >
                 {t('freelance.visit')}
                 <ArrowRight size={18} aria-hidden="true" />
-              </a>
+              </a>}
               <a
                 href={getWhatsAppUrl(WHATSAPP_MESSAGES.freelanceSimilar(project.name, language))}
                 target="_blank"
@@ -147,12 +148,14 @@ export function Freelance() {
               </a>
             </div>
           </div>
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Preview
+            {...(project.url ? {
+              href: project.url,
+              target: '_blank',
+              rel: 'noopener noreferrer',
+              'aria-label': `${t('freelance.preview')} — ${project.name}`,
+            } : {})}
             className={styles.preview}
-            aria-label={`${t('freelance.preview')} — ${project.name}`}
             style={{ backgroundColor: project.previewBackground, color: project.previewForeground }}
           >
             <div ref={imageFrame} className={styles.imageFrame}>
@@ -166,11 +169,11 @@ export function Freelance() {
                 onLoad={revealImage}
               />
             </div>
-            <span className={styles.domain}>
+            {project.url && project.domain && <span className={styles.domain}>
               {project.domain}
               <ArrowUpRight size={18} aria-hidden="true" />
-            </span>
-          </a>
+            </span>}
+          </Preview>
         </article>
       </div>
     </section>

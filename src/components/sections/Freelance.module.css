@@ -22,7 +22,7 @@
 .preview { min-width: 0; padding: 22px; border: 1px solid var(--border-color-hover); border-radius: 5px; overflow: hidden; }
 .imageFrame { position: relative; aspect-ratio: 16/9; }
 .screenshot { object-fit: contain; transition: transform 450ms ease; }
-.preview:hover .screenshot { transform: scale(1.015); }
+a.preview:hover .screenshot { transform: scale(1.015); }
 .domain { display: flex; align-items: center; gap: 12px; color: inherit; margin-top: 18px; min-height: 24px; font-size: 14px; }
 @media (max-width: 760px) { .case > .preview { order: -1; } .details { padding-top: 0; } }
 :global([data-theme="light"]) .visit { color: #fffaf2; }

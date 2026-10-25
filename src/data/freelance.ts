@@ -1,4 +1,33 @@
-export const freelanceProjects = [
+interface FreelanceProject {
+  id: string;
+  name: string;
+  url?: string;
+  domain?: string;
+  image: string;
+  previewBackground: string;
+  previewForeground: string;
+  categoryES: string;
+  categoryEN: string;
+  descriptionES: string;
+  descriptionEN: string;
+  platformES: string;
+  platformEN: string;
+}
+
+export const freelanceProjects: readonly FreelanceProject[] = [
+  {
+    id: 'drillhub',
+    name: 'DrillHub',
+    image: '/images/freelance/drillhub.webp',
+    previewBackground: '#f3f7f6',
+    previewForeground: '#0b4338',
+    categoryES: 'Aplicación web',
+    categoryEN: 'Web application',
+    descriptionES: 'Aplicación web para organizar proyectos de perforación, coordinar equipos y gestionar registros de campo. Una plataforma que reúne la información del trabajo de campo en un mismo lugar.',
+    descriptionEN: 'Web application for organizing drilling projects, coordinating teams, and managing field records. A platform that brings fieldwork information together in one place.',
+    platformES: 'Next.js · React · TypeScript',
+    platformEN: 'Next.js · React · TypeScript',
+  },
   {
     id: '180dc-upc',
     name: '180DC UPC',
