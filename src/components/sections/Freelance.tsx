@@ -170,10 +170,12 @@ export function Freelance() {
                 onLoad={revealImage}
               />
             </div>
-            {project.url && project.domain && <span className={styles.domain}>
-              {project.domain}
-              <ArrowUpRight size={18} aria-hidden="true" />
-            </span>}
+            <span className={styles.domain}>
+              <span>{project.domain ?? project.name}</span>
+              {project.url
+                ? <ArrowUpRight size={18} aria-hidden="true" />
+                : <span>{isSpanish ? 'Sin enlace público' : 'No public link'}</span>}
+            </span>
           </Preview>
         </article>
       </div>
