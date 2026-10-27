@@ -163,7 +163,8 @@ export function Freelance() {
                 key={project.id}
                 src={project.image}
                 fill
-                sizes="(max-width: 760px) 88vw, 60vw"
+                sizes="(max-width: 760px) calc(100vw - 50px), (max-width: 1100px) 54vw, (max-width: 1600px) 62vw, 1000px"
+                quality={90}
                 alt={`${t('freelance.screenshot')} ${project.name}`}
                 className={styles.screenshot}
                 onLoad={revealImage}
