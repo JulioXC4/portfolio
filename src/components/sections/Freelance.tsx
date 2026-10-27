@@ -27,6 +27,9 @@ export function Freelance() {
   const project = freelanceProjects[active];
   const Preview = project.url ? 'a' : 'div';
   const isSpanish = language === 'es';
+  const previewStatus = project.inDevelopment
+    ? (isSpanish ? 'En desarrollo' : 'In development')
+    : (isSpanish ? 'Sin enlace público' : 'No public link');
 
   useLayoutEffect(() => {
     if (previous.current !== active) {
@@ -174,7 +177,7 @@ export function Freelance() {
               <span>{project.domain ?? project.name}</span>
               {project.url
                 ? <ArrowUpRight size={18} aria-hidden="true" />
-                : <span>{isSpanish ? 'Sin enlace público' : 'No public link'}</span>}
+                : <span>{previewStatus}</span>}
             </span>
           </Preview>
         </article>

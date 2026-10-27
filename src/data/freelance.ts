@@ -3,6 +3,7 @@ interface FreelanceProject {
   name: string;
   url?: string;
   domain?: string;
+  inDevelopment?: boolean;
   image: string;
   previewBackground: string;
   previewForeground: string;
@@ -72,5 +73,19 @@ export const freelanceProjects: readonly FreelanceProject[] = [
     descriptionEN: 'Website for an electrical, plumbing, and fire protection consultancy. I developed its original WordPress website and its current version in Astro.',
     platformES: 'Astro · WordPress (versión anterior)',
     platformEN: 'Astro · WordPress (previous version)',
+  },
+  {
+    id: 'matere',
+    name: 'MATERÉ',
+    inDevelopment: true,
+    image: '/images/freelance/matere-desktop.webp',
+    previewBackground: '#f7f3ec',
+    previewForeground: '#30231d',
+    categoryES: 'Tienda online',
+    categoryEN: 'Online store',
+    descriptionES: 'Tienda online de belleza con catálogo de perfumes, maquillaje y cuidado personal, carrito de compras y consultas por WhatsApp. Proyecto en desarrollo.',
+    descriptionEN: 'Online beauty boutique with a perfume, makeup, and personal care catalog, a shopping cart, and WhatsApp inquiries. Currently in development.',
+    platformES: 'React',
+    platformEN: 'React',
   },
 ] as const;

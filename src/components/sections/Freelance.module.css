@@ -23,7 +23,7 @@
 .imageFrame { position: relative; aspect-ratio: 16/9; }
 .screenshot { object-fit: contain; }
 a.preview:hover { border-color: var(--color-primary); }
-.domain { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: inherit; padding: 14px 18px; border-top: 1px solid var(--border-color); min-height: 48px; font-size: 14px; overflow-wrap: anywhere; }
+.domain { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--bg-surface-solid); color: var(--text-secondary); padding: 14px 18px; border-top: 1px solid var(--border-color-hover); min-height: 48px; font-size: 14px; overflow-wrap: anywhere; }
 @media (max-width: 760px) { .case > .preview { order: -1; } .details { padding-top: 0; } }
 :global([data-theme="light"]) .visit { color: #fffaf2; }
 @media (max-width: 1100px) { .case { grid-template-columns: 1fr 1.4fr; gap: 28px; } .description { font-size: 15px; } .heading { font-size: 50px; } .intro { font-size: 18px; padding-left: 26px; } .title { font-size: 31px; } }
