@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import { Boxes, Monitor, Cloud, BrainCircuit, BadgeCheck, ExternalLink, Plus } from 'lucide-react';
+import { Boxes, Monitor, Cloud, BrainCircuit, Award, ExternalLink, GraduationCap } from 'lucide-react';
 import styles from './Goals.module.css';
 
 export const Goals: React.FC = () => {
@@ -17,41 +17,43 @@ export const Goals: React.FC = () => {
 
   return (
     <section id="goals" className={`${styles.goalsSection} editorial-band`} tabIndex={0} aria-labelledby="education-heading">
-      <div className="container">
+      <div className={`container ${styles.container}`}>
         <header className={styles.sectionHeader}>
-          <div className="section-rule" aria-hidden="true" />
+          <div className={styles.sectionRule} aria-hidden="true" />
           <h2 id="education-heading" className={styles.sectionTitle}>{t('education.section_title')}</h2>
         </header>
-        <div className={styles.grid}>
-          <div className={styles.educationColumn}>
-            <a href="https://www.upc.edu.pe/" target="_blank" rel="noopener noreferrer" className={styles.universityLink}>
-              <Image src="/images/brands/upc.png" width={52} height={52} alt="UPC" className={styles.universityLogo} />
-              <span>{t('education.university')}</span><ExternalLink size={16} aria-hidden="true" />
-            </a>
-            <h3 className={styles.degree}>{t('education.degree')}</h3>
-            <p className={styles.period}>{t('education.period')}</p>
-            <p className={styles.academic}><BadgeCheck size={19} aria-hidden="true" />{t('education.academic')}</p>
-            <p className={styles.foundation}>{t('education.foundation')}</p>
-            <blockquote className={styles.statement}>{t('education.statement')}</blockquote>
-          </div>
-          <div className={styles.growthColumn}>
-            <h3 className={styles.growthHeading}>{t('goals.title')}</h3>
-            <p className={styles.sectionSubtitle}>{t('goals.subtitle')}</p>
-            <div className={styles.growthList}>
-              {growthItems.map((item, index) => {
-                const Icon = item.icon;
-                return <details key={item.title} className={styles.growthCard} open={index === 0}>
-                  <summary className={styles.growthToggle}>
-                    <Icon size={25} strokeWidth={1.5} aria-hidden="true" />
-                    <span>{item.title}</span>
-                    <Plus size={18} className={styles.toggleMark} aria-hidden="true" />
-                  </summary>
-                  <p className={styles.growthDesc}>{item.desc}</p>
-                </details>;
-              })}
+        <div className={styles.education}>
+          <div className={styles.credentials}>
+            <Image src="/images/brands/upc.png" width={104} height={104} alt="UPC" className={styles.universityLogo} />
+            <div className={styles.degreeGroup}>
+              <h3 className={styles.degree}>{t('education.degree')}</h3>
+              <a href="https://www.upc.edu.pe/" target="_blank" rel="noopener noreferrer" className={styles.universityLink}>
+                <span>{t('education.university')}</span><ExternalLink size={20} aria-hidden="true" />
+              </a>
             </div>
+            <p className={styles.credential}><GraduationCap size={44} strokeWidth={1.4} aria-hidden="true" /><span>{t('education.period')}</span></p>
+            <p className={styles.credential}><Award size={42} strokeWidth={1.4} aria-hidden="true" /><span>{t('education.academic')}</span></p>
           </div>
+          <p className={styles.foundation}>{t('education.foundation')}</p>
         </div>
+        <div className={styles.growth}>
+          <h3 className={styles.growthHeading}>{t('goals.title')}</h3>
+          <p className={styles.sectionSubtitle}>{t('goals.subtitle')}</p>
+          <ol className={styles.growthList} role="list">
+            {growthItems.map((item, index) => {
+              const Icon = item.icon;
+              return <li key={item.title} className={styles.growthItem}>
+                <span className={styles.itemNumber} aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <Icon className={styles.itemIcon} size={36} strokeWidth={1.4} aria-hidden="true" />
+                <div className={styles.itemContent}>
+                  <h4 className={styles.growthTitle}>{item.title}</h4>
+                  <p className={styles.growthDesc}>{item.desc}</p>
+                </div>
+              </li>;
+            })}
+          </ol>
+        </div>
+        <blockquote className={styles.statement}>{t('education.statement')}</blockquote>
       </div>
     </section>
   );

@@ -1,37 +1,99 @@
-.sectionHeader { margin-bottom: 36px; }
-.sectionTitle { font-size: clamp(36px,4.2vw,64px); }
-.grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(36px,5vw,80px); align-items: start; }
-.educationColumn { min-width: 0; }
-.universityLink { display: flex; align-items: center; gap: 16px; max-width: 42ch; font-size: 15px; line-height: 1.45; color: var(--text-secondary); }
-.universityLink > svg { flex-shrink: 0; color: var(--color-primary); }
+:global(#main-content) section.goalsSection[id] { padding-block: 28px; }
+.container { max-width: 1480px; }
+.sectionHeader { margin-bottom: 28px; }
+.sectionRule { width: 38px; height: 1px; background: var(--color-primary); margin-bottom: 20px; }
+.sectionTitle { font-size: clamp(36px,4.2vw,64px); line-height: 1.15; }
+.education { padding-bottom: 28px; border-bottom: 1px solid var(--border-color); }
+.credentials { display: grid; grid-template-columns: 150px minmax(0,1.7fr) minmax(0,1fr) minmax(0,.87fr); align-items: center; }
+.universityLogo { width: 130px; height: 130px; margin-block: -20px; object-fit: contain; }
+.degreeGroup { min-width: 0; padding-inline: 38px; border-left: 1px solid var(--border-color); }
+.degree { font-family: var(--font-accent),Georgia,serif; font-size: clamp(30px,2.8vw,46px); font-weight: 600; line-height: 1.05; letter-spacing: -.035em; }
+.universityLink { display: inline-flex; align-items: center; gap: 12px; min-height: 32px; margin-top: 0; font-size: 20px; line-height: 1.3; color: var(--text-secondary); }
+.universityLink > svg { color: var(--color-primary); }
 .universityLink:hover { color: var(--color-primary); }
-.universityLogo { width: 52px; height: 52px; object-fit: contain; flex-shrink: 0; }
-.degree { font-size: clamp(29px,2.7vw,42px); line-height: 1.2; margin-top: 26px; letter-spacing: -.03em; }
-.period { font-size: 15px; margin-top: 12px; }
-.academic { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; color: var(--color-primary); font-size: 14px; }
-.foundation { font-size: 17px; line-height: 1.65; max-width: 48ch; margin-top: 22px; }
-.statement { font-family: var(--font-accent),Georgia,serif; color: var(--text-primary); font-size: clamp(21px,1.8vw,27px); line-height: 1.45; max-width: 34ch; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--border-color); text-wrap: pretty; }
-.growthColumn { padding-left: clamp(28px,3.2vw,48px); border-left: 1px solid var(--border-color); }
-.growthHeading { font-size: clamp(26px,2.2vw,34px); line-height: 1.25; }
-.sectionSubtitle { font-size: 16px; line-height: 1.6; margin-top: 12px; }
-.growthList { margin-top: 24px; }
-.growthCard { border-top: 1px solid var(--border-color); }
-.growthCard:last-child { border-bottom: 1px solid var(--border-color); }
-.growthToggle { display: flex; align-items: center; gap: 16px; padding-block: 22px; cursor: pointer; list-style: none; font-family: var(--font-display); font-size: 19px; font-weight: 600; line-height: 1.35; }
-.growthToggle::-webkit-details-marker { display: none; }
-.growthToggle > svg { color: var(--color-primary); }
-.growthToggle:hover { color: var(--color-primary); }
-.toggleMark { margin-left: auto; transition: transform 240ms ease; }
-.growthCard[open] .toggleMark { transform: rotate(45deg); }
-.growthDesc { padding: 0 30px 22px 41px; font-size: 16px; line-height: 1.65; }
-@media (prefers-reduced-motion: no-preference) { .growthCard[open] .growthDesc { animation: detail-arrive 240ms cubic-bezier(.16,1,.3,1) both; } }
-@keyframes detail-arrive { from { opacity: .5; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
-@supports (interpolate-size: allow-keywords) {
-  .growthCard { interpolate-size: allow-keywords; }
-  .growthCard::details-content { height: 0; overflow: clip; transition: height 320ms cubic-bezier(.16,1,.3,1),content-visibility 320ms allow-discrete; }
-  .growthCard[open]::details-content { height: auto; }
+.credential { display: flex; align-items: center; gap: 24px; min-height: 76px; padding-inline: 42px 22px; border-left: 1px solid var(--border-color); font-size: 20px; line-height: 1.3; color: var(--text-primary); }
+.credential:last-child { padding-right: 0; }
+.credential > svg { color: var(--color-primary); }
+.foundation { margin-top: 28px; max-width: 120ch; font-size: 20px; line-height: 1.5; }
+.growth { margin-top: 28px; }
+.growthHeading { font-family: var(--font-accent),Georgia,serif; font-size: clamp(30px,3vw,48px); font-weight: 600; line-height: 1.2; letter-spacing: -.03em; }
+.sectionSubtitle { font-size: 20px; line-height: 1.5; margin-top: 4px; }
+.growthList { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 60px; row-gap: 24px; list-style: none; margin-top: 24px; }
+.growthItem { display: grid; grid-template-columns: 44px 44px minmax(0,1fr); column-gap: 24px; align-items: start; min-width: 0; }
+.itemNumber { color: var(--color-primary); border-right: 1px solid var(--border-color); padding-block: 9px 20px; font-size: 16px; line-height: 1.4; font-variant-numeric: tabular-nums; }
+.itemIcon { color: var(--color-primary); margin-top: 4px; }
+.itemContent { min-width: 0; }
+.growthTitle { font-family: var(--font-primary),Arial,sans-serif; font-size: 20px; font-weight: 600; line-height: 1.4; letter-spacing: -.02em; }
+.growthDesc { margin-top: 6px; font-size: 17px; line-height: 1.6; max-width: 65ch; }
+.statement { font-family: var(--font-accent),Georgia,serif; font-weight: 600; font-size: clamp(23px,1.8vw,30px); line-height: 1.4; letter-spacing: -.025em; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-color); text-wrap: pretty; }
+@media (min-width: 1101px) and (max-height: 820px) {
+  :global(#main-content) section.goalsSection[id] { padding-block: 28px; }
+  .sectionHeader { margin-bottom: 28px; }
+  .sectionTitle { font-size: clamp(36px,3.8vw,56px); }
+  .universityLogo { width: 110px; height: 110px; margin-block: -14px; }
+  .degree { font-size: 38px; }
+  .universityLink,.credential,.foundation,.sectionSubtitle { font-size: 18px; }
+  .foundation { margin-top: 22px; }
+  .education { padding-bottom: 24px; }
+  .growth { margin-top: 24px; }
+  .growthHeading { font-size: 40px; }
+  .growthList { margin-top: 24px; row-gap: 24px; }
+  .growthDesc { font-size: 16px; }
+  .statement { margin-top: 22px; padding-top: 20px; font-size: 26px; }
 }
-@media (prefers-reduced-motion: reduce) { .growthCard::details-content { transition: none; } }
-@media (min-width: 1101px) and (max-height: 820px) { .sectionHeader { margin-bottom: 26px; } .degree { margin-top: 22px; } .foundation { font-size: 16px; margin-top: 18px; } .statement { font-size: 22px; margin-top: 20px; padding-top: 18px; } .growthToggle { padding-block: 18px; font-size: 18px; } .growthDesc { font-size: 15px; padding-bottom: 18px; } }
-@media (max-width: 1000px) { .grid { gap: 32px; grid-template-columns: 1fr 1.15fr; } .growthColumn { padding-left: 28px; } .growthToggle { font-size: 17px; gap: 12px; } .growthDesc { font-size: 15px; padding-left: 37px; } }
-@media (max-width: 760px) { .sectionHeader { margin-bottom: 28px; } .sectionTitle { font-size: 36px; } .grid { display: block; } .universityLink { font-size: 14px; gap: 12px; } .degree { font-size: 30px; margin-top: 24px; } .foundation { font-size: 16px; } .statement { font-size: 23px; margin-top: 24px; } .growthColumn { padding: 0; border: 0; margin-top: 40px; } .growthHeading { font-size: 27px; } .sectionSubtitle { font-size: 15px; } .growthToggle { font-size: 17px; padding-block: 20px; } .growthDesc { font-size: 15px; padding-right: 0; } }
+@media (max-width: 1200px) {
+  .credentials { grid-template-columns: 104px minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr); }
+  .universityLogo { width: 80px; height: 80px; margin-block: 0; }
+  .degreeGroup { padding-inline: 24px; }
+  .degree { font-size: 32px; }
+  .universityLink { font-size: 16px; }
+  .credential { padding-left: 24px; gap: 16px; font-size: 17px; }
+  .credential > svg { width: 34px; height: 34px; }
+  .foundation,.sectionSubtitle { font-size: 18px; }
+  .growthList { column-gap: 32px; }
+  .growthItem { grid-template-columns: 34px 32px minmax(0,1fr); column-gap: 16px; }
+  .itemIcon { width: 30px; height: 30px; }
+  .growthTitle { font-size: 18px; }
+  .growthDesc { font-size: 16px; }
+}
+@media (max-width: 900px) {
+  .credentials { grid-template-columns: 104px minmax(0,1fr); row-gap: 24px; }
+  .degree { font-size: 36px; }
+  .degreeGroup { padding-right: 0; }
+  .credential { grid-column: 2; min-height: 44px; padding-block: 0; padding-right: 0; }
+  .credential:last-child { margin-top: -12px; }
+  .credential > svg { width: 28px; height: 28px; }
+  .growthList { gap: 28px; }
+  .growthItem { grid-template-columns: 32px minmax(0,1fr); column-gap: 18px; row-gap: 10px; }
+  .itemNumber { grid-row: 1 / 3; align-self: stretch; padding-top: 6px; }
+  .itemIcon { grid-column: 2; }
+  .itemContent { grid-column: 2; }
+}
+@media (max-width: 600px) {
+  :global(#main-content) section.goalsSection[id] { padding-block: 32px; }
+  .sectionHeader { margin-bottom: 28px; }
+  .sectionRule { margin-bottom: 18px; width: 32px; }
+  .sectionTitle { font-size: 36px; }
+  .credentials { grid-template-columns: 60px minmax(0,1fr); column-gap: 18px; row-gap: 20px; }
+  .universityLogo { width: 60px; height: 60px; align-self: start; }
+  .degreeGroup { border: 0; padding: 0; }
+  .degree { font-size: 30px; }
+  .universityLink { font-size: 15px; margin-top: 10px; gap: 8px; min-height: 44px; }
+  .universityLink > svg { width: 16px; height: 16px; }
+  .credential { grid-column: 1 / -1; border: 0; padding: 0; gap: 16px; font-size: 16px; min-height: 32px; }
+  .credential:last-child { margin-top: 0; }
+  .credential > svg { width: 26px; height: 26px; }
+  .foundation { font-size: 16px; line-height: 1.65; margin-top: 24px; }
+  .education { padding-bottom: 28px; }
+  .growth { margin-top: 26px; }
+  .growthHeading { font-size: 30px; }
+  .sectionSubtitle { font-size: 16px; margin-top: 10px; }
+  .growthList { grid-template-columns: minmax(0,1fr); margin-top: 28px; gap: 26px; }
+  .growthItem { grid-template-columns: 32px 28px minmax(0,1fr); column-gap: 14px; row-gap: 0; }
+  .itemNumber { grid-row: 1; align-self: start; font-size: 14px; padding-block: 6px 18px; }
+  .itemIcon { grid-column: auto; width: 28px; height: 28px; margin-top: 2px; }
+  .itemContent { grid-column: auto; }
+  .growthTitle { font-size: 18px; }
+  .growthDesc { font-size: 16px; line-height: 1.6; }
+  .statement { font-size: 23px; line-height: 1.45; padding-top: 24px; margin-top: 28px; }
+}

@@ -1,59 +1,60 @@
-# About section — approved Product Design implementation
+# Formación y aprendizaje — approved design QA
 
-Date: 2026-10-28
+final result: passed
 
-## Visual target and evidence
+## Target and evidence
 
-- Source: `C:/Users/danie/.codex/visualizations/2026/10/17/01a14b90-d37e-79c3-843b-d06d71034b4f/about-redesign/reference.png` (user-selected second concept).
-- Implementation: `http://localhost:3000/#about`.
-- Desktop capture: `C:/Users/danie/.codex/visualizations/2026/10/17/01a14b90-d37e-79c3-843b-d06d71034b4f/about-redesign/desktop-final.png`.
-- Full-view comparison: same directory, `comparison-final.png`, source on left and implementation on right.
-- Focused typography/accordion comparison: `comparison-detail-final.png`, source on left and implementation on right.
-- Responsive captures: `mobile-top.png` and `mobile-method.png`.
-- Desktop CSS viewport and both comparison input images: 1748 × 900, density 1. No image stretching or density conversion; the comparison board places both original captures side by side.
-- State: Spanish, dark site header, cream About section, first disclosure open and the other three closed. Mobile viewport: 390 × 844.
+- Source visual truth: `C:/Users/danie/AppData/Local/Temp/codex-clipboard-b41c44b1-0df9-4403-bfa8-e80959e4c9fb.png` (the user's exact selected attachment, original option 1, not the later AI-focused copy revision).
+- Implementation: `http://localhost:3000/#goals`, existing Next.js portfolio.
+- Artifacts directory: `C:/Users/danie/.codex/visualizations/2026/10/17/01a14b90-d37e-79c3-843b-d06d71034b4f/learning-redesign/`.
+- Reference copy: `reference.png`.
+- Browser-rendered implementation: `desktop-final.png`.
+- Full-view comparison: `comparison-final.png`, source on left and implementation on right in a single image.
+- Focused comparisons: `comparison-credentials.png` and `comparison-topics.png`, source above implementation. These check logo scale, credential alignment, fonts, topic numbering, icons and body wrapping.
+- Reference and implementation both 1738 × 905 pixels. Browser CSS viewport 1738 × 905, devicePixelRatio 1; no density scaling. The existing 6px scrollbar leaves 1732px document width.
+- State: Spanish, dark site theme with its existing cream editorial section, Aprendizaje navigation selected, all four learning topics visible. Existing navigation is retained at 88px versus approximately 76px in the generated reference.
+- Responsive evidence: `mobile-top.png` and `mobile-topics.png` at 390 × 844 CSS pixels; `tablet.png` at 834 × 1194. Both devicePixelRatio 1.
 
-## Comparison history
+## Findings and comparison history
 
-1. Initial combined inputs: `comparison-first.png` and `comparison-detail-first.png`.
-   - P2: introduction and role were visually too small compared with the selected mock; the name used the site's Manrope heading face rather than the mock's closer DM Sans form.
-   - Fix: use DM Sans at 68px/700 for the desktop name, 24px for the role, 22px for the introduction, and DM Sans for disclosure labels. Compact disclosure padding preserves room for the credentials strip.
-2. Final combined inputs: `comparison-final.png` and `comparison-detail-final.png`.
-   - The introduction, right-hand portrait, expandable working principles, and three-part credentials strip follow the selected composition. All credentials remain visible at the reference desktop height.
-   - No actionable P0/P1/P2 findings remain.
+1. First comparison (`comparison-first.png`, `desktop-first.png`) was blocked by a P2 vertical-density mismatch: the academic row and university link consumed too much space, pushing the closing statement below the reference viewport. The official logo also looked smaller because its source bitmap includes transparent padding.
+2. Adjusted the academic row, university link height, optical logo sizing, section padding and vertical gaps. Intermediate evidence: `desktop-adjusted.png`. The statement was then visible but the section still extended below the viewport.
+3. Reduced remaining section padding and topic/statement gaps. Post-fix evidence: `desktop-final.png` and the three final comparison images above. The section now measures 817px tall at the reference viewport, from approximately y=88 to y=905, with all four descriptions and the statement visible. No actionable P0/P1/P2 mismatch remains.
 
 ## Required fidelity surfaces
 
-- **Fonts/typography:** existing self-hosted/site fonts retained: DM Sans for profile copy and controls, Fraunces for editorial headings. Desktop hierarchy, sentence measure, and wrapping compared in the focused board. Mobile text wraps without horizontal overflow.
-- **Spacing/layout:** 1480px outer container, approximately 832px/450px content tracks with a 70px gap at the reference width; portrait and introduction aligned. The credentials strip has hairline separators, not cards. On mobile: introduction, portrait, method, then stacked credentials. Sections keep natural document scrolling.
-- **Colors/tokens:** existing cream, ink, and copper tokens retained. Dark/light header states checked; About remains the established cream editorial band in both themes.
-- **Image quality:** actual original Julio portrait and UPC/180DC/Devdatep assets reused. Portrait served through Next Image at quality 90 with responsive sizes. The real portrait differs from the generated mock's altered crop/face; preserving the real photograph is intentional.
-- **Copy/content:** introduction retained from existing factual copy and split into two paragraphs. Freelance work is identified separately in the role. The mock's inaccurate “freelance at Devdatep” phrase is corrected to Backend Developer Intern, with five months of backend work for EmiteFacil. UPC eighth semester and academic standing, consulting role, location, and official links are preserved. New visible keys are translated into English.
+- **Fonts and typography:** Existing local Fraunces for editorial headings, degree and statement; DM Sans for descriptions and UI. Main heading 64px, degree 46px and learning heading 48px at the reference width. Body is 17–20px desktop and 16px mobile. All text wraps naturally without truncation. Minor generated-font glyph/weight differences are accepted; no replacement font was added.
+- **Spacing and layout rhythm:** Matches the horizontal academic credential band, open two-column/two-row topic grid, thin separators and final statement. Container is 1480px including gutters. Number columns, icons and text align consistently. Tablet preserves a two-column topic layout with stacked credential metadata; mobile uses one topic column. Content can grow vertically on smaller screens without a nested scroll area or fixed-height clipping.
+- **Colors and tokens:** Uses existing cream #f3f0e8, ink #171c1e and copper #8b532f editorial tokens. The same editorial surface remains legible in either site theme. Existing navbar and floating WhatsApp treatment are retained.
+- **Image quality and asset fidelity:** Reuses the actual supplied UPC PNG and existing brand mark. No generated or hand-drawn logo replacement. Uses matching Lucide Boxes, Cloud, Monitor, BrainCircuit, GraduationCap, Award and ExternalLink library icons. The reference's medal-star glyph differs slightly from the available Award glyph; accepted P3. The supplied small UPC raster is optically scaled to match the visible mark; its original resolution remains the quality limit.
+- **Copy and content:** Existing Spanish and English locale content is preserved verbatim, including UPC, eighth semester, academic performance and the original four learning descriptions. No claims or AI-focused replacement copy from the unselected revision were introduced. No new certifications, metrics or qualifications.
 
-## Interaction and accessibility checks
+## Browser and functional checks
 
-- Main navigation opens About and aligns it under the fixed header.
-- Four native `details` disclosures share a group; selecting another opens it and closes the previous item.
-- Mouse and Enter-key operation verified, including restoring the first-open reference state.
-- Summary focus styles and real plus/minus icons are present; controls remain native keyboard-accessible elements.
-- English translation checked for the introduction, disclosures, credentials, and location.
-- Mobile tested at 390px: document width does not exceed the viewport; disclosures remain operable and credentials stack.
-- Official destinations checked in DOM: UPC, 180dc.org, devdatep.com, and the original LinkedIn profile.
-- Browser error/warning log checked: no app errors reported during the inspection.
-- Motion reduction is implemented with a scoped CSS media rule; this inspection did not emulate an OS reduced-motion setting.
+- Desktop Aprendizaje button navigates to the existing section; Enter activation checked.
+- Mobile menu opens, Aprendizaje selection closes it and navigates to the section.
+- Exactly four semantic list items, each with a heading and readable description; removed accordion affordances because content is always shown.
+- University link retains `https://www.upc.edu.pe/`, a new tab and `noopener noreferrer`.
+- Logo loaded successfully in the browser.
+- Spanish/English toggle displays the existing translations; no horizontal overflow in English.
+- Desktop, tablet and mobile document widths checked: no horizontal overflow.
+- Mobile PageDown and PageUp permit reading and returning within the long section; no nested scroll container introduced.
+- Light theme checked: editorial background rgb(243, 240, 232), foreground rgb(23, 28, 30).
+- Existing root smooth scrolling and y mandatory snap remain active; global navigation/scroll code was not changed.
+- Browser warning/error log check: empty.
+- Scoped ESLint for Goals.tsx passed; `git diff --check` passed.
+- Production `npm run build -- --webpack` passed, including TypeScript and static route generation.
 
-## Accepted differences / follow-up polish
+## Open questions and follow-up polish
 
-- The existing navbar remains unchanged (88px versus roughly 74px in the generated reference); global navigation outside About was out of scope.
-- The original photograph, full location information, explicit freelance role, and corrected internship wording take precedence over generated content.
-- Minor serif glyph and icon-stroke differences from raster generation are accepted; no new fonts, dependencies, or fabricated assets were added.
+- None blocking. The generated reference's subtle paper raster variation and exact serif/icon rasterization are not reproduced as image textures; existing clean site tokens and real library assets are retained.
+- Small-height desktop and long translated content may naturally extend vertically; no content is hidden to force a single viewport. Browser zoom and OS reduced-motion emulation were not separately tested. No new animation was added, and existing global reduced-motion behavior is unchanged.
 
 ## Implementation checklist
 
-- [x] Selected composition implemented in existing Next.js components.
-- [x] Original assets and official links retained.
-- [x] Responsive disclosures, keyboard behavior, and translations checked.
-- [x] Full-view and focused comparisons completed after typography fix.
-- [x] No unresolved P0/P1/P2 issues.
-
-final result: passed
+- [x] Preserve the selected layout and original content.
+- [x] Reuse supplied brand assets and library icons.
+- [x] Compare full view and focused regions, then fix viewport density.
+- [x] Verify desktop, tablet, mobile, keyboard navigation, translation and themes.
+- [x] Pass lint, production build and console checks.
+- [x] Keep the local preview running for review.
